@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.awt.Label"/>
+<fullyQualifiedTypeName name="java.awt.GridBagConstraints"/>
+<fullyQualifiedTypeName name="javafx.event.EventHandler"/>
+<fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Label"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.StackPane"/>
+<fullyQualifiedTypeName name="javafx.application.Application"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.GridPane"/>
+<fullyQualifiedTypeName name="java.awt.Button"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="gui.uebungen.ByeRole"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Button"/>
+<fullyQualifiedTypeName name="gui.uebungen.Actor1"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.management.relation.Role"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="gui.uebungen.Role1"/>
+<fullyQualifiedTypeName name="gui.uebungen.Hallo"/>
+<fullyQualifiedTypeName name="gui.uebungen.GeneralRole"/>
+</qualifiedTypeNameHistroy>

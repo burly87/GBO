@@ -1,0 +1,10 @@
+package gui.uebungen;
+
+public interface Role
+{
+
+    class nowKiss implements Role
+    {
+        System.out.println("now Kiss");
+    }
+}

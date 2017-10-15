@@ -1,0 +1,10 @@
+package gui.uebungen;
+
+public class Role
+{
+    public void play()
+    {
+
+    }
+
+}

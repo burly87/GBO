@@ -1,0 +1,11 @@
+AbstractTextEditor.Color.SelectionBackground=7,54,66
+currentLineColor=0,43,54
+eclipse.preferences.version=1
+errorTextStyle=BOX
+filteredSearchResultIndicationColor=7,54,66
+net.sf.eclipsecs.error.color=255,128,128
+net.sf.eclipsecs.error.text.style=NONE
+occurrenceIndicationColor=7,54,66
+overviewRuler_migration=migrated_3.1
+spellingEnabled=false
+writeOccurrenceIndicationColor=7,54,66

@@ -1,0 +1,13 @@
+package gui.uebungen;
+
+public interface Role1
+{
+
+    public void play();
+
+}
+
+class nowKiss implements Role1
+{
+    
+}

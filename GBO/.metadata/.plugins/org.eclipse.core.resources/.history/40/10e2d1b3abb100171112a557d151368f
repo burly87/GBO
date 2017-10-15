@@ -1,0 +1,8 @@
+package gui.uebungen;
+
+public interface Role1
+{
+
+    void play();
+
+}

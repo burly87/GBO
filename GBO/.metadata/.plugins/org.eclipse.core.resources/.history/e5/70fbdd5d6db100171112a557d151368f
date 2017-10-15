@@ -1,0 +1,16 @@
+package gui.uebungen;
+
+public class Role extends Actor
+{
+    interface Role()
+    {
+
+        public void play();
+    }
+    
+    public void play()
+    {
+
+    }
+
+}

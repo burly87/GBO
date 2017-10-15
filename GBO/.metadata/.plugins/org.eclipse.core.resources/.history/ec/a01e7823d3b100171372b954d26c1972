@@ -32,7 +32,7 @@ public class Actor1 extends Application
     {
         counter++;
         addRole.add(role1);
-        System.out.println(addRole.toString());
+        // System.out.println(addRole.toString());
     }
 
     public static void clearRole()
@@ -56,7 +56,8 @@ public class Actor1 extends Application
 
         System.out.println("Anzahl an Rollen in ArrayList: " + counter);
         clearRole();
-        System.out.println("Arraylist nach CLEAR:" + addRole.toString());
+        // System.out.println("Anzahl an Rollen nach CLEAR:" +
+        // addRole.toString());
 
         // launch(args);
     }

@@ -56,7 +56,8 @@ public class Actor1 extends Application
 
         System.out.println("Anzahl an Rollen in ArrayList: " + counter);
         clearRole();
-        System.out.println("Arraylist nach CLEAR:" + addRole.toString());
+        // System.out.println("Anzahl an Rollen nach CLEAR:" +
+        // addRole.toString());
 
         // launch(args);
     }

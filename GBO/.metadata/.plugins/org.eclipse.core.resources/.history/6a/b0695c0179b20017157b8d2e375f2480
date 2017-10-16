@@ -1,0 +1,17 @@
+package gui.calculator;
+
+import javafx.event.ActionEvent;
+
+public class CalculatorControll
+{
+    private int counter = 0;
+
+    private Label label;
+
+    public void buttonClicked(ActionEvent e)
+    {
+        counter++;
+        // label.setText("Hallo welt " + counter + ".");
+    }
+
+}

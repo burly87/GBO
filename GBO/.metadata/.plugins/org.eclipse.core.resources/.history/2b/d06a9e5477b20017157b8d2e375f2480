@@ -1,0 +1,15 @@
+package gui.calculator;
+
+import javafx.event.ActionEvent;
+
+public class CalculatorControll
+{
+    private int counter = 0;
+
+    public void multiplication(ActionEvent e)
+    {
+        counter++;
+        System.out.println("multi " + counter + "x ausgeführt");
+    }
+
+}

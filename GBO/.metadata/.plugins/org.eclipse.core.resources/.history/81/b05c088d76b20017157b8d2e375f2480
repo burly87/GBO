@@ -1,0 +1,11 @@
+package gui.calculator;
+
+public class CalculatorControll
+{
+
+    public void multiplication()
+    {
+
+    }
+
+}

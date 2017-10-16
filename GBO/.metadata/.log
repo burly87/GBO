@@ -1194,3 +1194,275 @@ Caused by: java.io.FileNotFoundException: C:\MEINS\Programme\Workspace\GBO\Style
 	at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
 	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:124)
 	... 18 more
+!SESSION 2017-10-16 08:47:11.101 -----------------------------------------------
+eclipse.buildId=4.7.0.I20170612-0950
+java.version=1.8.0_65
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-10-16 08:47:22.077
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 2 0 2017-10-16 08:47:24.097
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-10-16 08:47:24.097
+!MESSAGE Commands should really have a category: plug-in='net.sf.eclipsecs.ui', id='CheckstylePlugin.PurgeCaches', categoryId='net.sf.eclipsecs'
+
+!ENTRY org.eclipse.ui 2 0 2017-10-16 08:47:25.246
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-10-16 08:47:25.246
+!MESSAGE Commands should really have a category: plug-in='net.sf.eclipsecs.ui', id='CheckstylePlugin.PurgeCaches', categoryId='net.sf.eclipsecs'
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-10-16 08:47:41.354
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\freek'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.resources 4 2 2017-10-16 08:47:49.047
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.runtime.CoreException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:307)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: net.sf.eclipsecs.core.util.CheckstylePluginException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:67)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:80)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:143)
+	at net.sf.eclipsecs.core.config.CheckConfiguration.getCheckstyleConfiguration(CheckConfiguration.java:161)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.getCacheKey(CheckerFactory.java:209)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.createChecker(CheckerFactory.java:105)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:141)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	... 13 more
+Caused by: java.io.FileNotFoundException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:124)
+	... 18 more
+!SUBENTRY 1 net.sf.eclipsecs.core 4 4 2017-10-16 08:47:49.049
+!MESSAGE D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+!STACK 0
+net.sf.eclipsecs.core.util.CheckstylePluginException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:67)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:80)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:143)
+	at net.sf.eclipsecs.core.config.CheckConfiguration.getCheckstyleConfiguration(CheckConfiguration.java:161)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.getCacheKey(CheckerFactory.java:209)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.createChecker(CheckerFactory.java:105)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:141)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.io.FileNotFoundException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:124)
+	... 18 more
+!SUBENTRY 1 net.sf.eclipsecs.core 4 4 2017-10-16 08:47:49.049
+!MESSAGE D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+!STACK 0
+net.sf.eclipsecs.core.util.CheckstylePluginException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:67)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:80)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:143)
+	at net.sf.eclipsecs.core.config.CheckConfiguration.getCheckstyleConfiguration(CheckConfiguration.java:161)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.getCacheKey(CheckerFactory.java:209)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.createChecker(CheckerFactory.java:105)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:141)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.io.FileNotFoundException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:124)
+	... 18 more
+
+!ENTRY org.eclipse.core.resources 4 75 2017-10-16 08:47:49.128
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 net.sf.eclipsecs.core 4 75 2017-10-16 08:47:49.128
+!MESSAGE Errors running builder 'Checkstyle Builder' on project 'GBO'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:307)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: net.sf.eclipsecs.core.util.CheckstylePluginException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:67)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:80)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:143)
+	at net.sf.eclipsecs.core.config.CheckConfiguration.getCheckstyleConfiguration(CheckConfiguration.java:161)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.getCacheKey(CheckerFactory.java:209)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.createChecker(CheckerFactory.java:105)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:141)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	... 13 more
+Caused by: java.io.FileNotFoundException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:124)
+	... 18 more
+!SUBENTRY 2 net.sf.eclipsecs.core 4 4 2017-10-16 08:47:49.128
+!MESSAGE D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+!STACK 0
+net.sf.eclipsecs.core.util.CheckstylePluginException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:67)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:80)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:143)
+	at net.sf.eclipsecs.core.config.CheckConfiguration.getCheckstyleConfiguration(CheckConfiguration.java:161)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.getCacheKey(CheckerFactory.java:209)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.createChecker(CheckerFactory.java:105)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:141)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.io.FileNotFoundException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:124)
+	... 18 more
+!SUBENTRY 1 net.sf.eclipsecs.core 4 4 2017-10-16 08:47:49.129
+!MESSAGE D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+!STACK 0
+net.sf.eclipsecs.core.util.CheckstylePluginException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:67)
+	at net.sf.eclipsecs.core.util.CheckstylePluginException.rethrow(CheckstylePluginException.java:80)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:143)
+	at net.sf.eclipsecs.core.config.CheckConfiguration.getCheckstyleConfiguration(CheckConfiguration.java:161)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.getCacheKey(CheckerFactory.java:209)
+	at net.sf.eclipsecs.core.builder.CheckerFactory.createChecker(CheckerFactory.java:105)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:141)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: java.io.FileNotFoundException: D:\Workspace\GitHub\GBO\GBO\Style\CheckstyleConfig1.xml (Das System kann den angegebenen Pfad nicht finden)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+	at net.sf.eclipsecs.core.config.configtypes.ConfigurationType.getCheckstyleConfiguration(ConfigurationType.java:124)
+	... 18 more
+
+!ENTRY org.eclipse.oomph.setup.ui 1 0 2017-10-16 08:47:54.747
+!MESSAGE Setup tasks were performed during startup updating 170 preferences. See 'C:\MEINS\Programme\001_IDEs\eclipseOxygen\configuration\org.eclipse.oomph.setup\setup.log' for details
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 16:12:17.153
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java:89:8: expecting EOF, found 'result'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more

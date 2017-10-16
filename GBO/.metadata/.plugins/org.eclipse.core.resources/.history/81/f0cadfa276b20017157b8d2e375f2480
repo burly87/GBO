@@ -1,0 +1,13 @@
+package gui.calculator;
+
+import javafx.event.ActionEvent;
+
+public class CalculatorControll
+{
+
+    public void multiplication(ActionEvent e)
+    {
+
+    }
+
+}

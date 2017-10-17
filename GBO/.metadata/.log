@@ -1466,3 +1466,660 @@ Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorCo
 	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
 	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
 	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:01:42.241
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:28:1: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:01:48.291
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:27:1: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:01:58.473
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:27:1: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:02:35.525
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:27:1: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:02:43.099
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:27:1: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:02:51.427
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:27:1: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:02:58.975
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:27:1: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:07:17.618
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:25:1: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:08:12.238
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:25:1: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:08:41.731
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:27:1: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:26:10.320
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: TokenStreamRecognitionException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:194)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:29:164: expecting '"', found '<EOF>'
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaLexer.nextToken(GeneratedJavaLexer.java:405)
+	at antlr.TokenStreamHiddenTokenFilter.consume(TokenStreamHiddenTokenFilter.java:38)
+	at antlr.TokenStreamHiddenTokenFilter.nextToken(TokenStreamHiddenTokenFilter.java:134)
+	at antlr.TokenBuffer.fill(TokenBuffer.java:69)
+	at antlr.TokenBuffer.LA(TokenBuffer.java:80)
+	at antlr.LLkParser.LA(LLkParser.java:52)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.expression(GeneratedJavaRecognizer.java:4788)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.expressionList(GeneratedJavaRecognizer.java:6148)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.argList(GeneratedJavaRecognizer.java:3448)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.postfixExpression(GeneratedJavaRecognizer.java:7624)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.unaryExpressionNotPlusMinus(GeneratedJavaRecognizer.java:7339)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.unaryExpression(GeneratedJavaRecognizer.java:7154)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.multiplicativeExpression(GeneratedJavaRecognizer.java:7019)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.additiveExpression(GeneratedJavaRecognizer.java:6970)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.shiftExpression(GeneratedJavaRecognizer.java:6913)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.relationalExpression(GeneratedJavaRecognizer.java:6830)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.equalityExpression(GeneratedJavaRecognizer.java:6781)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.andExpression(GeneratedJavaRecognizer.java:6752)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.exclusiveOrExpression(GeneratedJavaRecognizer.java:6723)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.inclusiveOrExpression(GeneratedJavaRecognizer.java:6694)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.logicalAndExpression(GeneratedJavaRecognizer.java:6665)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.logicalOrExpression(GeneratedJavaRecognizer.java:6636)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.conditionalExpression(GeneratedJavaRecognizer.java:2136)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.assignmentExpression(GeneratedJavaRecognizer.java:6388)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.expression(GeneratedJavaRecognizer.java:4789)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.lambdaBody(GeneratedJavaRecognizer.java:8024)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.lambdaExpression(GeneratedJavaRecognizer.java:6376)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.expression(GeneratedJavaRecognizer.java:4774)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.expressionList(GeneratedJavaRecognizer.java:6148)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.argList(GeneratedJavaRecognizer.java:3448)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.postfixExpression(GeneratedJavaRecognizer.java:7624)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.unaryExpressionNotPlusMinus(GeneratedJavaRecognizer.java:7339)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.unaryExpression(GeneratedJavaRecognizer.java:7154)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.multiplicativeExpression(GeneratedJavaRecognizer.java:7019)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.additiveExpression(GeneratedJavaRecognizer.java:6970)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.shiftExpression(GeneratedJavaRecognizer.java:6913)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.relationalExpression(GeneratedJavaRecognizer.java:6830)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.equalityExpression(GeneratedJavaRecognizer.java:6781)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.andExpression(GeneratedJavaRecognizer.java:6752)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.exclusiveOrExpression(GeneratedJavaRecognizer.java:6723)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.inclusiveOrExpression(GeneratedJavaRecognizer.java:6694)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.logicalAndExpression(GeneratedJavaRecognizer.java:6665)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.logicalOrExpression(GeneratedJavaRecognizer.java:6636)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.conditionalExpression(GeneratedJavaRecognizer.java:2136)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.assignmentExpression(GeneratedJavaRecognizer.java:6388)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.expression(GeneratedJavaRecognizer.java:4789)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.traditionalStatement(GeneratedJavaRecognizer.java:5427)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.statement(GeneratedJavaRecognizer.java:4276)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compoundStatement(GeneratedJavaRecognizer.java:3942)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.field(GeneratedJavaRecognizer.java:3332)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.classBlock(GeneratedJavaRecognizer.java:2542)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.classDefinition(GeneratedJavaRecognizer.java:634)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.typeDefinitionInternal(GeneratedJavaRecognizer.java:556)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.typeDefinition(GeneratedJavaRecognizer.java:389)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:202)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-16 21:44:42.572
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\uebungen\Liste.java:19:9: expecting EOF, found 'list'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-10-17 22:27:57.623
+!MESSAGE Unable to locate executable for jre1.8.0_65
+
+!ENTRY org.eclipse.jdt.launching 4 150 2017-10-17 22:28:23.608
+!MESSAGE Unable to locate executable for jre1.8.0_65
+!SESSION 2017-10-17 22:28:34.077 -----------------------------------------------
+eclipse.buildId=4.7.0.I20170612-0950
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ui 2 0 2017-10-17 22:30:28.302
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-10-17 22:30:28.302
+!MESSAGE Commands should really have a category: plug-in='net.sf.eclipsecs.ui', id='CheckstylePlugin.PurgeCaches', categoryId='net.sf.eclipsecs'
+
+!ENTRY org.eclipse.ui 2 0 2017-10-17 22:30:30.960
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-10-17 22:30:30.960
+!MESSAGE Commands should really have a category: plug-in='net.sf.eclipsecs.ui', id='CheckstylePlugin.PurgeCaches', categoryId='net.sf.eclipsecs'
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-10-17 22:31:07.541
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\freek'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.oomph.setup.ui 1 0 2017-10-17 22:31:25.544
+!MESSAGE Setup tasks were performed during startup updating 170 preferences. See 'C:\MEINS\Programme\001_IDEs\eclipseOxygen\configuration\org.eclipse.oomph.setup\setup.log' for details
+!SESSION 2017-10-17 22:56:14.312 -----------------------------------------------
+eclipse.buildId=4.7.0.I20170612-0950
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ui 2 0 2017-10-17 22:56:20.000
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-10-17 22:56:20.000
+!MESSAGE Commands should really have a category: plug-in='net.sf.eclipsecs.ui', id='CheckstylePlugin.PurgeCaches', categoryId='net.sf.eclipsecs'
+
+!ENTRY org.eclipse.ui 2 0 2017-10-17 22:56:20.469
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-10-17 22:56:20.469
+!MESSAGE Commands should really have a category: plug-in='net.sf.eclipsecs.ui', id='CheckstylePlugin.PurgeCaches', categoryId='net.sf.eclipsecs'
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-10-17 22:56:30.284
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\freek'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.oomph.setup.ui 1 0 2017-10-17 22:56:34.251
+!MESSAGE Setup tasks were performed during startup updating 170 preferences. See 'C:\MEINS\Programme\001_IDEs\eclipseOxygen\configuration\org.eclipse.oomph.setup\setup.log' for details
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-17 23:00:03.379
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\Bsp01\Main11.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\Bsp01\Main11.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\Bsp01\Main11.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\Bsp01\Main11.java:8:37: expecting EOF, found 'er'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-17 23:00:58.770
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\Bsp01\Main11.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\Bsp01\Main11.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\Bsp01\Main11.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\Bsp01\Main11.java:10:37: expecting EOF, found 'er'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-17 23:19:31.921
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java:107:13: expecting EOF, found '}'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more
+
+!ENTRY net.sf.eclipsecs.core 4 0 2017-10-17 23:22:32.230
+!MESSAGE Checkstyle-Plugin: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java
+!STACK 0
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: Exception was thrown while processing C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:295)
+	at com.puppycrawl.tools.checkstyle.Checker.process(Checker.java:213)
+	at net.sf.eclipsecs.core.builder.Auditor.runAudit(Auditor.java:158)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.handleBuildSelection(CheckstyleBuilder.java:301)
+	at net.sf.eclipsecs.core.builder.CheckstyleBuilder.build(CheckstyleBuilder.java:172)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:735)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:301)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:304)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:360)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:383)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: MismatchedTokenException occurred during the analysis of file C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java.
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:199)
+	at com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck.process(AbstractFileSetCheck.java:78)
+	at com.puppycrawl.tools.checkstyle.Checker.processFile(Checker.java:316)
+	at com.puppycrawl.tools.checkstyle.Checker.processFiles(Checker.java:286)
+	... 16 more
+Caused by: C:\MEINS\Programme\GitHub\GBO\GBO\GBO\src\gui\calculator\CalculatorControll.java:98:17: expecting EOF, found 'temp'
+	at antlr.Parser.match(Parser.java:211)
+	at com.puppycrawl.tools.checkstyle.grammars.GeneratedJavaRecognizer.compilationUnit(GeneratedJavaRecognizer.java:211)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.parse(TreeWalker.java:446)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.processFiltered(TreeWalker.java:179)
+	... 19 more

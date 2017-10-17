@@ -1,0 +1,24 @@
+package gui.uebungen;
+
+interface L
+{
+    void forEach(L l);
+}
+
+public class Liste implements L
+{
+    private L l;
+
+    public static void main(String[] args)
+    {
+        Liste list = new Liste();
+        list.forEach(e -> System.out.println(e));
+    }
+
+    @Override
+    public void forEach(L l)
+    {
+        System.out.println("test2");
+    }
+
+}

@@ -1,0 +1,29 @@
+package gui.uebungen;
+
+interface L
+{
+    void forEach(L l);
+}
+
+public class ListClass implements L
+{
+    private List l;
+
+    public ListeClass(List l)
+    {
+        this.List = l;
+    }
+
+    public static void main(String[] args)
+    {
+        Liste list = new Liste();
+        list.forEach(e -> System.out.println(e));
+    }
+
+    @Override
+    public void forEach(L l)
+    {
+        System.out.println("test2");
+    }
+
+}

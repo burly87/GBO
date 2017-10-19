@@ -77,11 +77,32 @@ public class CalculatorControll extends Computation
     private Button buttonDivi;
 
     @FXML
-    private TextField ergebnis;
+    private TextField display; // Texttfeld ausgabe
 
-    private String text = "";
+    private String text = ""; // KA
 
-    private String ausgabe = "";
+    private String ausgabe = ""; // text evaluate temp
+
+    @FXML
+    void clickedClear(ActionEvent event)
+    {
+        display.clear();
+        text = "";
+        ausgabe = "";
+    }
+
+    @FXML
+    void clickedDelete(ActionEvent event)
+    {
+        try
+        {
+            display.setText(display.getText().substring(0, display.getText().length() - 1));
+        }
+        catch (RuntimeException e)
+        {
+            ausgabe = "";
+        }
+    }
 
     @FXML
     void buttonClicked(ActionEvent event)
@@ -89,46 +110,29 @@ public class CalculatorControll extends Computation
 
         Button result = (Button) event.getSource();
 
-        if (event.getSource() == buttonIs)
+        if (event.getSource().equals(buttonIs) && !text.equals(""))
         {
             try
             {
                 Object temp = evaluate(text);
                 System.out.println("Ergebnis: " + temp);
-
-                // ergebnis.setText(String.valueOf(temp).toString());
-                // ergebnis.setText(String.valueOf(text +
-                // String.valueOf(temp)));
                 ausgabe = temp.toString();
+                // ergebnis.setText(text + ausgabe);
 
             }
 
             catch (ScriptException e)
             {
-                e.printStackTrace();
+                ausgabe += ">FEHLER";
             }
 
-        }
-
-        if (event.getSource() == buttonPlus)
-        {
-            try
-            {
-
-                Object temp = evaluate(text);
-                System.out.println("Zwischenergebnis: " + temp);
-                temp.toString();
-
-            }
-            catch (ScriptException e)
-            {
-                e.printStackTrace();
-            }
         }
 
         text += result.getText();
-        ergebnis.setText(text + ausgabe);
-
+        display.setText(text + ausgabe);
+        System.out.println("Ergebnis: " + display);
+        System.out.println("Text: " + text);
+        System.out.println("Ausgabe: " + ausgabe);
     }
 
     @FXML
@@ -153,7 +157,7 @@ public class CalculatorControll extends Computation
         assert buttonMinus != null : "fx:id=\"buttonMinus\" was not injected: check your FXML file 'calculator.fxml'.";
         assert buttonMulti != null : "fx:id=\"buttonMulti\" was not injected: check your FXML file 'calculator.fxml'.";
         assert buttonDivi != null : "fx:id=\"buttonDivi\" was not injected: check your FXML file 'calculator.fxml'.";
-        assert ergebnis != null : "fx:id=\"ergebnis\" was not injected: check your FXML file 'calculator.fxml'.";
+        assert display != null : "fx:id=\"ergebnis\" was not injected: check your FXML file 'calculator.fxml'.";
 
     }
 }

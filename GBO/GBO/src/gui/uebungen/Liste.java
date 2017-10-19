@@ -9,7 +9,7 @@ interface L
 
 public class Liste implements L
 {
-    private L l2;
+    private static L l2;
 
     // private static Liste list = new Liste();
 
@@ -17,7 +17,7 @@ public class Liste implements L
 
     public Liste(L l2)
     {
-        this.l2 = l2;
+        Liste.l2 = l2;
     }
 
     public void add(L addList)
@@ -29,12 +29,11 @@ public class Liste implements L
     public void forEach(L l)
     {
         list2.forEach(e -> System.out.println(e));
-        // System.out.println("test");
     }
 
     public static void main(String[] args)
     {
-        // list2.forEach(e -> System.out.println(e));
+        Liste liste = new Liste(l2);
     }
 
 }

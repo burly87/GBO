@@ -19,15 +19,6 @@ public class Main01 extends Application
         root.add(l, 0, 0);
         root.add(l2, 0, 1);
 
-        /* StackPane */
-        // StackPane root = new StackPane(); //StackPane benötigt
-        // .getChildren().add()
-
-        // root.getChildren().add(l);
-        // root.getChildren().add(l2);
-        // kommt container über getChildren
-        // zurück und da drauf wird add angewendet
-
         /* Scene */ // immer notwendig
         Scene scene = new Scene(root, 300, 300);
         primaryStage.setScene(scene);

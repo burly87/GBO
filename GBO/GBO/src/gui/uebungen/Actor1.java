@@ -30,15 +30,15 @@ public class Actor1 extends Application
 
     public void addRole(Role1 role1)
     {
-        counter++;
+        // counter++;
         addRole.add(role1);
-        System.out.println(addRole.toString());
+        // System.out.println(addRole.toString());
     }
 
     public static void clearRole()
     {
         addRole.clear();
-        System.out.println("clear wurde ausgeführt");
+        // System.out.println("clear wurde ausgeführt");
     }
 
     public static void main(String[] args)

@@ -1,0 +1,19 @@
+package gui.Testing;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
+public class LoveNaddyController
+{
+    private int counter;
+
+    @FXML
+    private Label label;
+
+    public void buttonClicked(ActionEvent e)
+    {
+        counter++;
+        label.setText("Love Naddys Desgin zum " + counter + ".");
+    }
+}

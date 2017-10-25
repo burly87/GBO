@@ -1,0 +1,12 @@
+package gui.Uebung2;
+
+import javafx.beans.property.SimpleIntegerProperty;
+
+public class PropertyWithListener
+{
+    public static void main(String[] args)
+    {
+        SimpleIntegerProperty prop = new SimpleIntegerProperty();
+        VerySimpleIntegerProperty listener = new VerySimpleIntegerProperty();
+    }
+}

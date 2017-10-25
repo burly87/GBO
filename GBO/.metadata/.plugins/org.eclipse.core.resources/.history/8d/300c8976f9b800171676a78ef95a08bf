@@ -1,0 +1,8 @@
+package gui.Uebung2;
+
+public class VerySimpleIntegerProperty implements ChangeListener
+{
+    
+    
+
+}

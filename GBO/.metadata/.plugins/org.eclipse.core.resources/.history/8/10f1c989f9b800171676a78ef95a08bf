@@ -1,0 +1,16 @@
+package gui.Uebung2;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+
+public class VerySimpleIntegerProperty implements ChangeListener<Integer>
+{
+
+    @Override
+    public void changed(ObservableValue observable, Object oldValue, Object newValue)
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+}

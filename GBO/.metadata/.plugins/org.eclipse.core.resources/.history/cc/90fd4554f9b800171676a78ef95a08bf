@@ -1,0 +1,6 @@
+package gui.Uebung23;
+
+public class Gruppe extends Mensch
+{
+
+}

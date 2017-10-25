@@ -1,0 +1,16 @@
+package gui.Uebung23;
+
+public class Mensch implements Mann, Frau
+{
+
+}
+
+interface Mann
+{
+
+}
+
+interface Frau
+{
+    
+}

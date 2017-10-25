@@ -1,0 +1,17 @@
+package gui.Uebung2;
+
+public class ListenerA implements ChangeListener
+{
+    public void update(int state)
+    {
+        System.out.println("Listener A updated with " + state);
+    }
+
+    public static void main(String[] args)
+    {
+        ListenerA listener = new ListenerA();
+        VerySimpleIntegerProperty a = new VerySimpleIntegerProperty();
+        a.addListener(listener);
+        a.set(55);
+    }
+}

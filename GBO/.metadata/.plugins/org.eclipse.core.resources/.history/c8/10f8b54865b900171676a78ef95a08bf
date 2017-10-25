@@ -1,0 +1,40 @@
+package gui.Uebung2;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+
+public class VerySimpleIntegerProperty
+{
+    private ArrayList<ChangeListener> listenerList = new ArrayList<>();
+
+    private int value;
+
+    public void set(int value)
+    {
+        this.value = value;
+        notify(value);
+    }
+
+    public int get()
+    {
+        return this.value;
+    }
+
+    public void addListener(ChangeListener l)
+    {
+        listenerList.add(l);
+    }
+
+    public void removeListener(ChangeListener l)
+    {
+        listenerList.remove(l);
+    }
+
+    private void notify(int v)
+    {
+        for (ChangeListener listener : listenerList)
+        {
+            listener.update(v);
+        }
+    }
+}

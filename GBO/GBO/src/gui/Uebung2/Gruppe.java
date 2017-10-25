@@ -1,6 +1,8 @@
 package gui.Uebung2;
 
-public class Gruppe extends Mensch
-{
+import java.util.ArrayList;
 
+public class Gruppe
+{
+    private ArrayList<Mensch> mensch;
 }

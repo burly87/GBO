@@ -1,7 +1,0 @@
-package gui.uebungen;
-
-public interface Role
-{
-
-  
-}

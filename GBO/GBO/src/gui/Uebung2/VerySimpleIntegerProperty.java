@@ -8,10 +8,10 @@ public class VerySimpleIntegerProperty
 
     private int value;
 
-    public void set(int v)
+    public void set(int wert)
     {
-        this.value = v;
-        notify(v);
+        this.value = wert;
+        notify(wert);
     }
 
     public int get()
@@ -29,11 +29,11 @@ public class VerySimpleIntegerProperty
         listenerList.remove(l);
     }
 
-    private void notify(int v)
+    private void notify(int wert)
     {
         for (ChangeListener listener : listenerList)
         {
-            listener.update(v);
+            listener.update(wert);
         }
     }
 }

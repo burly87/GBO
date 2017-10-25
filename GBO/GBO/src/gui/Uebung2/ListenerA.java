@@ -4,7 +4,7 @@ public class ListenerA implements ChangeListener
 {
     public void update(int state)
     {
-        System.out.println(state);
+        System.out.println("AENDERUNG ZU: " + state);
     }
 
     public static void main(String[] args)
@@ -12,6 +12,7 @@ public class ListenerA implements ChangeListener
         ListenerA listener = new ListenerA();
         VerySimpleIntegerProperty intProp = new VerySimpleIntegerProperty();
         intProp.addListener(listener);
-        intProp.set(55);
+        intProp.addListener(v -> System.out.println(v));
+        intProp.set(6);
     }
 }

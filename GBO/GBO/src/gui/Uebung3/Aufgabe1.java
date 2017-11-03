@@ -21,7 +21,8 @@ public class Aufgabe1
         /* 1b) unidirektional eine Property ist von mehreren abhängig */
         prop1.bind(prop2);
         prop1.bind(prop3);
-        prop1.bind(prop4);// */
+        prop1.bind(prop4);// eigentlich unnötig, da nur noch prop1.bind(prop4)
+                          // am ende existiert */
 
         /* 1c) unidirektional eine Property gibt Änderung an mehrere weiter */
         prop1.bind(prop2);
@@ -32,7 +33,7 @@ public class Aufgabe1
         prop1.bind(prop2);
         prop2.bind(prop3);
         prop3.bind(prop4);
-        prop4.bind(prop1);// */
+        prop4.bind(prop1);// StackOverflow, da kein set mehr möglich ist*/
 
         /* 1e) bidirektional vier in Reihe gekoppelt */
         prop1.bindBidirectional(prop2);
@@ -111,33 +112,4 @@ public class Aufgabe1
         /* END: PROP4 */
     }
 
-    /* SO SOLLS NICHT GEMACHT WERDEN - funktioniert aber auch */
-    /*
-     * private static final int FACTOR = 1;
-     * 
-     * private IntegerProperty accountBalanceEuro;
-     * 
-     * private ReadOnlyIntegerWrapper accountBalanceDollar;
-     * 
-     * public Aufgabe1(int value) { accountBalanceEuro = new
-     * SimpleIntegerProperty(value); accountBalanceDollar = new
-     * ReadOnlyIntegerWrapper(value * FACTOR); }
-     */
-
-    /*
-     * public int getAccountBalanceEuro() { return accountBalanceEuro.get(); }
-     * 
-     * public int getAccountBalanceDollar() { return accountBalanceDollar.get();
-     * }
-     * 
-     * public void setAccountBalanceEuro(int newValue) {
-     * accountBalanceEuro.set(newValue); accountBalanceDollar.set(newValue *
-     * FACTOR); }
-     * 
-     * public IntegerProperty accountBalanceEuroProperty() { return
-     * accountBalanceEuro; }
-     * 
-     * public ReadOnlyIntegerProperty accountBalanceDollarProperty() { return
-     * accountBalanceDollar.getReadOnlyProperty(); }
-     */
 }

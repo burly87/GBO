@@ -20,8 +20,19 @@ public class Laufzeitvergleich
     // LinkdList muss bei get komplett durchlaufen, bis zur [n]-gesuchten
     // Stelle. Daher langsamer
 
+    // LinkedList Methoden gehen nicht??? addFirst(), addLast(), getFirst(),
+    // getLast(), removeFirst(), removeLast()
     public static void main(String[] args)
     {
+        /* zur direkten Laufzeitmessung */
+        long start, end, time;
+
+        /* zum Testen der Laufzeit */
+        int helpArray = 0;
+        int helpLinked = 0;
+
+        /* initialisierung Listen */
+
         List<String> arrayList = new ArrayList<String>();
         List<String> linkedList = new LinkedList<String>();
 
@@ -46,44 +57,215 @@ public class Laufzeitvergleich
         });
         /* END: hinzufügen Listener */
 
-        /* zur direkten Laufzeitmessung */
-        long start, end, time;
-
-        /* Testen der Laufzeit */
-        int helpArray = 0;
-        int inArray = 0;
-
-        int inLinked = 0;
-        int helpLinked = 0;
         /* ARRAYLIST STUFF */
+
+        // Einfügen am Anfang
         System.out.println("Größe ArrayList zu Beginn: " + observableArrayList.size());
         start = System.currentTimeMillis();
-        while (helpArray <= 10000)
+        for (int i = 0; i < 100000; i++)
         {
-            arrayList.add(0, "Element" + inArray);
-            ++inArray;
-            helpArray++;
+            arrayList.add(0, "Element ");
 
         }
         end = System.currentTimeMillis();
         time = end - start;
-        System.out.println("Größe ArrayList nach Änderung: " + observableArrayList.size());
-        System.out.println("vergangene Zeit ArraydList: " + time);
+        System.out.println("Größe ArrayList EINFÜGEN ANFANG: " + observableArrayList.size());
+        System.out.println("vergangene Zeit ArrayList: " + time);
+        System.out.println("=======================");
+        arrayList.clear();
+
+        // Einfügen am Ende
+        System.out.println("Größe ArrayList zu Beginn: " + observableArrayList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            arrayList.add(arrayList.size(), "Element");
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("Größe ArrayList EINFÜGEN ENDE: " + observableArrayList.size());
+        System.out.println("vergangene Zeit ArrayList: " + time);
+        System.out.println("=======================");
+
+        // Löschen erstes Element
+        System.out.println("Größe ArrayList zu Beginn: " + observableArrayList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            arrayList.remove(0);
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("Größe ArrayList LÖSCHEN ERTES: " + observableArrayList.size());
+        System.out.println("vergangene Zeit ArrayList: " + time);
+        System.out.println("=======================");
+
+        // Löschen letztes Element
+
+        for (int i = 0; i < 100000; i++)
+        {
+            arrayList.add(0, "Element ");
+        }
+        System.out.println("Größe ArrayList zu Beginn: " + observableArrayList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            arrayList.remove(arrayList.size() - 1);
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("Größe ArrayList LÖSCHEN LETZTES: " + observableArrayList.size());
+        System.out.println("vergangene Zeit ArrayList: " + time);
+        System.out.println("=======================");
+
+        // Zugreifen erstes Element
+        for (int i = 0; i < 100000; i++)
+        {
+            arrayList.add(0, "Element ");
+        }
+        System.out.println("Größe ArrayList zu Beginn: " + observableArrayList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 10000000; i++)
+        {
+            arrayList.get(0);
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("ZUGRIFF ERSTES");
+        System.out.println("vergangene Zeit ArrayList: " + time);
+        System.out.println("=======================");
+
+        // Zugreifen letztes Element
+        System.out.println("Größe ArrayList zu Beginn: " + observableArrayList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            arrayList.get(arrayList.size() - 1);
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("ZUGRIFF LETZTES");
+        System.out.println("vergangene Zeit ArrayList: " + time);
+        System.out.println("=======================");
+
+        // Zugreifen mittleres Element
+        System.out.println("Größe ArrayList zu Beginn: " + observableArrayList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            arrayList.get(arrayList.size() / 2);
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("ZUGRIFF MITTLERES");
+        System.out.println("vergangene Zeit ArrayList: " + time);
         System.out.println("=======================");
 
         /* LINKEDLIST STUFF */
+        System.out.println("=======================");
+        System.out.println("LINKED LIST NOW");
+        System.out.println("=======================");
+
+        // Einfügen Anfang
         System.out.println("Größe LinkedList zu Beginn: " + observableLinkedList.size());
         start = System.currentTimeMillis();
-        while (helpLinked <= 10000)
+        for (int i = 0; i < 100000; i++)
         {
-            linkedList.add(0, "Element" + inLinked);
-            ++inLinked;
-            helpLinked++;
+            linkedList.add(0, "Element ");
         }
         end = System.currentTimeMillis();
         time = end - start;
-        System.out.println("Größe LinkedList nach Änderung: " + observableLinkedList.size());
+        System.out.println("Größe LinkedList EINFÜGEN ANFANG: " + observableLinkedList.size());
         System.out.println("vergangene Zeit LinkedList: " + time);
+        System.out.println("=======================");
+        linkedList.clear();
+
+        // Einfügen Ende
+        System.out.println("Größe LinkedList zu Beginn: " + observableLinkedList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            linkedList.add(linkedList.size(), "Element ");
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("Größe LinkedList EINFÜGEN ENDE: " + observableLinkedList.size());
+        System.out.println("vergangene Zeit LinkedList: " + time);
+        System.out.println("=======================");
+
+        // Löschen erstes Element
+        System.out.println("Größe LinkedList zu Beginn: " + observableLinkedList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            linkedList.remove(0);
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("Größe LinkedList LÖSCHEN ERSTES: " + observableLinkedList.size());
+        System.out.println("vergangene Zeit LinkedList: " + time);
+        System.out.println("=======================");
+
+        // Löschen letztes Element
+        for (int i = 0; i < 100000; i++)
+        {
+            linkedList.add(0, "Element ");
+        }
+        System.out.println("Größe LinkedList zu Beginn: " + observableLinkedList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            linkedList.remove(linkedList.size() - 1);
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("Größe LinkedList LÖSCHEN LETZTES: " + observableLinkedList.size());
+        System.out.println("vergangene Zeit LinkedList: " + time);
+        System.out.println("=======================");
+
+        // Zugreifen erstes Element
+        for (int i = 0; i < 100000; i++)
+        {
+            linkedList.add(0, "Element ");
+        }
+        System.out.println("Größe LinkedList zu Beginn: " + observableLinkedList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            linkedList.get(0);
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("ZUGRIFF ERSTES");
+        System.out.println("vergangene Zeit LinkedList: " + time);
+        System.out.println("=======================");
+
+        // Zugreifen letztes Element
+        System.out.println("Größe LinkedList zu Beginn: " + observableLinkedList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            linkedList.get(linkedList.size() - 1);
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("ZUGRIFF LETZTES");
+        System.out.println("vergangene Zeit LinkedList: " + time);
+        System.out.println("=======================");
+
+        // Zugreifen mittleres Element
+        System.out.println("Größe LinkedList zu Beginn: " + observableLinkedList.size());
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++)
+        {
+            linkedList.get(linkedList.size() / 2);
+        }
+        end = System.currentTimeMillis();
+        time = end - start;
+        System.out.println("ZUGRIFF MITTLERES");
+        System.out.println("vergangene Zeit LinkedList: " + time);
+        System.out.println("=======================");
+        linkedList.clear();
         /* END: Testen der Laufzeit */
     }
 

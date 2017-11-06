@@ -1,12 +1,12 @@
 package gui.properties;
 
-import javafx.beans.property.*;
-import javafx.beans.value.*;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 
 class MySimpleChangeListener implements ChangeListener<Number>
 {
-    public void changed(ObservableValue<? extends Number> observable,
-                        Number oldValue, Number newValue)
+    public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue)
     {
         System.out.println(">>>changed from " + oldValue + " to " + newValue);
     }
@@ -19,28 +19,19 @@ public class PropertyWithListeners
         SimpleIntegerProperty prop = new SimpleIntegerProperty();
         MySimpleChangeListener listener = new MySimpleChangeListener();
         prop.addListener(listener);
-        prop.addListener
-        ((ObservableValue<? extends Number> observable,
-          Number oldValue, Number newValue)
-          ->System.out.println("+++changed from " + 
-                               oldValue + " to " + 
-                               newValue));
-        prop.addListener((o, oldValue, newValue)
-                         ->System.out.println("***changed from " + 
-                                              oldValue + " to " + 
-                                              newValue));
+        prop.addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> System.out.println("+++changed from " + oldValue + " to " + newValue));
+        prop.addListener((o, oldValue, newValue) -> System.out.println("***changed from " + oldValue + " to " + newValue));
         prop.addListener(PropertyWithListeners::changedMethod);
 
-        for(int i = 1; i <= 20; i++)
+        for (int i = 1; i <= 20; i++)
         {
-            int newValue = (int)(Math.random()*10) - 5;
+            int newValue = (int) (Math.random() * 10) - 5;
             System.out.println("changing to " + newValue);
-            prop.set(newValue);            
+            prop.set(newValue);
         }
     }
-    
-    private static void changedMethod(ObservableValue<? extends Number> observable,
-                                      Number oldValue, Number newValue)
+
+    private static void changedMethod(ObservableValue<? extends Number> observable, Number oldValue, Number newValue)
     {
         System.out.println("###changed from " + oldValue + " to " + newValue);
     }

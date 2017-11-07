@@ -10,10 +10,12 @@ import javafx.stage.Stage;
 
 public class Aufgabe1 extends Application
 {
+    private Pane root = new Pane();
+
+    private double sizeX, sizeY;
 
     public void start(Stage primaryStage)
     {
-        Pane root = new Pane();
 
         root.widthProperty().addListener(new ChangeListener<Number>()
         {
@@ -21,8 +23,9 @@ public class Aufgabe1 extends Application
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldSize, Number newSize)
             {
-
-                changeSize(root);
+                // sizeX = (double) newSize;
+                root.getChildren().clear();
+                changeSize();
 
             }
 
@@ -34,7 +37,9 @@ public class Aufgabe1 extends Application
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldSize, Number newSize)
             {
-                changeSize(root);
+                // sizeY = (double) newSize;
+                root.getChildren().clear();
+                changeSize();
 
             }
 
@@ -42,10 +47,8 @@ public class Aufgabe1 extends Application
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Pane-Beispiel");
+        primaryStage.setTitle("Pane Aufgabe");
         primaryStage.show();
-
-        Button start = (Button) root.getChildren();
 
     }
 
@@ -54,26 +57,26 @@ public class Aufgabe1 extends Application
         return v0 + t * (v1 - v0);
     }
 
-    public void changeSize(Pane root)
+    public void changeSize()
     {
 
         Number width = root.widthProperty().getValue();
         Number height = root.heightProperty().getValue();
 
+        // Button btn = new Button("Button");
         // double oldBtnX = btn.getWidth();
-        // double oldBtnY = btn.gehtHeight();
+        // double oldBtnY = btn.getHeight();
 
-        for (int i = 0; i <= 10; i++)
+        for (int i = 0; i < 10; i++)
         {
-            Button btn = (Button) root.getChildren().get(i);
-            btn.setLayoutX(lerp(0, (double) width, i));
-            btn.setLayoutY(lerp(0, (double) height, i));
+            Button btn = new Button("Button " + i);
+            // Button btn = (Button) root.getChildren().get(i);
+            btn.setLayoutX(lerp(0, (double) width - 75, i / 9));
+            btn.setLayoutY(lerp(0, (double) height - 25, i / 9));
 
             root.getChildren().add(btn);
         }
 
-        System.out.println("width:" + width);
-        System.out.println("height:" + height);
     }
 
     public static void main(String[] args)

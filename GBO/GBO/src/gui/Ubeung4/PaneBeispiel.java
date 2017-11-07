@@ -20,8 +20,6 @@ public class PaneBeispiel extends Application
     public void start(Stage primaryStage)
     {
 
-        Button test = new Button("TEST");
-
         root.widthProperty().addListener(new ChangeListener<Number>()
         {
             @Override

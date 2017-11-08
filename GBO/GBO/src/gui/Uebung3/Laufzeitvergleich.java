@@ -28,8 +28,6 @@ public class Laufzeitvergleich
         long start, end, time;
 
         /* zum Testen der Laufzeit */
-        int helpArray = 0;
-        int helpLinked = 0;
 
         /* initialisierung Listen */
 

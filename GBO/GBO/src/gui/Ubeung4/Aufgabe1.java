@@ -63,11 +63,10 @@ public class Aufgabe1 extends Application
         Number width = root.widthProperty().getValue();
         Number height = root.heightProperty().getValue();
 
+        System.out.println(height);
         // Button btn = new Button("Button");
-        // double oldBtnX = btn.getWidth();
-        // double oldBtnY = btn.getHeight();
 
-        for (int i = 0; i < 10; i++)
+        for (double i = 0; i < 10; i++)
         {
             Button btn = new Button("Button " + i);
             // Button btn = (Button) root.getChildren().get(i);

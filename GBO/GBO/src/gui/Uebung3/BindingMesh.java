@@ -17,6 +17,8 @@ public class BindingMesh
 
         // (a*a) + (b*b)
         NumberBinding sum = (a.multiply(a)).add(b.multiply(b));
+        // ODER
+        // NumberBinding sum2 = Bindings.add(a.multiply(a), b.multiply(b));
 
         sum.addListener(new ChangeListener<Number>()
         {
@@ -42,6 +44,7 @@ public class BindingMesh
 
         System.out.println("Setting b to 4:");
         b.setValue(4);
+        System.out.println("Sum = " + sum.getValue());
 
     }
 }

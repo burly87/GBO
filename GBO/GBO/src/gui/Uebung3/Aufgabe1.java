@@ -21,8 +21,8 @@ public class Aufgabe1
         /* 1b) unidirektional eine Property ist von mehreren abhängig */
         prop1.bind(prop2);
         prop1.bind(prop3);
-        prop1.bind(prop4);// eigentlich unnötig, da nur noch prop1.bind(prop4)
-                          // am ende existiert */
+        prop1.bind(prop4);// eigentlich unnötig, da nur noch am ende existiert
+                          // */
 
         /* 1c) unidirektional eine Property gibt Änderung an mehrere weiter */
         prop1.bind(prop2);
@@ -33,7 +33,7 @@ public class Aufgabe1
         prop1.bind(prop2);
         prop2.bind(prop3);
         prop3.bind(prop4);
-        prop4.bind(prop1);// StackOverflow, da kein set mehr möglich ist*/
+        prop4.bind(prop1);// StackOverflow & kein set mehr möglich*/
 
         /* 1e) bidirektional vier in Reihe gekoppelt */
         prop1.bindBidirectional(prop2);

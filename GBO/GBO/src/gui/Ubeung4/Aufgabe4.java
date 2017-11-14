@@ -60,7 +60,7 @@ public class Aufgabe4 extends Application
                 if (i < 3 || j < 3)
                 {
                     Button b = new Button("Button " + i + "/" + j);
-                    b.setAlignment(Pos.TOP_CENTER);// grad keine Lust mehr XD
+                    b.setAlignment(Pos.TOP_CENTER);
                     System.out.println(b.getAlignment());
                     root.add(b, i - 1, j - 1);
                 }
@@ -70,7 +70,7 @@ public class Aufgabe4 extends Application
         // Aufgabenteil b)
         Button b;
         b = new Button("Button 6/*");
-        // b.setMaxHeight(Double.MAX_VALUE);
+        b.setMaxHeight(Double.MAX_VALUE);
         root.add(b, 5, 0, 1, 4);
 
         // b = new Button("Button */6");

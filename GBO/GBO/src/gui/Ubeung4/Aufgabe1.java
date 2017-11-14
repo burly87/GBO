@@ -52,6 +52,7 @@ public class Aufgabe1 extends Application
 
     }
 
+    // Interpolate between v0, v1, for parameter t [between 0 & 1 ]
     double lerp(double v0, double v1, double t)
     {
         return v0 + t * (v1 - v0);
@@ -64,15 +65,12 @@ public class Aufgabe1 extends Application
         Number height = root.heightProperty().getValue();
 
         System.out.println(height);
-        // Button btn = new Button("Button");
 
         for (double i = 0; i < 10; i++)
         {
             Button btn = new Button("Button " + i);
-            // Button btn = (Button) root.getChildren().get(i);
             btn.setLayoutX(lerp(0, (double) width - 75, i / 9));
             btn.setLayoutY(lerp(0, (double) height - 25, i / 9));
-
             root.getChildren().add(btn);
         }
 

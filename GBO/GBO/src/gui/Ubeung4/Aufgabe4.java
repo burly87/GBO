@@ -12,11 +12,11 @@ import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 
 /*
-4. Aufgabe: Wenn Sie das Beispiel aus der Vorlesung zu GridPane größer ziehen, wird das Gitter
-nicht größer.
-a) Finden Sie heraus, was Sie tun müssen, damit das Gitter wächst, wenn das Fenster größer wird!
-b) Entfernen Sie die Anweisungen zur Festlegung der maximalen Breite und Höhe der Buttons! Wenn
-Sie nun das Fenster größer ziehen, können Sie sehen, an welcher Stelle innerhalb eines Gitterfelds
+4. Aufgabe: Wenn Sie das Beispiel aus der Vorlesung zu GridPane grï¿½ï¿½er ziehen, wird das Gitter
+nicht grï¿½ï¿½er.
+a) Finden Sie heraus, was Sie tun mï¿½ssen, damit das Gitter wï¿½chst, wenn das Fenster grï¿½ï¿½er wird!
+b) Entfernen Sie die Anweisungen zur Festlegung der maximalen Breite und Hï¿½he der Buttons! Wenn
+Sie nun das Fenster grï¿½ï¿½er ziehen, kï¿½nnen Sie sehen, an welcher Stelle innerhalb eines Gitterfelds
 sich die Buttons jeweils befinden. Veranlassen Sie, dass die unterschiedlichen Buttons an
 unterschiedlichen Positionen ihres jeweiligen Gitterfeldes zu liegen kommen!
  */
@@ -44,6 +44,14 @@ public class Aufgabe4 extends Application
         row1.setVgrow(Priority.ALWAYS);
         root.getRowConstraints().add(row1);
 
+        // Aufgabenteil a) alternative
+        // ColumnConstraints columP1 = new ColumnConstraints();
+        // columP1.setPercentWidth(50);
+        // root.getColumnConstraints().add(columP1);
+        // RowConstraints rowP1 = new RowConstraints();
+        // rowP1.setPercentHeight(50);
+        // root.getRowConstraints().add(rowP1);
+
         /* generieren von Buttons */
         for (int i = 1; i <= 5; i++)
         {
@@ -65,9 +73,9 @@ public class Aufgabe4 extends Application
         // b.setMaxHeight(Double.MAX_VALUE);
         root.add(b, 5, 0, 1, 4);
 
-        b = new Button("Button */6");
+        // b = new Button("Button */6");
         // b.setMaxWidth(Double.MAX_VALUE);
-        root.add(b, 0, 5, 3, 1);
+        root.add(new Button("Button */6"), 0, 5, 3, 1);
 
         b = new Button("Button 3/3");
         // b.setMaxHeight(Double.MAX_VALUE);

@@ -1,8 +1,6 @@
-package gui.Uebung5;
+package gui.pizza;
 
 import java.util.Map;
-
-import javax.security.auth.login.Configuration;
 
 public class ParameterConverter
 {
@@ -28,6 +26,7 @@ public class ParameterConverter
         int numberOfDefaultToppings = parseIntValue(namedParameters.get(PARAM_NAME_DEFAULT_INGRIEDENTS_NUMBER));
 
         return new Configuration(sizeNames, sizePrices, toppingNames, toppingPrices, numberOfDefaultToppings);
+
     }
 
     private static void checkParameterExistence(Map<String, String> namedParameters)

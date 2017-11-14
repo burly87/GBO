@@ -1,9 +1,8 @@
 package gui.Tutorium;
 
-import java.awt.TextField;
-
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -22,7 +21,7 @@ public class EingabeControlle extends Application
         TextField input = new TextField();
         root.getChildren().add(input);
         input.textProperty().addListener((elem, oldText, newText) -> textListener(elem, oldText, newText));
-        // input.setOnKeyTyped(e -> inputControl(e));
+        input.setOnKeyTyped(e -> inputControl(e));
 
         Scene scene = new Scene(root, 400, 200);
         primaryStage.setScene(scene);
@@ -32,7 +31,7 @@ public class EingabeControlle extends Application
 
     private void textListener(TextField elem, String oldText, String newText)
     {
-        System.out.println("wird ausgeführt");
+        System.out.println("wird ausgefï¿½hrt");
         if (!isDigitString(newText))
         {
             elem.setText(oldText);

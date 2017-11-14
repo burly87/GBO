@@ -9,8 +9,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /*
- * 3. Aufgabe: Verändern Sie das Beispiel aus der Vorlesung zu BorderPane so, dass alle Buttons ihren
- * Platz vollständig ausnutzen!
+ * 3. Aufgabe: Verï¿½ndern Sie das Beispiel aus der Vorlesung zu BorderPane so, dass alle Buttons ihren
+ * Platz vollstï¿½ndig ausnutzen!
 */
 public class Aufgabe3 extends Application
 {

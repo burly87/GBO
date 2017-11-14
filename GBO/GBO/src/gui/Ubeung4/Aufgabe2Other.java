@@ -10,10 +10,10 @@ import javafx.stage.Stage;
 /*
 2. Aufgabe:
 Schreiben Sie ein Beispielprogramm, in dem mehrere Buttons in eine VBox gelegt werden. 
-Mindestens ein Button soll sich nicht ausdehnen (button1), wenn das Fenster vergrößert wird, 
+Mindestens ein Button soll sich nicht ausdehnen (button1), wenn das Fenster vergrï¿½ï¿½ert wird, 
 mindestens ein Button soll nur in der Breite wachsen (button2),
-mindestens einer nur in der Höhe (button3)
-und mindestens einer sowohl in der Breite als auch in der Höhe (button4).
+mindestens einer nur in der Hï¿½he (button3)
+und mindestens einer sowohl in der Breite als auch in der Hï¿½he (button4).
 */
 
 public class Aufgabe2Other extends Application
@@ -56,6 +56,11 @@ public class Aufgabe2Other extends Application
         primaryStage.setTitle("Aufgabe 2");
         primaryStage.show();
 
+    }
+
+    public static void main(String[] args)
+    {
+        launch(args);
     }
 
 }

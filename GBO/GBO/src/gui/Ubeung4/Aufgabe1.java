@@ -12,8 +12,6 @@ public class Aufgabe1 extends Application
 {
     private Pane root = new Pane();
 
-    private double sizeX, sizeY;
-
     public void start(Stage primaryStage)
     {
 

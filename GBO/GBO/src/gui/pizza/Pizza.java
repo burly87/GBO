@@ -83,7 +83,6 @@ public class Pizza extends Application
         Button btnOrder = new Button("Bestellen!");
         btnOrder.setOnAction(new EventHandler<ActionEvent>()
         {
-
             @Override
             public void handle(ActionEvent event)
             {
@@ -132,6 +131,9 @@ public class Pizza extends Application
         bestelltext += "Vielen Dank fuer Ihre Bestellung";
 
         return bestelltext;
+
+        // StringBuilder / oder StringBuffer zum append, concat etc. ohne
+        // ständig neue Strings zu erstellen.
     }
 
     public static void main(String[] args)

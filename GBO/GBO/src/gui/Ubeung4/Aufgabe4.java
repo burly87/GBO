@@ -70,16 +70,19 @@ public class Aufgabe4 extends Application
         // Aufgabenteil b)
         Button b;
         b = new Button("Button 6/*");
-        b.setMaxHeight(Double.MAX_VALUE);
+        // b.setMaxHeight(Double.MAX_VALUE);
+        b.setAlignment(Pos.TOP_RIGHT);
         root.add(b, 5, 0, 1, 4);
 
         // b = new Button("Button */6");
         // b.setMaxWidth(Double.MAX_VALUE);
+
         root.add(new Button("Button */6"), 0, 5, 3, 1);
 
         b = new Button("Button 3/3");
         // b.setMaxHeight(Double.MAX_VALUE);
         // b.setMaxWidth(Double.MAX_VALUE);
+        b.setAlignment(Pos.CENTER);
         root.add(b, 2, 2, 3, 3);
         /* END: generieren von Buttons */
 

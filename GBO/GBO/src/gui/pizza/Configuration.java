@@ -16,34 +16,26 @@ public class Configuration
     {
         super();
 
-        if (sizePrices.length == sizeNames.length)
-        {
-            this.sizeNames = sizeNames;
-            this.sizePrices = sizePrices;
-        }
-        else
+        if (sizePrices.length != sizeNames.length)
         {
             throw new IllegalArgumentException("size Stimmt nicht");
         }
 
-        if (toppingPrices.length == toppingNames.length)
-        {
-            this.toppingNames = toppingNames;
-            this.toppingPrices = toppingPrices;
-        }
-        else
+        if (toppingPrices.length != toppingNames.length)
         {
             throw new IllegalArgumentException("toppingName Stimmt nicht");
         }
 
-        if (numberOfDefaultToppings >= toppingNames.length)
+        if (numberOfDefaultToppings > toppingNames.length)
         {
-            throw new IllegalArgumentException("geht nid");
+            throw new IllegalArgumentException("default Toppings ");
         }
-        else
-        {
-            this.numberOfDefaultToppings = numberOfDefaultToppings;
-        }
+
+        this.sizeNames = sizeNames;
+        this.sizePrices = sizePrices;
+        this.toppingNames = toppingNames;
+        this.toppingPrices = toppingPrices;
+        this.numberOfDefaultToppings = numberOfDefaultToppings;
 
     }
 

@@ -1,11 +1,13 @@
 package gui.controls2;
 
 import javafx.application.Application;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.stage.Stage;
-import javafx.scene.layout.*;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class TreeViewSample extends Application
 {
@@ -31,15 +33,11 @@ public class TreeViewSample extends Application
         rootNode.getChildren().add(fbw);
 
         TreeView<String> treeView = new TreeView<>(rootNode);
-        //treeView.setShowRoot(false);
-        
+        // treeView.setShowRoot(false);
+
         Label status = new Label();
-        
-        treeView.getSelectionModel().selectedItemProperty().addListener
-        (
-            (ov, oldValue, newValue) ->
-            status.setText("selected: " + newValue.getValue())
-        );
+
+        treeView.getSelectionModel().selectedItemProperty().addListener((ov, oldValue, newValue) -> status.setText("selected: " + newValue.getValue()));
 
         VBox box = new VBox();
         box.getChildren().addAll(treeView, status);

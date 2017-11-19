@@ -56,13 +56,15 @@ public class CountryInfo extends Application
         TextField tfCountry = new TextField("Land");
         TextField tfCapital = new TextField("Hauptstadt");
         TextField tfPopulation = new TextField("Einwohner");
-        TextField tfArea = new TextField("Flaeche");
+        TextField areaField = new TextField("Flaeche");
 
-        Button add = new Button("Hinzufuegen");
-        Button delete = new Button("Loeschen");
+        Button add = new Button("Hinzufügen");
+        add.setId("add");
+        Button delete = new Button("Löschen");
+        delete.setId("delete");
 
         /* ComboBox anlegen mit entsprechendem Listener */
-        cEnum.setId("countrySeletor");
+        cEnum.setId("countrySelector");
         // cEnum.setValue(countrys.get(0));
         cEnum.setEditable(false);
 
@@ -132,7 +134,7 @@ public class CountryInfo extends Application
                 String strCountry = tfCountry.getText();
                 String strCapital = tfCapital.getText();
                 String strPopulation = tfPopulation.getText();
-                String strArea = tfArea.getText();
+                String strArea = areaField.getText();
                 long lPopulation = Long.parseLong(strPopulation);
                 long lArea = Long.parseLong(strArea);
 
@@ -164,7 +166,7 @@ public class CountryInfo extends Application
         root.add(checkBox, 0, 1);
         vboxLeft.getChildren().addAll(countryName, capital, population, area, density);
         vboxRight.getChildren().addAll(countryOut, capitalOut, populationOut, areaOut, densityOut);
-        hBox.getChildren().addAll(tfCountry, tfCapital, tfPopulation, tfArea, add, delete);
+        hBox.getChildren().addAll(tfCountry, tfCapital, tfPopulation, areaField, add, delete);
 
         Scene scene = new Scene(root, 600, 250);
         primaryStage.setScene(scene);
@@ -179,7 +181,7 @@ public class CountryInfo extends Application
 
         long rounded = erg.getPeople();
 
-        if (rounded >= 999999)
+        if (rounded > 999999)
         {
             rounded /= 1000000;
         }

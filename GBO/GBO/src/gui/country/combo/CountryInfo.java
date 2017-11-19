@@ -58,14 +58,14 @@ public class CountryInfo extends Application
         TextField tfPopulation = new TextField("Einwohner");
         TextField areaField = new TextField("Flaeche");
 
-        Button add = new Button("Hinzufügen");
+        Button add = new Button("Hinzufuegen");
         add.setId("add");
-        Button delete = new Button("Löschen");
+        Button delete = new Button("Loeschen");
         delete.setId("delete");
 
         /* ComboBox anlegen mit entsprechendem Listener */
         cEnum.setId("countrySelector");
-        // cEnum.setValue(countrys.get(0));
+        cEnum.setValue(countrys.get(0));
         cEnum.setEditable(false);
 
         cEnum.setOnAction(new EventHandler<ActionEvent>()
@@ -170,7 +170,7 @@ public class CountryInfo extends Application
 
         Scene scene = new Scene(root, 600, 250);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Lï¿½nder-Informationen");
+        primaryStage.setTitle("Laender-Informationen");
         primaryStage.show();
 
     }

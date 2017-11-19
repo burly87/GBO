@@ -19,6 +19,12 @@ public class Country
         this.area = area;
     }
 
+    @Override
+    public String toString()
+    {
+        return name;
+    }
+
     public String getName()
     {
         return name;

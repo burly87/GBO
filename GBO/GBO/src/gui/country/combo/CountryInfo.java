@@ -72,7 +72,7 @@ public class CountryInfo extends Application
             public void handle(ActionEvent event)
             {
                 Country name = cEnum.getSelectionModel().getSelectedItem();
-                cEnum.setPromptText(name.getName());
+                cEnum.setPromptText(name.toString());
                 countryOut.setText(name.getName());
                 capitalOut.setText(name.getCapital());
                 populationOut.setText("" + name.getPeople());
@@ -98,24 +98,29 @@ public class CountryInfo extends Application
         CheckBox checkBox = new CheckBox("exakte Angaben");
         checkBox.setId("exactValues");
 
-        checkBox.setOnAction((e) ->
+        checkBox.setOnAction(new EventHandler<ActionEvent>()
         {
-            Country name = cEnum.getSelectionModel().getSelectedItem();
-            populationOut.setText("" + name.getPeople());
-            areaOut.setText("" + name.getArea());
 
-            long roundedPop = name.getPeople();
-            long roundedArea = name.getArea();
-
-            if (roundedPop >= 999999 && checkBox.isSelected() == false)
+            @Override
+            public void handle(ActionEvent event)
             {
-                populationOut.setText("" + name.getPeople() / 1000000 + " Mill.");
-            }
-            if (roundedArea >= 999999 && checkBox.isSelected() == false)
-            {
-                areaOut.setText("" + name.getArea() / 1000000 + " Mill.");
-            }
+                Country name = cEnum.getSelectionModel().getSelectedItem();
+                populationOut.setText("" + name.getPeople());
+                areaOut.setText("" + name.getArea());
 
+                long roundedPop = name.getPeople();
+                long roundedArea = name.getArea();
+
+                if (roundedPop >= 999999 && checkBox.isSelected() == false)
+                {
+                    populationOut.setText("" + name.getPeople() / 1000000 + " Mill.");
+                }
+                if (roundedArea >= 999999 && checkBox.isSelected() == false)
+                {
+                    areaOut.setText("" + name.getArea() / 1000000 + " Mill.");
+                }
+
+            }
         });
 
         /* ButtonListener */

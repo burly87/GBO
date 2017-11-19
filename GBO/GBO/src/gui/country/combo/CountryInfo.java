@@ -111,11 +111,11 @@ public class CountryInfo extends Application
                 long roundedPop = name.getPeople();
                 long roundedArea = name.getArea();
 
-                if (roundedPop >= 999999 && checkBox.isSelected() == false)
+                if (roundedPop >= 999999 && !checkBox.isSelected())
                 {
                     populationOut.setText("" + name.getPeople() / 1000000 + " Mill.");
                 }
-                if (roundedArea >= 999999 && checkBox.isSelected() == false)
+                if (roundedArea >= 999999 && !checkBox.isSelected())
                 {
                     areaOut.setText("" + name.getArea() / 1000000 + " Mill.");
                 }
@@ -168,7 +168,7 @@ public class CountryInfo extends Application
 
         Scene scene = new Scene(root, 600, 250);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Länder-Informationen");
+        primaryStage.setTitle("Lï¿½nder-Informationen");
         primaryStage.show();
 
     }

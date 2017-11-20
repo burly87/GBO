@@ -1,7 +1,6 @@
 package gui.country.combo;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.text.DecimalFormat;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -21,16 +20,60 @@ import javafx.stage.Stage;
 
 public class CountryInfo extends Application
 {
-    private static List<Country> list = new ArrayList<Country>();
 
-    private ObservableList<Country> countrys = FXCollections.observableArrayList(list);
+    private ObservableList<Country> countries;
 
-    private ComboBox<Country> cEnum = new ComboBox<>(countrys);
+    private ComboBox<Country> cEnum;
+
+    /* in Boxes */
+    private Label countryName1;
+
+    private Label capital1;
+
+    private Label population1;
+
+    private Label area1;
+
+    private Label density1;
+
+    private Label countryName;
+
+    private Label capital;
+
+    private Label population;
+
+    private Label area;
+
+    private Label density;
+
+    private TextField countryField;
+
+    private TextField capitalField;
+
+    private TextField populationField;
+
+    private TextField areaField;
+
+    private CheckBox checkBox;
+
+    private Button add;
+
+    private Button delete;
 
     @Override
     public void start(Stage primaryStage) throws Exception
     { /* Surface */
         GridPane root = new GridPane();
+
+        countries = FXCollections.observableArrayList();
+        cEnum = new ComboBox<>(countries);
+
+        countries.add(new Country("Deutschland", "Berlin", 8916800, 1000000));
+        countries.add(new Country("Luxembourg", "Luxembourg", 5118, 3600));
+        countries.add(new Country("Test2", "test2", 36163, 2));
+        countries.add(new Country("Test", "test", 36942, 160));
+        countries.add(new Country("Kanada", "Ottawa", 34278406, 9984670));
+        countries.add(new Country("Belgien", "Bruessel", 11000230, 31001));
 
         VBox vboxLeft = new VBox(5);
         VBox vboxRight = new VBox(5);
@@ -41,64 +84,66 @@ public class CountryInfo extends Application
         root.add(hBox, 0, 3, 5, 1);
 
         /* in Boxes */
-        Label countryName = new Label("Land:");
-        Label capital = new Label("Hauptstadt:");
-        Label population = new Label("Einwohner:");
-        Label area = new Label("Flaeche (in qkm):");
-        Label density = new Label("Bevoelkerungsdichte (in Personen pro qkm):");
+        countryName1 = new Label("Land:");
+        capital1 = new Label("Hauptstadt:");
+        population1 = new Label("Einwohner:");
+        area1 = new Label("Flaeche (in qkm):");
+        density1 = new Label("Bevoelkerungsdichte (in Personen pro qkm):");
 
-        Label countryOut = new Label();
-        Label capitalOut = new Label();
-        Label populationOut = new Label();
-        Label areaOut = new Label();
-        Label densityOut = new Label();
+        countryName = new Label();
+        capital = new Label();
+        population = new Label();
+        area = new Label();
+        density = new Label();
 
-        TextField tfCountry = new TextField("Land");
-        TextField tfCapital = new TextField("Hauptstadt");
-        TextField tfPopulation = new TextField("Einwohner");
-        TextField areaField = new TextField("Flaeche");
+        countryField = new TextField();
+        capitalField = new TextField();
+        populationField = new TextField();
+        areaField = new TextField();
 
-        Button add = new Button("Hinzufuegen");
-        add.setId("add");
-        Button delete = new Button("Loeschen");
-        delete.setId("delete");
-
-        /* ComboBox anlegen mit entsprechendem Listener */
-        cEnum.setId("countrySelector");
-        cEnum.setValue(countrys.get(0));
-        cEnum.setEditable(false);
-
-        cEnum.setOnAction(new EventHandler<ActionEvent>()
-        {
-            @Override
-            public void handle(ActionEvent event)
-            {
-                Country name = cEnum.getSelectionModel().getSelectedItem();
-                cEnum.setPromptText(name.toString());
-                countryOut.setText(name.getName());
-                capitalOut.setText(name.getCapital());
-                populationOut.setText("" + name.getPeople());
-                areaOut.setText("" + name.getArea());
-                densityOut.setText("" + (name.getPeople()) / (name.getArea()));
-
-                long roundedPop = name.getPeople();
-                long roundedArea = name.getArea();
-
-                if (roundedPop >= 999999)
-                {
-                    populationOut.setText("" + name.getPeople() / 1000000 + " Mill.");
-                }
-                if (roundedArea >= 999999)
-                {
-                    areaOut.setText("" + name.getArea() / 1000000 + " Mill.");
-                }
-
-            }
-        });
+        countryField.setPromptText("Land");
+        capitalField.setPromptText("Hauptstadt");
+        populationField.setPromptText("Einwohner");
+        areaField.setPromptText("Fl\u00e4che");
 
         /* CheckBox */
-        CheckBox checkBox = new CheckBox("exakte Angaben");
+        checkBox = new CheckBox("exakte Angaben");
+
+        add = new Button("Hinzuf\u00fcgen");
+
+        delete = new Button("L\u00f6schen");
+
+        /* Zeichnen */
+        root.getChildren().add(cEnum);
+        root.add(checkBox, 0, 1);
+        vboxLeft.getChildren().addAll(countryName1, capital1, population1, area1, density1);
+        vboxRight.getChildren().addAll(countryName, capital, population, area, density);
+        hBox.getChildren().addAll(countryField, capitalField, populationField, areaField, add, delete);
+
+        /* Ids */
         checkBox.setId("exactValues");
+        countryName.setId("countryName");
+        capital.setId("capital");
+        population.setId("population");
+        area.setId("area");
+        density.setId("density");
+
+        countryField.setId("countryField");
+        capitalField.setId("capitalField");
+        populationField.setId("populationField");
+        areaField.setId("areaField");
+
+        add.setId("add");
+        delete.setId("delete");
+
+        cEnum.setId("countrySelector");
+        cEnum.setEditable(false);
+
+        cEnum.setPromptText("Keine Laender vorhanden");
+        cEnum.getSelectionModel().selectFirst();
+        ausgabe();
+
+        cEnum.setOnAction((e) -> ausgabe());
 
         checkBox.setOnAction(new EventHandler<ActionEvent>()
         {
@@ -106,21 +151,10 @@ public class CountryInfo extends Application
             @Override
             public void handle(ActionEvent event)
             {
+
                 Country name = cEnum.getSelectionModel().getSelectedItem();
-                populationOut.setText("" + name.getPeople());
-                areaOut.setText("" + name.getArea());
-
-                long roundedPop = name.getPeople();
-                long roundedArea = name.getArea();
-
-                if (roundedPop >= 999999 && !checkBox.isSelected())
-                {
-                    populationOut.setText("" + name.getPeople() / 1000000 + " Mill.");
-                }
-                if (roundedArea >= 999999 && !checkBox.isSelected())
-                {
-                    areaOut.setText("" + name.getArea() / 1000000 + " Mill.");
-                }
+                population.setText("" + roundOff(name.getPeople()));
+                area.setText("" + roundOff(name.getArea()));
 
             }
         });
@@ -128,20 +162,26 @@ public class CountryInfo extends Application
         /* ButtonListener */
         add.setOnAction(new EventHandler<ActionEvent>()
         {
+
             @Override
             public void handle(ActionEvent event)
             {
-                String strCountry = tfCountry.getText();
-                String strCapital = tfCapital.getText();
-                String strPopulation = tfPopulation.getText();
+
+                String strCountry = countryField.getText();
+                String strCapital = capitalField.getText();
+                String strPopulation = populationField.getText();
                 String strArea = areaField.getText();
                 long lPopulation = Long.parseLong(strPopulation);
                 long lArea = Long.parseLong(strArea);
 
-                if (!"".equals(tfCountry.getText()) && (!"".equals(tfCapital.getText())))
+                if (!"".equals(countryField.getText()) && (!"".equals(capitalField.getText())))
                 {
-                    cEnum.getItems().add(new Country(strCountry, strCapital, lPopulation, lArea));
+                    countries.add(new Country(strCountry, strCapital, lPopulation, lArea));
                 }
+                countryField.clear();
+                capitalField.clear();
+                populationField.clear();
+                areaField.clear();
 
             }
         });
@@ -151,49 +191,142 @@ public class CountryInfo extends Application
             @Override
             public void handle(ActionEvent event)
             {
-                Country selected = cEnum.getSelectionModel().getSelectedItem();
-                cEnum.getItems().remove(selected);
-
-                if (!"".equals(cEnum.getItems()))
+                try
                 {
-                    cEnum.setPromptText("Keine Laender vorhanden");
+                    if (countries != null)
+                    {
+                        Country selected = cEnum.getSelectionModel().getSelectedItem();
+                        cEnum.getItems().remove(selected);
+                        countries.get(cEnum.getSelectionModel().getSelectedIndex());
+                    }
+                }
+                catch (ArrayIndexOutOfBoundsException e)
+                {
+                    if (cEnum.getSelectionModel().getSelectedIndex() == -1)
+                    {
+                        cEnum.getSelectionModel().select(0);
+                    }
+                    System.out.println("Liste ist -1");
                 }
             }
         });
 
-        /* Zeichnen */
-        root.getChildren().add(cEnum);
-        root.add(checkBox, 0, 1);
-        vboxLeft.getChildren().addAll(countryName, capital, population, area, density);
-        vboxRight.getChildren().addAll(countryOut, capitalOut, populationOut, areaOut, densityOut);
-        hBox.getChildren().addAll(tfCountry, tfCapital, tfPopulation, areaField, add, delete);
-
         Scene scene = new Scene(root, 600, 250);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Laender-Informationen");
+        primaryStage.setTitle("L\u00e4nder-Informationen");
         primaryStage.show();
 
     }
 
-    public void roundOff()
+    private void ausgabe()
     {
-        Country erg = cEnum.getSelectionModel().getSelectedItem();
-
-        long rounded = erg.getPeople();
-
-        if (rounded > 999999)
+        try
         {
-            rounded /= 1000000;
+
+            Country name = cEnum.getSelectionModel().getSelectedItem();
+
+            countryName.setText(name.getName());
+            capital.setText(name.getCapital());
+            population.setText("" + roundOff(name.getPeople()));
+            area.setText("" + roundOff(name.getArea()));
+            density.setText("" + roundOff(name.getDensity()));
         }
+        catch (NullPointerException e)
+        {
+            System.out.println("caught " + e);
+        }
+
+    }
+
+    private String decimalFormat(long var)
+    {
+        DecimalFormat n = new DecimalFormat("###,###,###");
+        return n.format(var);
+    }
+
+    public String roundOff(long var)
+    {
+        // Country name = cEnum.getSelectionModel().getSelectedItem();
+        String str = "";
+        // double densityTemp = ((double) (name.getPeople() / (double)
+        // (name.getArea())));
+        // DecimalFormat df = new DecimalFormat("###,###,###");
+        //
+        // if (var <= 1000000l && !checkBox.isSelected())
+        // {
+        // str = df.format((Math.round((var / 1000l))) * 1000l);
+        // }
+        // else if (var > 1000000l && var <= 1000000000l &&
+        // !checkBox.isSelected())
+        // {
+        // str = Long.toString(Math.round(var / 1000000l)) + " Mio.";
+        // }
+        // return str;
+
+        /* ANSATZ */
+        // if (var >= 100000 && !checkBox.isSelected())
+        // {
+        // return decimalFormat(var / 1000000) + " Mill.";
+        // }
+        // else if (var >= 1000 && !checkBox.isSelected())
+        // {
+        // return decimalFormat(var / 1000 * 1000);
+        // }
+        // return decimalFormat(var);
+
+        if (var >= 1000000l && var <= 999999999999l && !checkBox.isSelected())
+        {
+            long temp = (var / 100000l) % 10;
+            if (temp >= 5)
+            {
+                temp = (var / 1000000l) + 1;
+                str = Long.toString(temp) + " Mill.";
+            }
+            else
+            {
+                temp = (var / 1000000l);
+                str = Long.toString(temp) + " Mill.";
+            }
+        }
+        else if (var >= 1000l && var <= 999999l && !checkBox.isSelected())
+        {
+            long temp = (var / 100l) % 10;
+            if (temp >= 5)
+            {
+                temp = (var / 1000l) + 1;
+                str = Long.toString(temp) + ".000";
+            }
+            else
+            {
+                temp = (var / 1000l);
+                str = Long.toString(temp) + ".000";
+            }
+        }
+        // else if (var >= 100 && var <= 999 && !checkBox.isSelected())
+        // {
+        // long temp = var;
+        // if (densityTemp % (long) densityTemp > 0)
+        // {
+        // temp = var + 1;
+        // str = Long.toString(temp);
+        // }
+        // else
+        // {
+        // temp = var;
+        // str = Long.toString(temp);
+        // }
+        // }
+        else
+        {
+            str = decimalFormat(var);
+        }
+        return str;
 
     }
 
     public static void main(String[] args)
     {
-        list.add(new Country("Deutschland", "Berlin", 89168, 1000));
-        list.add(new Country("Luxembourg", "Luxembourg", 511840, 3000));
-        list.add(new Country("Kanada", "Ottawa", 34278406, 9984670));
-        list.add(new Country("Belgien", "Bruessel", 11000000, 31000));
+
         launch(args);
     }
 }

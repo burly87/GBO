@@ -1,4 +1,4 @@
-package gui.country.combo;
+package gui.jan;
 
 public class Country
 {
@@ -43,19 +43,6 @@ public class Country
     public long getArea()
     {
         return area;
-    }
-
-    public long getDensity()
-    {
-
-        long temp1 = getPeople() / getArea();
-        double temp = (double) getPeople() / (double) getArea();
-
-        if (temp % (long) temp >= 0.5)
-        {
-            temp1 += 1;
-        }
-        return temp1;
     }
 
 }

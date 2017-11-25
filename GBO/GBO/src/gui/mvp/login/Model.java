@@ -9,7 +9,7 @@ public class Model
     public Model()
     {
         userList = new HashMap<>();
-        userList.put("hänsel", "password1");
+        userList.put("Tobias", "1234");
         userList.put("gretel", "password2");
         userList.put("aschenputtel", "password3");
         userList.put("wolf", "password4");

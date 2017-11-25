@@ -87,8 +87,8 @@ public class CountryInfo extends Application
         countryName1 = new Label("Land:");
         capital1 = new Label("Hauptstadt:");
         population1 = new Label("Einwohner:");
-        area1 = new Label("Flaeche (in qkm):");
-        density1 = new Label("Bevoelkerungsdichte (in Personen pro qkm):");
+        area1 = new Label("Fl\u00e4che (in qkm):");
+        density1 = new Label("Bev\u00f6lkerungsdichte (in Personen pro qkm):");
 
         countryName = new Label();
         capital = new Label();
@@ -139,7 +139,7 @@ public class CountryInfo extends Application
         cEnum.setId("countrySelector");
         cEnum.setEditable(false);
 
-        cEnum.setPromptText("Keine Laender vorhanden");
+        cEnum.setPromptText("Keine L\u00e4nder vorhanden");
         cEnum.getSelectionModel().selectFirst();
         ausgabe();
 
@@ -151,22 +151,18 @@ public class CountryInfo extends Application
             @Override
             public void handle(ActionEvent event)
             {
-
                 Country name = cEnum.getSelectionModel().getSelectedItem();
                 population.setText("" + roundOff(name.getPeople()));
                 area.setText("" + roundOff(name.getArea()));
-
             }
         });
 
         /* ButtonListener */
         add.setOnAction(new EventHandler<ActionEvent>()
         {
-
             @Override
             public void handle(ActionEvent event)
             {
-
                 String strCountry = countryField.getText();
                 String strCapital = capitalField.getText();
                 String strPopulation = populationField.getText();
@@ -182,7 +178,6 @@ public class CountryInfo extends Application
                 capitalField.clear();
                 populationField.clear();
                 areaField.clear();
-
             }
         });
 
@@ -215,14 +210,12 @@ public class CountryInfo extends Application
         primaryStage.setScene(scene);
         primaryStage.setTitle("L\u00e4nder-Informationen");
         primaryStage.show();
-
     }
 
     private void ausgabe()
     {
         try
         {
-
             Country name = cEnum.getSelectionModel().getSelectedItem();
 
             countryName.setText(name.getName());
@@ -230,6 +223,8 @@ public class CountryInfo extends Application
             population.setText("" + roundOff(name.getPeople()));
             area.setText("" + roundOff(name.getArea()));
             density.setText("" + roundOff(name.getDensity()));
+            // density.setText("" + roundOff(name.getPeople() /
+            // name.getArea()));
         }
         catch (NullPointerException e)
         {
@@ -246,87 +241,70 @@ public class CountryInfo extends Application
 
     public String roundOff(long var)
     {
-        // Country name = cEnum.getSelectionModel().getSelectedItem();
-        String str = "";
-        // double densityTemp = ((double) (name.getPeople() / (double)
-        // (name.getArea())));
-        // DecimalFormat df = new DecimalFormat("###,###,###");
+        /* ANSATZ */
+        if (var >= 1000000 && !checkBox.isSelected())
+        {
+            return decimalFormat(Math.round(var / 1000000.0)) + " Mill.";
+        }
+        else if (var >= 1000 && !checkBox.isSelected())
+        {
+            return decimalFormat(Math.round(var / 1000.0) * 1000);
+        }
+        return decimalFormat(var);
         //
-        // if (var <= 1000000l && !checkBox.isSelected())
-        // {
-        // str = df.format((Math.round((var / 1000l))) * 1000l);
-        // }
-        // else if (var > 1000000l && var <= 1000000000l &&
+        // if (var >= 1000000l && var <= 999999999999l &&
         // !checkBox.isSelected())
         // {
-        // str = Long.toString(Math.round(var / 1000000l)) + " Mio.";
-        // }
-        // return str;
-
-        /* ANSATZ */
-        // if (var >= 100000 && !checkBox.isSelected())
+        // long temp = (var / 100000l) % 10;
+        // if (temp >= 5)
         // {
-        // return decimalFormat(var / 1000000) + " Mill.";
-        // }
-        // else if (var >= 1000 && !checkBox.isSelected())
-        // {
-        // return decimalFormat(var / 1000 * 1000);
-        // }
-        // return decimalFormat(var);
-
-        if (var >= 1000000l && var <= 999999999999l && !checkBox.isSelected())
-        {
-            long temp = (var / 100000l) % 10;
-            if (temp >= 5)
-            {
-                temp = (var / 1000000l) + 1;
-                str = Long.toString(temp) + " Mill.";
-            }
-            else
-            {
-                temp = (var / 1000000l);
-                str = Long.toString(temp) + " Mill.";
-            }
-        }
-        else if (var >= 1000l && var <= 999999l && !checkBox.isSelected())
-        {
-            long temp = (var / 100l) % 10;
-            if (temp >= 5)
-            {
-                temp = (var / 1000l) + 1;
-                str = Long.toString(temp) + ".000";
-            }
-            else
-            {
-                temp = (var / 1000l);
-                str = Long.toString(temp) + ".000";
-            }
-        }
-        // else if (var >= 100 && var <= 999 && !checkBox.isSelected())
-        // {
-        // long temp = var;
-        // if (densityTemp % (long) densityTemp > 0)
-        // {
-        // temp = var + 1;
-        // str = Long.toString(temp);
+        // temp = (var / 1000000l) + 1;
+        // str = Long.toString(temp) + " Mill.";
         // }
         // else
         // {
-        // temp = var;
-        // str = Long.toString(temp);
+        // temp = (var / 1000000l);
+        // str = Long.toString(temp) + " Mill.";
         // }
         // }
-        else
-        {
-            str = decimalFormat(var);
-        }
-        return str;
+        // else if (var >= 1000l && var <= 999999l && !checkBox.isSelected())
+        // {
+        // long temp = (var / 100l) % 10;
+        // if (temp >= 5)
+        // {
+        // temp = (var / 1000l) + 1;
+        // str = Long.toString(temp) + ".000";
+        // }
+        // else
+        // {
+        // temp = (var / 1000l);
+        // str = Long.toString(temp) + ".000";
+        // }
+        // }
+        // // else if (var >= 100 && var <= 999 && !checkBox.isSelected())
+        // // {
+        // // long temp = var;
+        // // if (densityTemp % (long) densityTemp > 0)
+        // // {
+        // // temp = var + 1;
+        // // str = Long.toString(temp);
+        // // }
+        // // else
+        // // {
+        // // temp = var;
+        // // str = Long.toString(temp);
+        // // }
+        // // }
+        // else
+        // {
+        // str = decimalFormat(var);
+        // }
+        // return str;
 
     }
 
     public static void main(String[] args)
     {
-
         launch(args);
     }
 }

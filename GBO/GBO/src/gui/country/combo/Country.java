@@ -53,9 +53,13 @@ public class Country
 
         if (temp % (long) temp >= 0.5)
         {
+
             temp1 += 1;
         }
         return temp1;
+        // OR BETER
+        // return (double) Math.round((double) getPeople() / getArea());
+
     }
 
 }

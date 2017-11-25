@@ -15,7 +15,7 @@ public class View extends Application
 
         Scene scene = new Scene(root, 300, 300);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("VocableTrainer");
+        primaryStage.setTitle("TEST");
         primaryStage.show();
 
     }

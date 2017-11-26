@@ -1,6 +1,7 @@
 package gui.mvp.vocabtrainer;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class Model
 {
@@ -20,4 +21,11 @@ public class Model
 		return engWord.equals(vocables.get(gerWord));
 	}
 
+    public String nextHashElement()
+    {
+        Random generator = new Random();
+        Object[] randKey = vocables.keySet().toArray();
+        String randomKey = (String) randKey[generator.nextInt(randKey.length)];
+        return randomKey;
+    }
 }

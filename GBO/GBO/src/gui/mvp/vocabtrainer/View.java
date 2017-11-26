@@ -72,6 +72,13 @@ public class View
     	presenter.translate(gerWord, engWord);
     }
     
+    public void handleNext()
+    {
+        word.setText(presenter.nextVocab());
+        eingabe.setText("");
+        answer.setText("");
+    }
+    
     public Pane getUI()
     {
         return pane;

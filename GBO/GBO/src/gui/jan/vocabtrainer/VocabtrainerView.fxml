@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="291.0" prefWidth="547.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.mvp.vocabtrainer.ViewController">
+   <children>
+      <Button fx:id="check" layoutX="14.0" layoutY="200.0" mnemonicParsing="false" text="Check" onAction="#handleCheck" />
+      <Button fx:id="next" layoutX="86.0" layoutY="200.0" mnemonicParsing="false" text="Next" onAction="#handleNext" />
+      <Label fx:id="vocable" layoutX="12.0" layoutY="138.0" prefHeight="17.0" prefWidth="134.0" text="Katze" />
+      <TextField fx:id="translation" layoutX="146.0" layoutY="134.0" onAction="#handleCheck" />
+      <Label layoutX="26.0" layoutY="68.0" prefHeight="17.0" prefWidth="270.0" text="Bitte übersetzen Sie:" />
+      <Label fx:id="status" layoutX="24.0" layoutY="249.0" prefHeight="17.0" prefWidth="169.0" />
+   </children>
+</Pane>

@@ -36,5 +36,8 @@ public class Presenter
 	    	}
 	    }
 
-	
+	    public String nextVocab()
+	    {
+	        return model.nextHashElement();
+	    }
 }

@@ -20,8 +20,17 @@ public class Model
         return engWord.equals(vocables.get(gerWord));
     }
 
+    public String setFirst()
+    {
+        Object list[] = this.vocables.keySet().toArray();
+        String a = (String) list[0];
+        return a;
+
+    }
+
     public String nextHashElement()
     {
+
         Random generator = new Random();
         Object[] randKey = vocables.keySet().toArray();
         String randomKey = (String) randKey[generator.nextInt(randKey.length)];

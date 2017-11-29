@@ -1,5 +1,6 @@
 package gui.mvp.vocabtrainer;
 
+// "Controllzentrum" 
 public class Presenter
 {
     private View view;
@@ -20,6 +21,7 @@ public class Presenter
         this.model = model;
     }
 
+    // deligiert view what to do next
     public void translate(String gerWord, String engWord)
     {
         if (engWord.isEmpty())

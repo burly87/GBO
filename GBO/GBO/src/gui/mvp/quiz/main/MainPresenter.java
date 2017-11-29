@@ -1,6 +1,46 @@
 package gui.mvp.quiz.main;
 
+import gui.mvp.quiz.main.MainView;
+import gui.mvp.quiz.game.QuizPresenter;
+import gui.mvp.quiz.overview.OverviewPresenter;
+
 public class MainPresenter
 {
+	private MainView view;
+	private OverviewPresenter overviewPresenter;
+	private QuizPresenter quizPresenter;
+
+	public MainPresenter()
+	{
+		
+	}
+		
+	public MainView getView() 
+	{
+		return view;
+	}
+
+	public void setView(MainView view) 
+	{
+		this.view = view;
+	}
+
+	public void setOverviewPresenter(OverviewPresenter overviewPresenter) 
+	{
+		this.overviewPresenter = overviewPresenter;
+	}
+
+	public void setQuizPresenter(QuizPresenter quizPresenter) 
+	{
+		this.quizPresenter = quizPresenter;
+	}
+
+
+	public void showOverviewView() 
+	{
+//		overviewPresenter.search();
+//		view.setConten(overviewPresenter.getView());
+		
+	}
 
 }

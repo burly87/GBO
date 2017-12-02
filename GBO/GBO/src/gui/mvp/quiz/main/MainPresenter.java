@@ -1,6 +1,7 @@
 package gui.mvp.quiz.main;
 
 import gui.mvp.quiz.main.MainView;
+import gui.mvp.quiz.model.Question;
 import gui.mvp.quiz.game.QuizPresenter;
 import gui.mvp.quiz.overview.OverviewPresenter;
 
@@ -39,8 +40,12 @@ public class MainPresenter
 	public void showOverviewView() 
 	{
 //		overviewPresenter.search();
-//		view.setConten(overviewPresenter.getView());
-		
+		view.setContent(overviewPresenter.getView());
+	}
+	
+	public void showQuizView(Question question)
+	{
+		quizPresenter.setQuestion(question);
 	}
 
 }

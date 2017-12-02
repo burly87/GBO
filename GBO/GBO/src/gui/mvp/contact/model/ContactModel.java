@@ -47,11 +47,9 @@ public class ContactModel
         contacts.put(updatedContact.getId(), updatedContact);
     }
 
-    private void createContact(String firstName, String lastName,
-                               String mailAddress)
+    private void createContact(String firstName, String lastName, String mailAddress)
     {
-        Contact contact = new Contact(nextId, firstName, lastName, 
-                                      mailAddress);
+        Contact contact = new Contact(nextId, firstName, lastName, mailAddress);
         contacts.put(contact.getId(), contact);
         nextId++;
     }

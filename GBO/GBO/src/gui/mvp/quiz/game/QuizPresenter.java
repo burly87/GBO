@@ -2,6 +2,7 @@ package gui.mvp.quiz.game;
 
 import gui.mvp.quiz.main.MainPresenter;
 import gui.mvp.quiz.model.Model;
+import gui.mvp.quiz.model.Question;
 
 public class QuizPresenter
 {
@@ -33,6 +34,11 @@ public class QuizPresenter
 		this.model = model;
 	}
 	
+	public void setQuestion(Question question)
+	{
+		view.showQuestion(question);
+	}
+	
 	public void delete()
 	{
 		// Ergebnisse löschen 
@@ -41,6 +47,11 @@ public class QuizPresenter
 	public void save()
 	{
 		//Antworten zählen
+	}
+
+	public Object answer() {
+		// TODO HIER EVENT FÜR ANSWER EINFÜGEN
+		return null;
 	}
 
 	

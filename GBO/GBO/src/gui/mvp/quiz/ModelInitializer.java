@@ -78,13 +78,18 @@ public final class ModelInitializer
 
         String question = getQuestion(line, indexAnswerStart);
         String[] possibleAnswers = getPossibleAnswers(line.substring(indexAnswerStart + 1, indexAnswerEnds + 1));
-//        String answerOne = getPossibleAnswers(line.substring(indexAnswerStart));
-//        String answerTwo = getPossibleAnswers(line.substring(indexAnswerStart + 1));
-//        String answerThree = getPossibleAnswers(line.substring(indexAnswerStart + 2));
-//        String answerFour = getPossibleAnswers(line.substring(indexAnswerStart + 3));
+        // String answerOne =
+        // getPossibleAnswers(line.substring(indexAnswerStart));
+        // String answerTwo = getPossibleAnswers(line.substring(indexAnswerStart
+        // + 1));
+        // String answerThree =
+        // getPossibleAnswers(line.substring(indexAnswerStart + 2));
+        // String answerFour =
+        // getPossibleAnswers(line.substring(indexAnswerStart + 3));
         int indexOfCorrectAnswer = getIndexOfCorrectAnswer(line.substring(indexAnswerEnds + 1));
 
-       // return new Question( question, answerOne,answerTwo, answerThree, answerFour);
+        // return new Question( question, answerOne,answerTwo, answerThree,
+        // answerFour);
         return new Question(question, possibleAnswers, indexOfCorrectAnswer);
     }
 

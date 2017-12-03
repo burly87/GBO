@@ -7,44 +7,44 @@ import javafx.scene.layout.GridPane;
 
 public class QuizPresenter
 {
-	private QuizView view;
-	private Model model;
-	private MainPresenter mainPresenter;
-	
-	public QuizPresenter()
-	{
-	}
-	
-	public void setView(QuizView view)
-	{
-		this.view = view;
-	}
-	
-		
-	public QuizView getView()
-	{
-		return view;
-	}
+    private QuizView view;
 
-	public void setMainPresenter(MainPresenter mainPresenter)
-	{
-		this.mainPresenter = mainPresenter;
-	}
-	
-	public void setModel(Model model)
-	{
-		this.model = model;
-	}
-	
-	public void showQuestion(Question question) 
-	{
-	
-		
-	}
-	
+    private Model model;
+
+    private MainPresenter mainPresenter;
+
+    public QuizPresenter()
+    {
+    }
+
+    public void setView(QuizView view)
+    {
+        this.view = view;
+    }
+
+    public QuizView getView()
+    {
+        return view;
+    }
+
+    public void setMainPresenter(MainPresenter mainPresenter)
+    {
+        this.mainPresenter = mainPresenter;
+    }
+
+    public void setModel(Model model)
+    {
+        this.model = model;
+    }
+
+    public void showQuestion(Question question)
+    {
+
+    }
+
     public GridPane initView()
     {
         return view.initView(model.getFirst());
     }
-	
+
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import gui.jan.quiz.model.Question;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -24,6 +25,16 @@ public class Model
 	
 	public void addQuestion(Question question)
 	{
+		 String frage = question.getFrage();
+	        for (Question i : container)
+	        {
+	            if (i.getFrage().equals(frage))
+	            {
+	                container.remove(i);
+	                break;
+	            }
+	        }
+	        container.add(question);
 	}
 		
 	public ObservableList<Question> getResult()

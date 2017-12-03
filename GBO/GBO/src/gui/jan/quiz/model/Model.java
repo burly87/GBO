@@ -19,9 +19,8 @@ public class Model
     {
         container = new LinkedList<Question>();
         container.add(new Question("Was ist 1+1?", "2", "4", "6", "8", "2"));
-        container.add(new Question("Was ist 2+2?", "2", "4", "6", "8", "4"));
-        container.add(new Question("Was ist 3+3?", "2", "4", "6", "8", "6"));
-        container.add(new Question("Was ist 4+4?", "2", "4", "6", "8", "8"));
+        container.add(new Question("Was ist das?", "blaues licht", "rotes licht", "gruenes licht", "gelbes licht", "blaues licht"));
+        container.add(new Question("..Und was macht das?", "es leuchtet blau", "es leuchtet rot", "es leuchtet gruen", "es leuchtet gelb", "es leuchtet blau"));
    
     }
 

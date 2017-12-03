@@ -19,11 +19,11 @@ public class Model
     {
         container = new LinkedList<Question>();
         // container.add(new Question("1+1", "1", "2", "3", "4", "2"));
-        // container.add(new Question("Was ist das?", "blaues lich", "rotes
-        // licht", "gr�nes licht", "gelbes licht", "blaues licht"));
-        // container.add(new Question("..Und was macht das?", "es leuchtet
-        // blau", "es leuchtet rot", "es leuchtet gr�n", "es leuchtet gelb", "es
-        // leuchtet blau"));
+         container.add(new Question("Was ist das?", "blaues lich", "rotes
+         licht", "gr�nes licht", "gelbes licht", "blaues licht"));
+         container.add(new Question("..Und was macht das?", "es leuchtet
+         blau", "es leuchtet rot", "es leuchtet gr�n", "es leuchtet gelb", "es
+         leuchtet blau"));
     }
 
     public void addQuestion(Question q)

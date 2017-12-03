@@ -77,6 +77,7 @@ public final class ModelInitializer
         checkIndices(indexAnswerStart, indexAnswerEnds);
 
         String question = getQuestion(line, indexAnswerStart);
+        String[] possibleAnswers = getPossibleAnswers(line.substring(indexAnswerStart + 1, indexAnswerEnds + 1));
 //        String answerOne = getPossibleAnswers(line.substring(indexAnswerStart));
 //        String answerTwo = getPossibleAnswers(line.substring(indexAnswerStart + 1));
 //        String answerThree = getPossibleAnswers(line.substring(indexAnswerStart + 2));

@@ -6,13 +6,13 @@ import gui.jan.quiz.overview.OverviewPresenter;
 
 public class MainPresenter
 {
-    private MainView v;
+    private MainView view;
 
-    private OverviewPresenter sp;
+    private OverviewPresenter overviewPresenter;
 
-    private DetailPresenter fp;
+    private DetailPresenter quizPresenter;
 
-    private EditPresenter ep;
+    private EditPresenter editPresenter;
 
     public MainPresenter()
     {
@@ -20,41 +20,44 @@ public class MainPresenter
 
     public void setView(MainView vnew)
     {
-        this.v = vnew;
+        this.view = vnew;
     }
 
     public void setSecondPresenter(OverviewPresenter spnew)
     {
-        this.sp = spnew;
+        this.overviewPresenter = spnew;
     }
 
     public void setFirstPresenter(DetailPresenter fpnew)
     {
-        this.fp = fpnew;
+        this.quizPresenter = fpnew;
     }
+    
+    public void setEditPresenter(EditPresenter e)
+    {
+        this.editPresenter = e;
+    }
+    
 
     public void edit()
     {
-        v.setPane(ep.initView());
+        view.setPane(editPresenter.initView());
     }
 
     public void start()
     {
-        v.setPane(fp.initView());
+        view.setPane(quizPresenter.initView());
     }
 
     public void overview()
     {
-        v.setPane(sp.initView());
+        view.setPane(overviewPresenter.initView());
     }
 
     public void fortsetzen()
     {
-        v.setPane(fp.getPane());
+        view.setPane(quizPresenter.getPane());
     }
 
-    public void setEditPresenter(EditPresenter e)
-    {
-        this.ep = e;
-    }
+   
 }

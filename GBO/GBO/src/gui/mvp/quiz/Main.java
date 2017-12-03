@@ -1,6 +1,7 @@
 package gui.mvp.quiz;
 
 import gui.mvp.quiz.main.MainView;
+import gui.mvp.quiz.model.Model;
 import gui.mvp.quiz.game.QuizPresenter;
 import gui.mvp.quiz.game.QuizView;
 import gui.mvp.quiz.main.MainPresenter;
@@ -26,18 +27,31 @@ public class Main extends Application
 	}
 
 	private MainPresenter initApplication() 
-	{
+	{	//Objekte erzeugen
 		MainPresenter mainPresenter = new MainPresenter();
 		MainView mainView = new MainView();
+		
 		QuizPresenter  quizPresenter = new QuizPresenter();
-		QuizView quizView = new QuizView();
+		QuizView quizView = new QuizView(quizPresenter);
+		
 		OverviewPresenter overviewPresenter = new OverviewPresenter();
-		OverviewView overviewView = new OverviewView();
+		OverviewView overviewView = new OverviewView(overviewPresenter);
 		
+		Model model = new Model();
+	
+		//Klassen verbinden und setzen
 		mainPresenter.setView(mainView);
+		mainPresenter.setOverviewPresenter(overviewPresenter);
+		mainPresenter.setQuizPresenter(quizPresenter);
+		
+		overviewPresenter.setView(overviewView);
+		overviewPresenter.setMainPresenter(mainPresenter);
+		overviewPresenter.setModel(model);
+		
 		quizPresenter.setView(quizView);
-		
-		
+		quizPresenter.setMainPresenter(mainPresenter);
+		quizPresenter.setModel(model);		
+	
 		
 		return mainPresenter;
 	}

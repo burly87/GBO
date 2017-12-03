@@ -5,116 +5,98 @@ import java.util.List;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 public class Question
 {
-	private List<SimpleStringProperty> answer = new ArrayList<SimpleStringProperty>();
-	private SimpleStringProperty question;
-	private SimpleStringProperty answerOne;
-	private SimpleStringProperty answerTwo;
-	private SimpleStringProperty answerThree;
-	private SimpleStringProperty answerFour;
-	
-	private SimpleStringProperty loesung;
+	private String question;
+	private String[] possibleAnswers;
+	private int indexOfCorrectAnswer;
+
+	 private List<SimpleStringProperty> answer = new ArrayList<SimpleStringProperty>();
+	private SimpleStringProperty frage;
 	private SimpleIntegerProperty amount;
 	private SimpleIntegerProperty correct;
+	private SimpleStringProperty loesung;
 	
-	public Question(List<String> answer, String question, String loesung) 
+	
+	// weitere Attribute nach Bedarf
+	public Question(String question, String[] possibleAnswers, int indexOfCorrectAnswer)
 	{
-		this.question = new SimpleStringProperty(question);
-		this.loesung = new SimpleStringProperty(loesung);
-		this.amount = new SimpleIntegerProperty(0);
-		this.correct = new SimpleIntegerProperty(0);
+		this.question = question;
+		this.possibleAnswers = possibleAnswers;
+		this.indexOfCorrectAnswer = indexOfCorrectAnswer;
+	}
+	
+	public Question(String frage, String ansOne, String ansTwo,
+			String ansThree, String ansFour) 
+	{
+		this.frage = new SimpleStringProperty(frage);
+		ansOne = this.possibleAnswers	[0];
+		ansTwo = this.possibleAnswers	[1];
+		ansThree = this.possibleAnswers	[2];
+		ansFour = this.possibleAnswers	[3];
 		
-		for (String i: answer)
+		loesung = new SimpleStringProperty();
+		
+	}
+
+	public ObservableList<String> getQuestion() //frage
+	{
+		ObservableList<String> q = FXCollections.observableArrayList(frage.get());
+		for(SimpleStringProperty i : answer) //geht glaube ich nicht
 		{
-			this.answer.add(new SimpleStringProperty(i));
+			q.add(i.get());
 		}
-		
-	}
-
-	public Question(String question, String one, String two,String three, String four, String loesung) 
-	{
-		this.question = new SimpleStringProperty(question);
-		this.answerOne = new SimpleStringProperty(one);
-		this.answerTwo = new SimpleStringProperty(two);
-		this.answerThree = new SimpleStringProperty(three);
-		this.answerFour = new SimpleStringProperty(four);
-		this.loesung = new SimpleStringProperty(loesung);
-		
-		answer.add(answerOne);
-		answer.add(answerTwo);
-		answer.add(answerThree);
-		answer.add(answerFour);
-		
-	
-	}
-
-    public String getAnswer()
-    {
-        return loesung.get();
-    }
-
-	public void setAnswer(List<SimpleStringProperty> answer) 
-	{
-		this.answer = answer;		
+		return q;
 	}
 	
-	public String getQuestion() 
+	public String[] getPossibleAnswers() //antwortmöglichkeit 1-4
 	{
-		return question.get();
+		return possibleAnswers;
 	}
-
-	public String getLoesung() 
+	
+	public int getIndexOfCorrectAnswer() //lösung
+	{
+		return indexOfCorrectAnswer;
+	}
+	
+	public String toString()
+	{		
+		return question + " (Antworten: " + amount + ", davon richtig: " + correct + ")";
+	}
+		
+	// weitere Methoden nach Bedarf
+	public String getAnswer() 
 	{
 		return loesung.get();
-	}
+	}	
 	
-	
-	/*Statistik*/
 	public int getAmount() 
 	{
 		return amount.get();
 	}
-	
-	public void setAmount(int amount)
+
+	public void incAmount() //increase
 	{
-		this.amount = new SimpleIntegerProperty(amount);
+		this.amount.set(amount.get()+1);		
 	}
 	
 	public int getCorrect() 
 	{
 		return correct.get();
 	}
-	
-	public void setCorrect(int correct)
-	{
-	    this.correct = new SimpleIntegerProperty(correct);
-	}
-	
-	/*Statistik ändern*/
-	public void incAmount() //amount erhöhen
-	{
-		this.amount.set(amount.get()+1);
-	}
-	
-	public void incCorrect() //correct erhöhen
+
+	public void incCorrect() //increase
 	{
 		this.correct.set(correct.get()+1);
 	}
-	
-	public void clear() // nullen
+
+	public void clear() 
 	{
 		this.amount = new SimpleIntegerProperty(0);
-		this.correct = new SimpleIntegerProperty(0);
-	}
-	
-	
-	
-
-	
-
-
-
+        this.correct = new SimpleIntegerProperty(0);
+	}	
 }

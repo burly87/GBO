@@ -10,15 +10,15 @@ import javafx.scene.layout.GridPane;
 
 public class OverviewView
 {
-    private GridPane gp;
+    private GridPane gridPane;
 
     private Button delete;
 
-    private OverviewPresenter sp;
+    private OverviewPresenter overviewPresenter;
 
     public OverviewView(OverviewPresenter sp)
     {
-        this.sp = sp;
+        this.overviewPresenter = sp;
     }
 
     public GridPane initView(ObservableList<Question> observableList)
@@ -34,20 +34,20 @@ public class OverviewView
         t.getColumns().add(b);
         t.getColumns().add(c);
         t.setMinSize(400, 150);
-        gp = new GridPane();
-        gp.add(t, 0, 1);
+        gridPane = new GridPane();
+        gridPane.add(t, 0, 1);
         GridPane.setColumnSpan(t, 5);
         GridPane.setRowSpan(t, 5);
         delete = new Button();
         delete.setText("Ergebnisse löschen");
         delete.setOnAction(e -> delete());
-        gp.add(delete, 0, 6);
-        return gp;
+        gridPane.add(delete, 0, 6);
+        return gridPane;
     }
 
     public void delete()
     {
-        sp.delete();
+        overviewPresenter.delete();
     }
 
 }

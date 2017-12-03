@@ -7,70 +7,76 @@ import javafx.scene.layout.Pane;
 
 public class MainView
 {
-    private GridPane gp;
+    private GridPane gridPane;
 
-    private Button startbutton;
+    private Button startButton;
 
-    private Button continuequiz;
+    private Button continueQuiz;
 
     private Button overview;
     private Button edit;
-    private MainPresenter mp;
+    private MainPresenter mainPresenter;
     private GridPane innerpane;
-    public MainView(MainPresenter mp)
+    public MainView(MainPresenter mainPresenter)
     {
-        this.mp = mp;
+        this.mainPresenter = mainPresenter;
         init();
     }
     private void init()
     {
-        gp = new GridPane();
-        startbutton = new Button();
-        startbutton.setText("Quiz starten!");
-        startbutton.setOnAction(e->start());
-        continuequiz = new Button();
-        continuequiz.setText("Quiz fortsetzen!");
-        continuequiz.setOnAction(e->weiter());
+        gridPane = new GridPane();
+        startButton = new Button();
+        startButton.setText("Quiz starten!");
+        startButton.setOnAction(e->start());
+        
+        continueQuiz = new Button();
+        continueQuiz.setText("Quiz fortsetzen!");
+        continueQuiz.setOnAction(e->weiter());
+        
         overview = new Button();
         overview.setText("Überblick!");
         overview.setOnAction(e->overview());
+        
         edit = new Button();
         edit.setText("Quiz editieren");
         edit.setOnAction(e->edit());
-        gp.add(startbutton, 0, 0);
-        gp.add(continuequiz, 1, 0);
-        gp.add(overview, 2, 0);
-        gp.add(edit, 3, 0);
+        
+        gridPane.add(startButton, 0, 0);
+        gridPane.add(continueQuiz, 1, 0);
+        gridPane.add(overview, 2, 0);
+        gridPane.add(edit, 3, 0);
+        
         innerpane = new GridPane();
-        gp.add(innerpane, 0, 1);
+        
+        gridPane.add(innerpane, 0, 1);
     }
     public void edit()
     {
-        mp.edit();
+        mainPresenter.edit();
     }
     public Pane ui()
     {
-        return gp;
+        return gridPane;
     }
     public void start()
     {
-        mp.start();
+        mainPresenter.start();
     }
     public void weiter()
     {
-        mp.fortsetzen();
+        mainPresenter.fortsetzen();
     }
     public void overview()
     {
-        mp.overview();
+        mainPresenter.overview();
     }
-    public void setPane(GridPane p)
+    public void setPane(GridPane pane)
     {
-        gp.getChildren().remove(innerpane);
-        innerpane = p;
-        gp.add(innerpane, 0, 1);
+        gridPane.getChildren().remove(innerpane);
+        innerpane = pane;
+        gridPane.add(innerpane, 0, 1);
         GridPane.setColumnSpan(innerpane, 4);
-        gp.autosize();
+        gridPane.autosize();
 
     }
 }

@@ -8,65 +8,69 @@ import javafx.scene.layout.GridPane;
 
 public class DetailView
 {
-    private GridPane gp;
+    private GridPane gridPane;
 
-    private DetailPresenter p;
+    private DetailPresenter presenter;
 
     private Label label;
 
     private Button next;
 
-    private RadioButton rp[];
+    private RadioButton radioButton[];
 
     public DetailView(DetailPresenter p)
     {
-        this.p = p;
+        this.presenter = p;
     }
 
     public GridPane initView(ObservableList<String> list)
     {
 
-        gp = new GridPane();
+        gridPane = new GridPane();
         next = new Button();
         next.setOnAction(e -> next());
         next.setText("==>");
-        gp.add(next, 0, 5);
+            
         label = new Label();
-        gp.add(label, 0, 0);
-        rp = new RadioButton[list.size() - 1];
+        
+        gridPane.add(label, 0, 0);
+        gridPane.add(next, 0, 5);
+        
+        radioButton = new RadioButton[list.size() - 1];
+        
         for (int i = 0; i < 4; i++)
         {
-            rp[i] = new RadioButton();
-            gp.add(rp[i], 0, i + 1);
+            radioButton[i] = new RadioButton();
+            gridPane.add(radioButton[i], 0, i + 1);
         }
         setQuestion(list);
-        return gp;
+        return gridPane;
     }
 
     public void setQuestion(ObservableList<String> list)
     {
         label.setText(list.get(0));
-        for (int i = 0; i < rp.length; i++)
+        for (int i = 0; i < radioButton.length; i++)
         {
-            rp[i].setText(list.get(i + 1));
+            radioButton[i].setText(list.get(i + 1));
         }
     }
 
     public GridPane getPane()
     {
-        return gp;
+        return gridPane;
     }
 
     public void next()
     {
-        p.next();
+        presenter.next();
     }
 
     public void setend()
     {
-        for (int i = 0; i < rp.length; i++)
+        for (int i = 0; i < radioButton.length; i++)
         {
-            gp.getChildren().remove(rp[i]);
+            gridPane.getChildren().remove(radioButton[i]);
         }
         label.setText("Quiz beendet!");
         next.setDisable(true);
@@ -75,13 +79,13 @@ public class DetailView
     public String getmarked()
     {
         String answer = null;
-        for (int i = 0; i < rp.length; i++)
+        for (int i = 0; i < radioButton.length; i++)
         {
-            if (rp[i].isSelected() && answer == null)
+            if (radioButton[i].isSelected() && answer == null)
             {
-                answer = rp[i].getText();
+                answer = radioButton[i].getText();
             }
-            rp[i].setSelected(false);
+            radioButton[i].setSelected(false);
         }
         return answer;
     }

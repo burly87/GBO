@@ -5,9 +5,9 @@ import javafx.scene.layout.GridPane;
 
 public class OverviewPresenter
 {
-    private OverviewView v;
+    private OverviewView view;
 
-    private Model m;
+    private Model model;
 
     public OverviewPresenter()
     {
@@ -16,22 +16,22 @@ public class OverviewPresenter
 
     public void setModel(Model mnew)
     {
-        this.m = mnew;
+        this.model = mnew;
     }
 
     public void setSecondView(OverviewView vnew)
     {
-        this.v = vnew;
+        this.view = vnew;
     }
 
     public void delete()
     {
-        m.clear();
-        v.initView(m.getResult());
+        model.clear();
+        view.initView(model.getResult());
     }
 
     public GridPane initView()
     {
-        return v.initView(m.getResult());
+        return view.initView(model.getResult());
     }
 }

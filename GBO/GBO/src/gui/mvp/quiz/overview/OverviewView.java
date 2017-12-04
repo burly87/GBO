@@ -1,54 +1,46 @@
 package gui.mvp.quiz.overview;
 
 import gui.mvp.quiz.model.Question;
-import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.VBox;
 
-public class OverviewView
+public class OverviewView extends VBox
 {
     private OverviewPresenter presenter;
 
     private Label text;
 
-    private TextField overview;
+    private ListView<Question> overview;
 
     private Button delete;
 
-    private GridPane pane;
+    public OverviewView()
+    {
+        text = new Label("Übersicht");
+        overview = new ListView<>();
 
-    public OverviewView(OverviewPresenter overviewPresenter)
+        delete = new Button("Ergebnisse löschen");
+        delete.setOnAction(e -> presenter.delete());
+
+        // Ids
+        overview.setId("overviewList");
+        delete.setId("deleteHistory");
+
+        this.getChildren().addAll(text, overview, delete);
+
+    }
+
+    public void setPresenter(OverviewPresenter overviewPresenter)
     {
         this.presenter = overviewPresenter;
     }
 
-    public GridPane initView(ObservableList<Question> observableList)
+    public void initTextField()
     {
-        text = new Label("�bersicht");
-
-        overview = new TextField();
-        overview.setPrefColumnCount(20);
-        overview.setOnAction(e -> presenter.result());
-
-        delete = new Button("Ergebnisse l�schen");
-        delete.setOnAction(e -> presenter.delete());
-
-        pane.getChildren().addAll(text, overview, delete);
-
-        return pane;
-
-    }
-
-    // public void setPresenter(OverviewPresenter presenter)
-    // {
-    // this.presenter = presenter;
-    // }
-
-    public void delete()
-    {
-        presenter.delete();
+        overview.getItems().clear();
+        overview.getItems().addAll(presenter.getContent());
     }
 
 }

@@ -1,88 +1,91 @@
 package gui.mvp.quiz.model;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class Model
 {
-    private LinkedList<Question> container;
+    private ArrayList<Question> container;
 
-    private ObservableList<Question> list = FXCollections.observableArrayList();
+    private int currentIndex;
 
-    private Question question;
+    private int lastSelectedIndex;
 
     public Model()
     {
-        container = new LinkedList<Question>();
-        // container.add(new Question("1+1", "1", "2", "3", "4", "2"));
-         container.add(new Question("Was ist das?", "blaues lich", "rotes
-         licht", "gr�nes licht", "gelbes licht", "blaues licht"));
-         container.add(new Question("..Und was macht das?", "es leuchtet
-         blau", "es leuchtet rot", "es leuchtet gr�n", "es leuchtet gelb", "es
-         leuchtet blau"));
+        container = new ArrayList<>();
+        currentIndex = 0;
+        lastSelectedIndex = -1;
     }
 
     public void addQuestion(Question q)
     {
-
+        container.add(q);
     }
 
-    public ObservableList<Question> getResult()
+    public void reset()
     {
-        list.clear();
-        for (Question i : container)
+        lastSelectedIndex = -1;
+        currentIndex = 0;
+    }
+
+    public void next()
+    {
+        currentIndex++;
+    }
+
+    public String[] getAnswer()
+    {
+        return container.get(currentIndex).getPossibleAnswers();
+    }
+
+    public String getQuestion()
+    {
+        return container.get(currentIndex).getQuestion();
+    }
+
+    public void choose(int selected)// antwort mit correct prüfen
+    {
+        if (currentIndex >= 0 && selected >= 0)
         {
-            List<String> temp = new ArrayList<String>();
-            temp.add(i.toString());
-            temp.add(String.valueOf(i.getAmount()));
-            list.add(i);
+            lastSelectedIndex = selected;
+            container.get(currentIndex).incAmount(selected == container.get(currentIndex).getIndexOfCorrectAnswer());
         }
-        return list;
     }
 
-    public void clear()
+    public boolean hasNext() // prüfen ob es noch eine question gibt
     {
-        for (Question i : container)
-        {
-            i.clear();
-        }
-
+        return (currentIndex + 1) < container.size();
     }
 
-    public ObservableList<String> getFirst()
+    public ArrayList<Question> getQuestionList()
     {
-        question = container.getFirst();
-        return question.getQuestion();
+        return container;
     }
 
-    public String getAnswer()
+    public int getLastSelectedIndex()
     {
-        return question.getAnswer();
+        return lastSelectedIndex;
     }
 
     /* Statistik */
-    public int getCorrect()
-    {
-        return question.getCorrect();
-    }
-
-    public void incCorrect()
-    {
-        question.incCorrect();
-    }
-
-    public int getAmount()
-    {
-        return question.getAmount();
-    }
-
-    public void incAmount()
-    {
-        question.incAmount();
-    }
+    // public int getCorrect()
+    // {
+    // return question.getCorrect();
+    // }
+    //
+    // public void incCorrect()
+    // {
+    // question.incCorrect();
+    // }
+    //
+    // public int getAmount()
+    // {
+    // return question.getAmount();
+    // }
+    //
+    // public void incAmount()
+    // {
+    // question.incAmount();
+    // }
 
 }

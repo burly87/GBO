@@ -1,13 +1,10 @@
 package gui.mvp.quiz.overview;
 
-import gui.mvp.quiz.main.MainPresenter;
 import gui.mvp.quiz.model.Model;
-import javafx.scene.layout.GridPane;
+import gui.mvp.quiz.model.Question;
 
 public class OverviewPresenter
 {
-
-    private MainPresenter mainPresenter;
 
     private OverviewView view;
 
@@ -25,12 +22,8 @@ public class OverviewPresenter
 
     public OverviewView getView()
     {
+        view.initTextField();
         return view;
-    }
-
-    public void setMainPresenter(MainPresenter mainPresenter)
-    {
-        this.mainPresenter = mainPresenter;
     }
 
     public void setModel(Model model)
@@ -46,13 +39,16 @@ public class OverviewPresenter
 
     public void delete()
     {
-        model.clear();
-        view.initView(model.getResult());
+        for (Question q : model.getQuestionList())
+        {
+            q.reset();
+        }
+        view.initTextField();
     }
 
-    public GridPane initView()
+    public Question[] getContent()
     {
-        return view.initView(model.getResult());
+        return model.getQuestionList().toArray(new Question[model.getQuestionList().size()]);
     }
 
 }

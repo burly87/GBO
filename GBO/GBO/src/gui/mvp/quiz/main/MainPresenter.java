@@ -3,6 +3,7 @@ package gui.mvp.quiz.main;
 import gui.mvp.quiz.game.QuizPresenter;
 import gui.mvp.quiz.model.Question;
 import gui.mvp.quiz.overview.OverviewPresenter;
+import javafx.scene.layout.Pane;
 
 public class MainPresenter
 {
@@ -16,16 +17,7 @@ public class MainPresenter
     {
     }
 
-    public void setView(MainView view)
-    {
-        this.view = view;
-    }
-
-    public MainView getView()
-    {
-        return view;
-    }
-
+    // init
     public void setOverviewPresenter(OverviewPresenter overviewPresenter)
     {
         this.overviewPresenter = overviewPresenter;
@@ -36,21 +28,41 @@ public class MainPresenter
         this.quizPresenter = quizPresenter;
     }
 
+    public void setView(MainView view)
+    {
+        this.view = view;
+    }
+    // END: init
+
+    public void showQuiz(boolean reset)
+    {
+        if (reset)
+        {
+            quizPresenter.reset();
+        }
+        view.setContent(quizPresenter.getView());
+    }
+
+    public Pane getView()
+    {
+        return view.getView();
+    }
+
     public void showOverviewView()
     {
-        overviewPresenter.result();
-        view.setContent(overviewPresenter.initView());
+        view.setContent(overviewPresenter.getView()); // Zusammenhang mit
+                                                      // OverviewView..
     }
 
     public void showQuizView(Question question)
     {
         quizPresenter.showQuestion(question);
-        view.setContent(quizPresenter.initView());
+        view.setContent(quizPresenter.getView());
     }
 
     public void start()
     {
-        view.setContent(quizPresenter.initView());
+        view.setContent(quizPresenter.getView());
     }
 
 }

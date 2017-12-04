@@ -1,18 +1,13 @@
 package gui.mvp.quiz.main;
 
-import gui.mvp.quiz.game.QuizPresenter;
-import gui.mvp.quiz.overview.OverviewPresenter;
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 
 public class MainView extends BorderPane
 {
-    private OverviewPresenter overviewPresenter;
-
-    private QuizPresenter quizPresenter;
+    private BorderPane bPane;
 
     private MainPresenter mainPresenter;
 
@@ -23,38 +18,53 @@ public class MainView extends BorderPane
 
     private void initView()
     {
-
+        bPane = new BorderPane();
         HBox topArea = new HBox(5);
 
         Button start = new Button("Quiz starten!");
         Button weiter = new Button("Quiz fortsetzen!");
-        Button overview = new Button("�berblick!");
+        Button overview = new Button("Überblick!");
 
         // zwischen Views hinundherschalten
         start.setOnAction(e -> start());
-        weiter.setOnAction(e -> quizPresenter.getView());
+        weiter.setOnAction(e -> nextQ());
         overview.setOnAction(e -> overview());
 
         overview.setId("overview");
 
         topArea.getChildren().addAll(start, weiter, overview);
-        setTop(topArea);
+        bPane.setTop(topArea);
     }
 
     private void overview()
     {
-        overviewPresenter.initView();
+        mainPresenter.showOverviewView();
+        // overviewPresenter.initView();
     }
 
     public void start()
     {
-        mainPresenter.start();
+        mainPresenter.showQuiz(true);
+        // mainPresenter.start();
     }
 
-    public void setContent(GridPane content)
+    public void nextQ()
     {
-        setCenter(content);
-        setMargin(content, new Insets(20, 20, 20, 20));
+        mainPresenter.showQuiz(false);
     }
 
+    public void setPresenter(MainPresenter mainP)
+    {
+        mainPresenter = mainP;
+    }
+
+    public void setContent(Pane pane)
+    {
+        bPane.setCenter(pane);
+    }
+
+    public Pane getView()
+    {
+        return bPane;
+    }
 }

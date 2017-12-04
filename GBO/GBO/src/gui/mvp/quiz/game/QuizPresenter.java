@@ -1,17 +1,14 @@
 package gui.mvp.quiz.game;
 
-import gui.mvp.quiz.main.MainPresenter;
 import gui.mvp.quiz.model.Model;
 import gui.mvp.quiz.model.Question;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 
 public class QuizPresenter
 {
     private QuizView view;
 
     private Model model;
-
-    private MainPresenter mainPresenter;
 
     public QuizPresenter()
     {
@@ -22,15 +19,15 @@ public class QuizPresenter
         this.view = view;
     }
 
-    public QuizView getView()
+    public Pane getView()
     {
-        return view;
+        return view.getQuizView();
     }
 
-    public void setMainPresenter(MainPresenter mainPresenter)
-    {
-        this.mainPresenter = mainPresenter;
-    }
+    // public void setMainPresenter(MainPresenter mainPresenter)
+    // {
+    // this.mainPresenter = mainPresenter;
+    // }
 
     public void setModel(Model model)
     {
@@ -42,9 +39,41 @@ public class QuizPresenter
 
     }
 
-    public GridPane initView()
+    public void reset()
     {
-        return view.initView(model.getFirst());
+        model.reset();
+        continueQuiz();
+    }
+
+    public void continueQuiz()
+    {
+        if (!model.getQuestionList().isEmpty()) // geht immer direkt in else
+        {
+            view.setAnswers(model.getAnswer());
+            view.setQuestion(model.getQuestion());
+            view.setSelected(model.getLastSelectedIndex());
+            view.setBottonDisable(false);
+        }
+        else
+        {
+            view.end();
+        }
+    }
+
+    public void next()
+    {
+        model.choose(view.getSelectedIndex());
+
+        if (model.hasNext())
+        {
+            model.next();
+            view.setAnswers(model.getAnswer());
+            view.setQuestion(model.getQuestion());
+        }
+        else
+        {
+            view.end();
+        }
     }
 
 }

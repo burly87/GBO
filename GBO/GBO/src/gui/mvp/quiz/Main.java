@@ -18,15 +18,18 @@ public class Main extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        MainPresenter mainPresenter = initApplication();
-        mainPresenter.showOverviewView();
-        Scene scene = new Scene(mainPresenter.getView(), 900, 400);
+        Model m = ModelInitializer.initModel(this.getParameters().getUnnamed().get(0));
+        MainPresenter mainPresenter = initApplication(m);
+
+        mainPresenter.showQuiz(false);
+        Scene scene = new Scene(mainPresenter.getView(), 600, 300);
+
         stage.setScene(scene);
         stage.setTitle("Quiz");
         stage.show();
     }
 
-    private MainPresenter initApplication()
+    private MainPresenter initApplication(Model model)
     { // Objekte erzeugen
         MainPresenter mainPresenter = new MainPresenter();
         MainView mainView = new MainView();
@@ -35,22 +38,24 @@ public class Main extends Application
         QuizView quizView = new QuizView(quizPresenter);
 
         OverviewPresenter overviewPresenter = new OverviewPresenter();
-        OverviewView overviewView = new OverviewView(overviewPresenter);
-
-        Model model = new Model();
+        OverviewView overviewView = new OverviewView();
 
         // Klassen verbinden und setzen
+        overviewPresenter.setView(overviewView);
+        overviewPresenter.setModel(model);
+        overviewView.setPresenter(overviewPresenter);
+        overviewView.initTextField();
+
+        quizPresenter.setView(quizView);
+        quizPresenter.setModel(model);
+        quizView.initView();
+
+        mainView.setPresenter(mainPresenter);
+
         mainPresenter.setView(mainView);
         mainPresenter.setOverviewPresenter(overviewPresenter);
         mainPresenter.setQuizPresenter(quizPresenter);
-
-        overviewPresenter.setView(overviewView);
-        overviewPresenter.setMainPresenter(mainPresenter);
-        overviewPresenter.setModel(model);
-
-        quizPresenter.setView(quizView);
-        quizPresenter.setMainPresenter(mainPresenter);
-        quizPresenter.setModel(model);
+        mainPresenter.start();
 
         return mainPresenter;
     }

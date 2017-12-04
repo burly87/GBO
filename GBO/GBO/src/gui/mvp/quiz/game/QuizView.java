@@ -1,66 +1,63 @@
 package gui.mvp.quiz.game;
 
-import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 public class QuizView
 {
     private QuizPresenter presenter;
 
-    private Label question1;
+    private Label question;
 
-    private RadioButton radioButtons[];
+    private Button answerBtn;
 
-    private RadioButton choiceTwo;
+    private Pane pane; // überliegende Pane
 
-    private RadioButton choiceThree;
-
-    private RadioButton choiceFour;
-
-    private Button answer;
-
-    private String loesung;
-
-    private int amount;
-
-    private GridPane pane;
+    private Pane aPane; // Frage, antworten, answerBtn
 
     private ToggleGroup group;
 
     public QuizView(QuizPresenter quizPresenter)
     {
-        this.presenter = quizPresenter;
+        presenter = quizPresenter;
+
+        pane = new VBox(10);
+        aPane = new VBox(5);
+        question = new Label("Frage");
+        answerBtn = new Button("=>");
+
+        question.setId("question");
+
+        answerBtn.setOnAction(e -> handleAnswer());
+
+        pane.getChildren().addAll(question, aPane, answerBtn);
+
     }
 
-    public GridPane initView(ObservableList<String> list)
+    public Pane getQuizView()
     {
-        pane = new GridPane();
-        pane.setHgap(10);
-        pane.setVgap(10);
-
-        question1 = new Label();
-
-        question1.setId("question");
-
-        answer = new Button("=>");
-        // answer.setOnAction(e-> presenter.answer());
-
-        pane.add(question1, 0, 0);
-        pane.add(answer, 0, 5);
-
-        radioButtons = new RadioButton[list.size() - 1];
-        for (int i = 0; i < 4; i++)
-        {
-            radioButtons[i] = new RadioButton();
-            radioButtons[i].setToggleGroup(group);
-            pane.add(radioButtons[i], 0, i + 1);
-        }
         return pane;
+    }
 
+    public void initView()
+    {
+        presenter.continueQuiz();
+    }
+
+    private void handleAnswer()
+    {
+        presenter.next();
+    }
+
+    public void end()
+    {
+        aPane.getChildren().clear();
+        question.setText("Endes des Quiz");
+        answerBtn.setDisable(true);
     }
 
     public void setPresenter(QuizPresenter presenter)
@@ -68,13 +65,49 @@ public class QuizView
         this.presenter = presenter;
     }
 
-    public void setQuestion(ObservableList<String> list)
+    public void setQuestion(String text)
     {
-        question1.setText(list.get(0));
-        for (int i = 0; i < radioButtons.length; i++)
+        question.setText(text);
+    }
+
+    public void setAnswers(String[] strings)
+    {
+        aPane.getChildren().clear();
+
+        for (String s : strings)
         {
-            radioButtons[i].setText(list.get(i + 1));
+            RadioButton rBtn = new RadioButton(s);
+            rBtn.setToggleGroup(group);
+            aPane.getChildren().add(rBtn);
         }
+    }
+
+    public int getSelectedIndex()
+    {
+        for (int i = 0; i < aPane.getChildren().size(); i++)
+        {
+            RadioButton rBtn = (RadioButton) aPane.getChildren().get(i);
+
+            if (rBtn.isSelected())
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void setSelected(int lastSelectedIndex)
+    {
+        if (lastSelectedIndex >= 0)
+        {
+            RadioButton rBtn = (RadioButton) aPane.getChildren().get(lastSelectedIndex);
+            rBtn.setSelected(true);
+        }
+    }
+
+    public void setBottonDisable(boolean b)
+    {
+        answerBtn.setDisable(b);
     }
 
 }

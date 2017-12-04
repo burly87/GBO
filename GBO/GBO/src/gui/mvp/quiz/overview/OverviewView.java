@@ -18,10 +18,10 @@ public class OverviewView extends VBox
 
     public OverviewView()
     {
-        text = new Label("Ãœbersicht");
+        text = new Label("Übersicht");
         overview = new ListView<>();
 
-        delete = new Button("Ergebnisse lÃ¶schen");
+        delete = new Button("Ergebnisse löschen");
         delete.setOnAction(e -> presenter.delete());
 
         // Ids

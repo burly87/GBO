@@ -18,14 +18,14 @@ public class Question
     // Für TableView
     private SimpleStringProperty questionT;
 
-    private SimpleStringProperty possibleAnswersT;
+    private SimpleIntegerProperty possibleAnswersT;
 
     private SimpleIntegerProperty indexOfCorrectAnswerT;
 
-    Question(String questionT, String possibleAnswersT, int indexOfCorrectAnswerT)
+    Question(String questionT, int possibleAnswersT, int indexOfCorrectAnswerT)
     {
         this.questionT = new SimpleStringProperty(questionT);
-        this.possibleAnswersT = new SimpleStringProperty(possibleAnswersT);
+        this.possibleAnswersT = new SimpleIntegerProperty(possibleAnswersT);
         this.indexOfCorrectAnswerT = new SimpleIntegerProperty(indexOfCorrectAnswerT);
     }
 
@@ -48,7 +48,7 @@ public class Question
         return questionT.get();
     }
 
-    public String getPossibleAnswersT()
+    public int getPossibleAnswersT()
     {
         return possibleAnswersT.get();
     }
@@ -59,14 +59,14 @@ public class Question
     }
 
     // Setter TableView
-    public void setQuestionT(SimpleStringProperty questionT)
+    public void setQuestionT(String questionT)
     {
-        this.questionT = questionT;
+        this.questionT = new SimpleStringProperty(questionT);
     }
 
-    public void setPossibleAnswersT(SimpleStringProperty possibleAnswersT)
+    public void setPossibleAnswersT(int possibleAnswersT)
     {
-        this.possibleAnswersT = possibleAnswersT;
+        this.possibleAnswersT = new SimpleIntegerProperty(possibleAnswersT);
     }
 
     public void setIndexOfCorrectAnswerT(int indexOfCorrectAnswerT)
@@ -111,9 +111,10 @@ public class Question
         correctCounter = 0;
     }
 
-    @Override
-    public String toString()
-    {
-        return question + " (Antworten: " + amount + ", davon richtig: " + correctCounter + ")";
-    }
+    // @Override
+    // public String toString()
+    // {
+    // return question + " (Antworten: " + amount + ", davon richtig: " +
+    // correctCounter + ")";
+    // }
 }

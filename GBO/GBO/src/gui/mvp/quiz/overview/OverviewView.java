@@ -48,9 +48,9 @@ public class OverviewView extends VBox
         correctAnswerCol = new TableColumn<Question, Integer>("Korrekt");
 
         // Column text
-        questionCol.setCellValueFactory(new PropertyValueFactory<Question, String>("Frage"));
-        totalAnswerCol.setCellValueFactory(new PropertyValueFactory<Question, Integer>("Antworten"));
-        correctAnswerCol.setCellValueFactory(new PropertyValueFactory<Question, Integer>("Korrekt"));
+        questionCol.setCellValueFactory(new PropertyValueFactory<Question, String>("questionT"));
+        totalAnswerCol.setCellValueFactory(new PropertyValueFactory<Question, Integer>("possibleAnswerT"));
+        correctAnswerCol.setCellValueFactory(new PropertyValueFactory<Question, Integer>("indexOfCorrectAnswerT"));
 
         // overview.setItems(data);
 

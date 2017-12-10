@@ -27,17 +27,19 @@ public class Question
     private SimpleIntegerProperty amount;
 
     private SimpleIntegerProperty correct;
+
     Question(String frage, List<String> answer, String loesung)
     {
         this.frage = new SimpleStringProperty(frage);
         this.loesung = new SimpleStringProperty(loesung);
-        for(String i: answer)
+        for (String i : answer)
         {
             this.answer.add(new SimpleStringProperty(i));
         }
         this.amount = new SimpleIntegerProperty(0);
         this.correct = new SimpleIntegerProperty(0);
     }
+
     public Question(String frage, String eins, String zwei, String drei, String vier, String loesung)
     {
         this.frage = new SimpleStringProperty(frage);
@@ -53,20 +55,17 @@ public class Question
         this.amount = new SimpleIntegerProperty(0);
         this.correct = new SimpleIntegerProperty(0);
     }
+
+    @Override
     public String toString()
     {
         return frage.get();
     }
+
     public void addAnswer(String a)
     {
         answer.add(new SimpleStringProperty(a));
     }
-
-//    @Override
-//    public String toString()
-//    {
-//        return frage + " Antworten: " + amount + " davon richtig: " + correct;
-//    }
 
     public ObservableList<String> getQA()
     {
@@ -77,10 +76,12 @@ public class Question
         }
         return t;
     }
+
     public String getFrage()
     {
         return frage.get();
     }
+
     public int getAmount()
     {
         return amount.get();
@@ -113,12 +114,12 @@ public class Question
 
     public void setcorrect()
     {
-        this.correct.set(correct.get()+1);
+        this.correct.set(correct.get() + 1);
     }
 
     public void increaseamount()
     {
-        this.amount.set(amount.get()+1);
+        this.amount.set(amount.get() + 1);
     }
 
     public void clear()

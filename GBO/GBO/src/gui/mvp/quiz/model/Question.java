@@ -1,5 +1,8 @@
 package gui.mvp.quiz.model;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class Question
 {
     private String question;
@@ -11,6 +14,20 @@ public class Question
     private int correctCounter;
 
     private int amount;
+
+    // Für TableView
+    private SimpleStringProperty questionT;
+
+    private SimpleStringProperty possibleAnswersT;
+
+    private SimpleIntegerProperty indexOfCorrectAnswerT;
+
+    Question(String questionT, String possibleAnswersT, int indexOfCorrectAnswerT)
+    {
+        this.questionT = new SimpleStringProperty(questionT);
+        this.possibleAnswersT = new SimpleStringProperty(possibleAnswersT);
+        this.indexOfCorrectAnswerT = new SimpleIntegerProperty(indexOfCorrectAnswerT);
+    }
 
     // weitere Attribute nach Bedarf
     public Question(String question, String[] possibleAnswers, int indexOfCorrectAnswer)
@@ -25,6 +42,44 @@ public class Question
         this.indexOfCorrectAnswer = indexOfCorrectAnswer;
     }
 
+    // Getter TableView
+    public String getQuestionT()
+    {
+        return questionT.get();
+    }
+
+    public String getPossibleAnswersT()
+    {
+        return possibleAnswersT.get();
+    }
+
+    public int getIndexofCorrectAnswerT()
+    {
+        return indexOfCorrectAnswerT.get();
+    }
+
+    // Setter TableView
+    public void setQuestionT(SimpleStringProperty questionT)
+    {
+        this.questionT = questionT;
+    }
+
+    public void setPossibleAnswersT(SimpleStringProperty possibleAnswersT)
+    {
+        this.possibleAnswersT = possibleAnswersT;
+    }
+
+    public void setIndexOfCorrectAnswerT(int indexOfCorrectAnswerT)
+    {
+        this.indexOfCorrectAnswerT = new SimpleIntegerProperty(indexOfCorrectAnswerT);
+    }
+
+    public int getAmount()
+    {
+        return amount;
+    }
+
+    // Old
     public String getQuestion()
     {
         return question;
@@ -48,7 +103,6 @@ public class Question
         {
             correctCounter++;
         }
-        // this.amount.set(amount.get() + 1);
     }
 
     public void reset()

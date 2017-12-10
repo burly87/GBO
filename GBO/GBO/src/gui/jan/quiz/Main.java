@@ -24,35 +24,35 @@ public class Main extends Application
     @Override
     public void start(Stage mainStage) throws Exception
     {
-        Model m = new Model();
-        MainView v;
+        Model model = new Model();
+        MainView view;
 
-        MainPresenter p = new MainPresenter();
-        DetailPresenter fp = new DetailPresenter();
-        OverviewPresenter sp = new OverviewPresenter();
-        EditPresenter ep = new EditPresenter();
-        fp.setModel(m);
-        sp.setModel(m);
-        ep.setModel(m);
-        ep.setStage(mainStage);
+        MainPresenter mainPresenter = new MainPresenter();
+        DetailPresenter detailPresenter = new DetailPresenter();
+        OverviewPresenter overviewPresenter = new OverviewPresenter();
+        EditPresenter editPresenter = new EditPresenter();
+        detailPresenter.setModel(model);
+        overviewPresenter.setModel(model);
+        editPresenter.setModel(model);
+        editPresenter.setStage(mainStage);
 
-        DetailView fv = new DetailView(fp);
-        OverviewView sv = new OverviewView(sp);
-        EditView ev = new EditView(ep);
-        WaitView wv = new WaitView(ep);
+        DetailView detailView = new DetailView(detailPresenter);
+        OverviewView overviewView = new OverviewView(overviewPresenter);
+        EditView editView = new EditView(editPresenter);
+        WaitView waitView = new WaitView(editPresenter);
 
-        fp.setFirstView(fv);
-        sp.setSecondView(sv);
-        ep.setEditView(ev);
-        ep.setWaitView(wv);
+        detailPresenter.setFirstView(detailView);
+        overviewPresenter.setSecondView(overviewView);
+        editPresenter.setEditView(editView);
+        editPresenter.setWaitView(waitView);
 
-        v = new MainView(p);
-        p.setFirstPresenter(fp);
-        p.setSecondPresenter(sp);
-        p.setView(v);
-        p.setEditPresenter(ep);
+        view = new MainView(mainPresenter);
+        mainPresenter.setFirstPresenter(detailPresenter);
+        mainPresenter.setSecondPresenter(overviewPresenter);
+        mainPresenter.setView(view);
+        mainPresenter.setEditPresenter(editPresenter);
 
-        Scene scene = new Scene(v.ui(), 400, 200);
+        Scene scene = new Scene(view.ui(), 400, 200);
 
         mainStage.setScene(scene);
         mainStage.show();

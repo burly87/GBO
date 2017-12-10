@@ -1,6 +1,10 @@
 package gui.mvp.quiz.model;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Model
 {
@@ -9,6 +13,22 @@ public class Model
     private int currentIndex;
 
     private int lastSelectedIndex;
+
+    private ObservableList<Question> list = FXCollections.observableArrayList();
+
+    public ObservableList<Question> getResult()
+    {
+        list.clear();
+
+        for (Question i : container)
+        {
+            List<String> t = new ArrayList<String>();
+            t.add(i.toString());
+            t.add(String.valueOf(i.getAmount()));
+            list.add(i);
+        }
+        return list;
+    }
 
     public Model()
     {
@@ -66,26 +86,5 @@ public class Model
     {
         return lastSelectedIndex;
     }
-
-    /* Statistik */
-    // public int getCorrect()
-    // {
-    // return question.getCorrect();
-    // }
-    //
-    // public void incCorrect()
-    // {
-    // question.incCorrect();
-    // }
-    //
-    // public int getAmount()
-    // {
-    // return question.getAmount();
-    // }
-    //
-    // public void incAmount()
-    // {
-    // question.incAmount();
-    // }
 
 }

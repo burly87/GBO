@@ -38,7 +38,7 @@ public class Main extends Application
         QuizView quizView = new QuizView(quizPresenter);
 
         OverviewPresenter overviewPresenter = new OverviewPresenter();
-        OverviewView overviewView = new OverviewView();
+        OverviewView overviewView = new OverviewView(overviewPresenter);
 
         // Klassen verbinden und setzen
         overviewPresenter.setView(overviewView);

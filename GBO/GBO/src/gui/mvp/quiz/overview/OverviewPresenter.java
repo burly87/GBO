@@ -2,6 +2,7 @@ package gui.mvp.quiz.overview;
 
 import gui.mvp.quiz.model.Model;
 import gui.mvp.quiz.model.Question;
+import javafx.scene.layout.Pane;
 
 public class OverviewPresenter
 {
@@ -46,8 +47,14 @@ public class OverviewPresenter
         view.initTextField();
     }
 
+    public Pane initView()
+    {
+        return view.OverviewViewInit(model.getResult());
+    }
+
     public Question[] getContent()
     {
+
         return model.getQuestionList().toArray(new Question[model.getQuestionList().size()]);
     }
 

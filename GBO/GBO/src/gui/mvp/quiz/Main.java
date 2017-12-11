@@ -1,5 +1,7 @@
 package gui.mvp.quiz;
 
+import gui.mvp.quiz.editor.EditorPresenter;
+import gui.mvp.quiz.editor.EditorView;
 import gui.mvp.quiz.game.QuizPresenter;
 import gui.mvp.quiz.game.QuizView;
 import gui.mvp.quiz.main.MainPresenter;
@@ -40,17 +42,23 @@ public class Main extends Application
         OverviewPresenter overviewPresenter = new OverviewPresenter();
         OverviewView overviewView = new OverviewView(overviewPresenter);
 
+        EditorPresenter editorPresenter = new EditorPresenter();
+        EditorView editorView = new EditorView();
+
         // Klassen verbinden und setzen
         overviewPresenter.setView(overviewView);
         overviewPresenter.setModel(model);
         overviewView.setPresenter(overviewPresenter);
-        overviewView.initTextField();
 
         quizPresenter.setView(quizView);
         quizPresenter.setModel(model);
         quizView.initView();
 
         mainView.setPresenter(mainPresenter);
+
+        editorPresenter.setView(editorView);
+        editorPresenter.setModel(model);
+        editorView.setPresenter(editorPresenter);
 
         mainPresenter.setView(mainView);
         mainPresenter.setOverviewPresenter(overviewPresenter);

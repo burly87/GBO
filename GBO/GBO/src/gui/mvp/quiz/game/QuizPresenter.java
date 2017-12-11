@@ -24,11 +24,6 @@ public class QuizPresenter
         return view.getQuizView();
     }
 
-    // public void setMainPresenter(MainPresenter mainPresenter)
-    // {
-    // this.mainPresenter = mainPresenter;
-    // }
-
     public void setModel(Model model)
     {
         this.model = model;

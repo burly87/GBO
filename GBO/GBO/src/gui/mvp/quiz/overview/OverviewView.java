@@ -20,41 +20,34 @@ public class OverviewView extends VBox
 
     private TableColumn<Question, String> questionCol;
 
-    private TableColumn<Question, Integer> totalAnswerCol;
+    private TableColumn<Question, Number> totalAnswerCol;
 
-    private TableColumn<Question, Integer> correctAnswerCol;
+    private TableColumn<Question, Number> correctAnswerCol;
 
     private Button delete;
 
     private Pane pane;
-
-    // ObservableList<Question> data;
 
     public OverviewView(OverviewPresenter overviewPresenter)
     {
         this.presenter = overviewPresenter;
     }
 
-    public Pane OverviewViewInit(ObservableList<Question> observableList)
+    public Pane overviewViewInit(ObservableList<Question> observableList)
     {
-        // data = FXCollections.observableArrayList(new Question(question,
-        // possibleAnswers, indexOfCorrectAnswer));
 
-        text = new Label("Übersicht");
+        text = new Label("\u00dcbersicht");
 
-        overview = new TableView<Question>(observableList);// data
-        questionCol = new TableColumn<Question, String>("Frage");
-        totalAnswerCol = new TableColumn<Question, Integer>("Antworten");
-        correctAnswerCol = new TableColumn<Question, Integer>("Korrekt");
+        overview = new TableView<Question>(observableList);
+        questionCol = new TableColumn("Frage");
+        totalAnswerCol = new TableColumn("Antworten");
+        correctAnswerCol = new TableColumn("Korrekt");
 
-        // Column text
-        questionCol.setCellValueFactory(new PropertyValueFactory<Question, String>("questionT"));
-        totalAnswerCol.setCellValueFactory(new PropertyValueFactory<Question, Integer>("possibleAnswerT"));
-        correctAnswerCol.setCellValueFactory(new PropertyValueFactory<Question, Integer>("indexOfCorrectAnswerT"));
+        questionCol.setCellValueFactory(new PropertyValueFactory<Question, String>("question"));
+        totalAnswerCol.setCellValueFactory(new PropertyValueFactory<Question, Number>("amount"));
+        correctAnswerCol.setCellValueFactory(new PropertyValueFactory<Question, Number>("correctCounter"));
 
-        // overview.setItems(data);
-
-        delete = new Button("Ergebnisse löschen");
+        delete = new Button("Ergebnisse l\u00f6schen");
         delete.setOnAction(e -> presenter.delete());
 
         // Ids
@@ -63,6 +56,7 @@ public class OverviewView extends VBox
         questionCol.setId("questionCol");
         totalAnswerCol.setId("totalAnswerCol");
 
+        // TableColumns
         overview.getColumns().add(questionCol);
         overview.getColumns().add(totalAnswerCol);
         overview.getColumns().add(correctAnswerCol);
@@ -76,12 +70,6 @@ public class OverviewView extends VBox
     public void setPresenter(OverviewPresenter overviewPresenter)
     {
         this.presenter = overviewPresenter;
-    }
-
-    public void initTextField()
-    {
-        overview.getItems().clear();
-        overview.getItems().addAll(presenter.getContent());
     }
 
 }

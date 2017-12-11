@@ -1,5 +1,6 @@
 package gui.mvp.quiz.main;
 
+import gui.mvp.quiz.editor.EditorPresenter;
 import gui.mvp.quiz.game.QuizPresenter;
 import gui.mvp.quiz.model.Question;
 import gui.mvp.quiz.overview.OverviewPresenter;
@@ -12,6 +13,8 @@ public class MainPresenter
     private OverviewPresenter overviewPresenter;
 
     private QuizPresenter quizPresenter;
+
+    private EditorPresenter editorPresenter;
 
     public MainPresenter()
     {
@@ -58,6 +61,11 @@ public class MainPresenter
     {
         quizPresenter.showQuestion(question);
         view.setContent(quizPresenter.getView());
+    }
+
+    public void showEditorView()
+    {
+        view.setContent(editorPresenter.getView()); // Nullpointer HERE
     }
 
     public void start()

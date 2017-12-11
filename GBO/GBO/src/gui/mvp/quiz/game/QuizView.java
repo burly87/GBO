@@ -15,7 +15,7 @@ public class QuizView
 
     private Button answerBtn;
 
-    private Pane pane; // überliegende Pane
+    private Pane pane; // Ueberliegende Pane
 
     private Pane aPane; // Frage, antworten, answerBtn
 

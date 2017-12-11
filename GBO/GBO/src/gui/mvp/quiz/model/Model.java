@@ -37,6 +37,18 @@ public class Model
         lastSelectedIndex = -1;
     }
 
+    public void deleteQuestion(Question q)
+    {
+        container.remove(q);
+    }
+
+    public void replaceQuestion(Question old, Question n)
+    {
+        int i = container.indexOf(old);
+        container.remove(old);
+        container.add(i, n);
+    }
+
     public void addQuestion(Question q)
     {
         container.add(q);
@@ -85,6 +97,11 @@ public class Model
     public int getLastSelectedIndex()
     {
         return lastSelectedIndex;
+    }
+
+    public void delete(Question question)
+    {
+        container.remove(question);
     }
 
 }

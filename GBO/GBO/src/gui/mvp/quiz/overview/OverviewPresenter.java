@@ -1,5 +1,7 @@
 package gui.mvp.quiz.overview;
 
+import java.util.ArrayList;
+
 import gui.mvp.quiz.model.Model;
 import gui.mvp.quiz.model.Question;
 import javafx.scene.layout.Pane;
@@ -23,7 +25,7 @@ public class OverviewPresenter
 
     public OverviewView getView()
     {
-        view.initTextField();
+        view.overviewViewInit(model.getResult());
         return view;
     }
 
@@ -44,12 +46,23 @@ public class OverviewPresenter
         {
             q.reset();
         }
-        view.initTextField();
+        view.overviewViewInit(model.getResult());
     }
 
     public Pane initView()
     {
-        return view.OverviewViewInit(model.getResult());
+        return view.overviewViewInit(model.getResult());
+    }
+
+    public ArrayList<Question> showAnswers()
+    {
+        ArrayList<Question> answers = new ArrayList<>();
+
+        for (int i = 0; i < model.getQuestionList().size(); i++)
+        {
+            answers.add(model.getQuestionList().get(i));
+        }
+        return answers;
     }
 
     public Question[] getContent()

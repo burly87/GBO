@@ -23,34 +23,39 @@ public class MainView extends BorderPane
 
         Button start = new Button("Quiz starten!");
         Button weiter = new Button("Quiz fortsetzen!");
-        Button overview = new Button("Überblick!");
+        Button overview = new Button("\u00dcberblick!");
+        Button edit = new Button("Quiz editieren!");
 
         // zwischen Views hinundherschalten
         start.setOnAction(e -> start());
         weiter.setOnAction(e -> nextQ());
         overview.setOnAction(e -> overview());
+        edit.setOnAction(e -> editorList());
 
         overview.setId("overview");
 
-        topArea.getChildren().addAll(start, weiter, overview);
+        topArea.getChildren().addAll(start, weiter, overview, edit);
         bPane.setTop(topArea);
     }
 
     private void overview()
     {
         mainPresenter.showOverviewView();
-        // overviewPresenter.initView();
     }
 
     public void start()
     {
         mainPresenter.showQuiz(true);
-        // mainPresenter.start();
     }
 
     public void nextQ()
     {
         mainPresenter.showQuiz(false);
+    }
+
+    public void editorList()
+    {
+        mainPresenter.showEditorView();
     }
 
     public void setPresenter(MainPresenter mainP)

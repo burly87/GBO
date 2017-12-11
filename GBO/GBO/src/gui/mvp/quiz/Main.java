@@ -40,7 +40,7 @@ public class Main extends Application
         QuizView quizView = new QuizView(quizPresenter);
 
         OverviewPresenter overviewPresenter = new OverviewPresenter();
-        OverviewView overviewView = new OverviewView(overviewPresenter);
+        OverviewView overviewView = new OverviewView();
 
         EditorPresenter editorPresenter = new EditorPresenter();
         EditorView editorView = new EditorView();
@@ -49,6 +49,7 @@ public class Main extends Application
         overviewPresenter.setView(overviewView);
         overviewPresenter.setModel(model);
         overviewView.setPresenter(overviewPresenter);
+        overviewView.initList();
 
         quizPresenter.setView(quizView);
         quizPresenter.setModel(model);
@@ -64,6 +65,7 @@ public class Main extends Application
         mainPresenter.setOverviewPresenter(overviewPresenter);
         mainPresenter.setQuizPresenter(quizPresenter);
         mainPresenter.start();
+        mainPresenter.init(quizPresenter, overviewPresenter, editorPresenter, mainView);
 
         return mainPresenter;
     }

@@ -16,8 +16,6 @@ public class EditorView extends VBox
 {
     private EditorPresenter presenter;
 
-    private Label label;
-
     private ListView<Question> editorList;
 
     private Button addQuestion;
@@ -26,16 +24,14 @@ public class EditorView extends VBox
 
     private Button deleteQuestion;
 
-    private HBox questionButtons;
-
     public EditorView()
     {
-        label = new Label("Editor");
+        Label label = new Label("Editor");
         editorList = new ListView<>();
         addQuestion = new Button("Frage hinzuf\u00fcgen");
         editQuestion = new Button("Frage editieren");
         deleteQuestion = new Button("Frage l\u00f6schen");
-        questionButtons = new HBox();
+        HBox questionButtons = new HBox();
 
         addQuestion.setOnAction(e -> add());
         editQuestion.setOnAction(e -> edit());
@@ -51,12 +47,14 @@ public class EditorView extends VBox
         questionButtons.getChildren().add(deleteQuestion);
 
         this.getChildren().addAll(label, editorList, questionButtons);
+
     }
 
     public void showSelectedDialog()
     {
         Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setHeaderText("Keine Frage ausgew\u00fe4hlt");
+        alert.setHeaderText("");
+        alert.setContentText("Keine Frage ausgew\u00e4hlt");
         alert.showAndWait();
     }
 

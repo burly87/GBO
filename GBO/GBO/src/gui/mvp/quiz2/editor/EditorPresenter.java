@@ -1,45 +1,17 @@
-package gui.mvp.quiz.editor;
+package gui.mvp.quiz2.editor;
 
-import gui.mvp.quiz.model.Model;
-import gui.mvp.quiz.model.Question;
+import gui.mvp.quiz2.model.Model;
+import gui.mvp.quiz2.model.Question;
 
 public class EditorPresenter
 {
 
-    private Model model;
+    private Model m;
 
     private EditorView view;
 
     public EditorPresenter()
     {
-    }
-
-    public EditorView getView()
-    {
-        view.initList();
-        return view;
-    }
-
-    public void setModel(Model mo)
-    {
-        model = mo;
-    }
-
-    public void setView(EditorView ev)
-    {
-        view = ev;
-    }
-
-    // -------------
-
-    public void addQuestion(Question q)
-    {
-        model.addQuestion(q);
-    }
-
-    public void changeQuestion(Question old, Question n)
-    {
-        model.replaceQuestion(old, n);
     }
 
     public void deleteQuestion(Question q)
@@ -58,10 +30,26 @@ public class EditorPresenter
     {
         if (delete)
         {
-            model.deleteQuestion(q);
+            m.deleteQuestion(q);
             view.initList();
         }
 
+    }
+
+    public void addQuestion(Question q)
+    {
+        m.addQuestion(q);
+    }
+
+    public void changeQuestion(Question old, Question n)
+    {
+        m.replaceQuestion(old, n);
+    }
+
+    public EditorView getView()
+    {
+        view.initList();
+        return view;
     }
 
     public void showEdit(Question q)
@@ -86,9 +74,19 @@ public class EditorPresenter
         view.initList();
     }
 
+    public void setModel(Model mo)
+    {
+        m = mo;
+    }
+
+    public void setView(EditorView ev)
+    {
+        view = ev;
+    }
+
     public Question[] getQuestions()
     {
-        return model.getQuestionList().toArray(new Question[model.getQuestionList().size()]);
+        return m.getQuestList().toArray(new Question[m.getQuestList().size()]);
 
     }
 }

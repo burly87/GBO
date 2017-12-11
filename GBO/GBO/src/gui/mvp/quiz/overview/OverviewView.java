@@ -1,13 +1,10 @@
 package gui.mvp.quiz.overview;
 
 import gui.mvp.quiz.model.Question;
-import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class OverviewView extends VBox
@@ -26,26 +23,19 @@ public class OverviewView extends VBox
 
     private Button delete;
 
-    private Pane pane;
-
-    public OverviewView(OverviewPresenter overviewPresenter)
-    {
-        this.presenter = overviewPresenter;
-    }
-
-    public Pane overviewViewInit(ObservableList<Question> observableList)
+    public OverviewView()
     {
 
         text = new Label("\u00dcbersicht");
 
-        overview = new TableView<Question>(observableList);
+        overview = new TableView();
         questionCol = new TableColumn("Frage");
         totalAnswerCol = new TableColumn("Antworten");
-        correctAnswerCol = new TableColumn("Korrekt");
+        correctAnswerCol = new TableColumn("Richtig");
 
-        questionCol.setCellValueFactory(new PropertyValueFactory<Question, String>("question"));
-        totalAnswerCol.setCellValueFactory(new PropertyValueFactory<Question, Number>("amount"));
-        correctAnswerCol.setCellValueFactory(new PropertyValueFactory<Question, Number>("correctCounter"));
+        questionCol.setCellValueFactory(item -> item.getValue().questionProp());
+        totalAnswerCol.setCellValueFactory(item -> item.getValue().amountProp());
+        correctAnswerCol.setCellValueFactory(item -> item.getValue().correctCountProp());
 
         delete = new Button("Ergebnisse l\u00f6schen");
         delete.setOnAction(e -> presenter.delete());
@@ -63,13 +53,17 @@ public class OverviewView extends VBox
 
         this.getChildren().addAll(text, overview, delete);
 
-        return pane;
-
     }
 
     public void setPresenter(OverviewPresenter overviewPresenter)
     {
         this.presenter = overviewPresenter;
+    }
+
+    public void initList()
+    {
+        overview.getItems().clear();
+        overview.getItems().addAll(presenter.getContent());
     }
 
 }

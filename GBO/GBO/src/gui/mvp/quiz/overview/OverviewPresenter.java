@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import gui.mvp.quiz.model.Model;
 import gui.mvp.quiz.model.Question;
-import javafx.scene.layout.Pane;
 
 public class OverviewPresenter
 {
@@ -25,7 +24,7 @@ public class OverviewPresenter
 
     public OverviewView getView()
     {
-        view.overviewViewInit(model.getResult());
+        view.initList();
         return view;
     }
 
@@ -46,12 +45,7 @@ public class OverviewPresenter
         {
             q.reset();
         }
-        view.overviewViewInit(model.getResult());
-    }
-
-    public Pane initView()
-    {
-        return view.overviewViewInit(model.getResult());
+        view.initList();
     }
 
     public ArrayList<Question> showAnswers()

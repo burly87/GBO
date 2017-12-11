@@ -1,16 +1,19 @@
 package gui.mvp.quiz.model;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class Question
 {
-    private String question;
+    private SimpleStringProperty question;
 
     private String[] possibleAnswers;
 
     private int indexOfCorrectAnswer;
 
-    private int correctCounter;
+    private SimpleIntegerProperty correctCounter;
 
-    private int amount;
+    private SimpleIntegerProperty amount;
 
     // weitere Attribute nach Bedarf
     public Question(String question, String[] possibleAnswers, int indexOfCorrectAnswer)
@@ -20,21 +23,43 @@ public class Question
             throw new IllegalArgumentException("out of index");
         }
 
-        this.question = question;
+        correctCounter = new SimpleIntegerProperty();
+        amount = new SimpleIntegerProperty();
+
+        this.question = new SimpleStringProperty(question);
         this.possibleAnswers = possibleAnswers;
         this.indexOfCorrectAnswer = indexOfCorrectAnswer;
 
     }
 
+    public String getQuestion()
+    {
+        return question.get();
+    }
+
+    public SimpleStringProperty questionProp()
+    {
+        return question;
+    }
+
     public int getAmount()
+    {
+        return amount.get();
+    }
+
+    public SimpleIntegerProperty amountProp()
     {
         return amount;
     }
 
-    // Old
-    public String getQuestion()
+    public int getCorrectCounter()
     {
-        return question;
+        return correctCounter.get();
+    }
+
+    public SimpleIntegerProperty correctCountProp()
+    {
+        return correctCounter;
     }
 
     public String[] getPossibleAnswers()
@@ -47,20 +72,21 @@ public class Question
         return indexOfCorrectAnswer;
     }
 
-    // weitere Methoden nach Bedarf
     public void incAmount(boolean correct) // increase
     {
-        amount++;
+        amount.set(amount.get() + 1);
+        ;
         if (correct)
         {
-            correctCounter++;
+            correctCounter.set(correctCounter.get() + 1);
+            ;
         }
     }
 
     public void reset()
     {
-        amount = 0;
-        correctCounter = 0;
+        amount.set(0);
+        correctCounter.set(0);
     }
 
     // @Override

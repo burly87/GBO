@@ -21,6 +21,15 @@ public class MainPresenter
     }
 
     // init
+
+    public void init(QuizPresenter qp, OverviewPresenter op, EditorPresenter ep, MainView v)
+    {
+        quizPresenter = qp;
+        overviewPresenter = op;
+        editorPresenter = ep;
+        view = v;
+    }
+
     public void setOverviewPresenter(OverviewPresenter overviewPresenter)
     {
         this.overviewPresenter = overviewPresenter;
@@ -35,7 +44,11 @@ public class MainPresenter
     {
         this.view = view;
     }
-    // END: init
+
+    public Pane getView()
+    {
+        return view.getView();
+    }
 
     public void showQuiz(boolean reset)
     {
@@ -44,11 +57,6 @@ public class MainPresenter
             quizPresenter.reset();
         }
         view.setContent(quizPresenter.getView());
-    }
-
-    public Pane getView()
-    {
-        return view.getView();
     }
 
     public void showOverviewView()

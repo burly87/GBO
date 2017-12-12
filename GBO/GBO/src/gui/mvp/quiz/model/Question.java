@@ -89,10 +89,9 @@ public class Question
         correctCounter.set(0);
     }
 
-    // @Override
-    // public String toString()
-    // {
-    // return question + " (Antworten: " + amount + ", davon richtig: " +
-    // correctCounter + ")";
-    // }
+    @Override
+    public String toString()
+    {
+        return question.get();
+    }
 }

@@ -12,6 +12,15 @@ public class Main extends Application
     public void start(Stage stage) throws Exception
     {
         Pane root = new Pane();
+
+        SinusPresenter sinusPresenter = new SinusPresenter();
+        SinusView sinusView = new SinusView();
+        SinusModel sinusModel = new SinusModel();
+
+        sinusPresenter.setView(sinusView);
+        sinusPresenter.setModel(sinusModel);
+        sinusView.setPresenter(sinusPresenter);
+
         Scene scene = new Scene(root, 600, 400);
         stage.setScene(scene);
         stage.setTitle("Sinus");

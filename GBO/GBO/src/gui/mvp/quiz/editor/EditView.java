@@ -37,7 +37,7 @@ public class EditView extends Stage
         this.editorPresenter = ep;
         this.edit = edit;
 
-        Label l = new Label("Frage:");
+        Label label = new Label("Frage:");
         Button changeBtn = new Button();
 
         if (edit)
@@ -61,7 +61,7 @@ public class EditView extends Stage
         cancelBtn.setOnAction(e -> handleCancel());
         questionField.setId("dialogQuestion");
 
-        root.getChildren().addAll(l, questionField, addAnswerBtn, answerPane, changeBtn, cancelBtn);
+        root.getChildren().addAll(label, questionField, addAnswerBtn, answerPane, changeBtn, cancelBtn);
 
         this.setScene(new Scene(root));
 

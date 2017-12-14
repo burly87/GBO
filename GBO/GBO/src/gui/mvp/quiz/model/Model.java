@@ -84,7 +84,7 @@ public class Model
         }
     }
 
-    public boolean hasNext() // prüfen ob es noch eine question gibt
+    public boolean hasNext()
     {
         return (currentIndex + 1) < container.size();
     }

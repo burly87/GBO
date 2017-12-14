@@ -20,14 +20,14 @@ public class EditorPresenter
         return view;
     }
 
-    public void setModel(Model mo)
+    public void setModel(Model model)
     {
-        model = mo;
+        this.model = model;
     }
 
-    public void setView(EditorView ev)
+    public void setView(EditorView editorView)
     {
-        view = ev;
+        this.view = editorView;
     }
 
     // -------------

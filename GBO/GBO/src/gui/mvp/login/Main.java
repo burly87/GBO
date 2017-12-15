@@ -6,11 +6,13 @@ import javafx.stage.Stage;
 
 public class Main extends Application
 {
+    @Override
     public void start(Stage primaryStage)
     {
         Presenter p = new Presenter();
         View v = new View(p);
         v.initView();
+
         Model m = new Model();
         p.setView(v);
         p.setModel(m);

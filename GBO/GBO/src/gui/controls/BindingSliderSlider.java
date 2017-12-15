@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 public class BindingSliderSlider extends Application
 {
+    @Override
     public void start(Stage primaryStage)
     {
         Slider slider1 = new Slider(0, 100, 50);

@@ -1,24 +1,32 @@
 package gui.mvp.login;
 
-import javafx.event.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.layout.*;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 
 public class View
 {
     private Presenter presenter;
-    
+
     private GridPane pane;
+
     private TextField loginName;
+
     private PasswordField password;
+
     private Label status;
-    
+
     public View(Presenter presenter)
     {
         this.presenter = presenter;
     }
-        
+
     public void initView()
     {
         pane = new GridPane();
@@ -36,13 +44,13 @@ public class View
         pane.add(b, 0, 2, 2, 1);
         status = new Label();
         pane.add(status, 0, 3, 2, 1);
-        
+
         EventHandler<ActionEvent> h = e -> handle();
         loginName.setOnAction(h);
         password.setOnAction(h);
         b.setOnAction(h);
     }
-    
+
     private void handle()
     {
         String name = loginName.getText();
@@ -51,18 +59,18 @@ public class View
         pw = pw.trim();
         presenter.login(name, pw);
     }
-    
+
     public Pane getUI()
     {
         return pane;
     }
-    
+
     public void resetInput()
     {
         loginName.setText("");
         password.setText("");
     }
-    
+
     public void showOkayMessage()
     {
         status.setText("Login erfolgreich.");

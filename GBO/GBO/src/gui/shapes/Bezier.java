@@ -7,8 +7,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.CubicCurve;
-import javafx.scene.shape.Line;
-import javafx.scene.shape.StrokeLineCap;
 import javafx.stage.Stage;
 
 public class Bezier extends Application
@@ -49,8 +47,6 @@ public class Bezier extends Application
         bezier.setEndX(300.0f);
         bezier.setEndY(50.0f);
 
-        Line line = connect(start, bezier);
-
         bezier.setStroke(Color.BLACK);
         bezier.setFill(null);
         bezier.setStrokeWidth(3);
@@ -58,7 +54,6 @@ public class Bezier extends Application
         bezier.toFront();
 
         root.getChildren().add(bezier);
-        root.getChildren().add(line);
         root.getChildren().addAll(start, end, control1, control2);
     }
 
@@ -90,21 +85,6 @@ public class Bezier extends Application
             orgSceneY = t.getSceneY();
         });
         return circle;
-    }
-
-    private Line connect(Circle c1, CubicCurve c2)
-    {
-        Line line = new Line();
-
-        line.startXProperty().bind(c1.centerXProperty());
-        line.startYProperty().bind(c1.centerYProperty());
-        line.endXProperty().bind(c2.endXProperty());
-        line.endYProperty().bind(c2.endYProperty());
-
-        line.setStrokeWidth(3);
-        line.setStrokeLineCap(StrokeLineCap.ROUND);
-
-        return line;
     }
 
     public static void main(String[] args)

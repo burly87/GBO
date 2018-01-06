@@ -1,4 +1,4 @@
-package gui.dragndrop;
+package gui.shapes;
 
 import javafx.application.Application;
 import javafx.beans.property.DoubleProperty;
@@ -13,7 +13,7 @@ import javafx.scene.shape.CubicCurve;
 import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
 
-public class DragDropTest extends Application
+public class BezierDragAndDrop extends Application
 {
 
     private Anchor start, end, control1, control2;

@@ -251,55 +251,6 @@ public class CountryInfo extends Application
             return decimalFormat(Math.round(var / 1000.0) * 1000);
         }
         return decimalFormat(var);
-        //
-        // if (var >= 1000000l && var <= 999999999999l &&
-        // !checkBox.isSelected())
-        // {
-        // long temp = (var / 100000l) % 10;
-        // if (temp >= 5)
-        // {
-        // temp = (var / 1000000l) + 1;
-        // str = Long.toString(temp) + " Mill.";
-        // }
-        // else
-        // {
-        // temp = (var / 1000000l);
-        // str = Long.toString(temp) + " Mill.";
-        // }
-        // }
-        // else if (var >= 1000l && var <= 999999l && !checkBox.isSelected())
-        // {
-        // long temp = (var / 100l) % 10;
-        // if (temp >= 5)
-        // {
-        // temp = (var / 1000l) + 1;
-        // str = Long.toString(temp) + ".000";
-        // }
-        // else
-        // {
-        // temp = (var / 1000l);
-        // str = Long.toString(temp) + ".000";
-        // }
-        // }
-        // // else if (var >= 100 && var <= 999 && !checkBox.isSelected())
-        // // {
-        // // long temp = var;
-        // // if (densityTemp % (long) densityTemp > 0)
-        // // {
-        // // temp = var + 1;
-        // // str = Long.toString(temp);
-        // // }
-        // // else
-        // // {
-        // // temp = var;
-        // // str = Long.toString(temp);
-        // // }
-        // // }
-        // else
-        // {
-        // str = decimalFormat(var);
-        // }
-        // return str;
 
     }
 

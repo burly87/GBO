@@ -1,4 +1,4 @@
-package gui.shapes;
+package gui.Uebung11;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -41,7 +41,7 @@ public class DrawingLines extends Application
         btnBox = new HBox();
 
         lineNmb = FXCollections.observableArrayList(1d, 2d, 3d, 4d, 5d, 6d, 7d, 8d, 9d);
-        lineCol = FXCollections.observableArrayList(Color.BLUE, Color.RED, Color.GREEN);
+        lineCol = FXCollections.observableArrayList(Color.BLUE, Color.RED, Color.GREEN, Color.GOLD);
 
         lineSize = new ComboBox(lineNmb);
         lineSize.setValue(1d);
@@ -82,9 +82,7 @@ public class DrawingLines extends Application
         drawPane.getChildren().add(line);
 
         if (newX > 0 && newX < drawPane.getScene().getWidth())
-        {
             x = newX;
-        }
 
         if (newY > 0 && newY < drawPane.getScene().getHeight())
             y = newY;

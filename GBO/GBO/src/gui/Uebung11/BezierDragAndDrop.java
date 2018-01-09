@@ -1,4 +1,4 @@
-package gui.shapes;
+package gui.Uebung11;
 
 import javafx.application.Application;
 import javafx.beans.property.DoubleProperty;

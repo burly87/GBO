@@ -1,4 +1,4 @@
-package gui.shapes;
+package gui.Uebung11;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -24,6 +24,13 @@ public class Aufgabe3 extends Application
         start = new Circle(50, 50, 10, Color.BLACK);
         start.setOnMouseDragged(mouseDragged);
         end.setOnMouseDragged(pkt2);
+
+        for (int i = 1; i < 10; i++)
+        {
+            Circle p = new Circle();
+
+        }
+
         p1 = new Circle(100, 200, 10, Color.BLACK);
         p2 = new Circle(250, 200, 10, Color.BLACK);
         p3 = new Circle(300, 200, 10, Color.BLACK);

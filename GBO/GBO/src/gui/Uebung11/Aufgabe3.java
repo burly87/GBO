@@ -32,21 +32,20 @@ public class Aufgabe3 extends Application
         }
 
         p1 = new Circle(100, 200, 10, Color.BLACK);
-        p2 = new Circle(250, 200, 10, Color.BLACK);
-        p3 = new Circle(300, 200, 10, Color.BLACK);
-        p4 = new Circle(400, 200, 10, Color.BLACK);
-        p5 = new Circle(500, 200, 10, Color.BLACK);
-        p6 = new Circle(250, 500, 10, Color.BLACK);
-        p7 = new Circle(100, 300, 10, Color.BLACK);
-        end = new Circle(300, 50, 10, Color.BLACK);
-
         p1.setOnMouseDragged(pkt0);
+        p2 = new Circle(250, 200, 10, Color.BLACK);
         p2.setOnMouseDragged(pkt1);
+        p3 = new Circle(300, 200, 10, Color.BLACK);
         p3.setOnMouseDragged(pkt3);
+        p4 = new Circle(400, 200, 10, Color.BLACK);
         p4.setOnMouseDragged(pkt4);
+        p5 = new Circle(500, 200, 10, Color.BLACK);
         p5.setOnMouseDragged(pkt5);
+        p6 = new Circle(250, 500, 10, Color.BLACK);
         p6.setOnMouseDragged(pkt6);
+        p7 = new Circle(100, 300, 10, Color.BLACK);
         p7.setOnMouseDragged(pkt7);
+        end = new Circle(300, 50, 10, Color.BLACK);
 
         root.getChildren().add(start);
         root.getChildren().add(p1);

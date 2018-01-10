@@ -1,4 +1,4 @@
-package gui.mvp.quiz.model;
+package gui.mvp.quizCopy.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,8 +39,7 @@ public class Model
 
     public void deleteQuestion(Question q)
     {
-        container.indexOf(q);
-        // container.remove(q);
+        container.remove(q);
     }
 
     public void replaceQuestion(Question old, Question n)

@@ -1,4 +1,4 @@
-package gui.mvp.quiz.main;
+package gui.mvp.quizCopy.main;
 
 import gui.mvp.quiz.editor.EditorPresenter;
 import gui.mvp.quiz.game.QuizPresenter;
@@ -19,6 +19,8 @@ public class MainPresenter
     public MainPresenter()
     {
     }
+
+    // init
 
     public void init(QuizPresenter qp, OverviewPresenter op, EditorPresenter ep, MainView v)
     {
@@ -77,21 +79,6 @@ public class MainPresenter
     public void start()
     {
         view.setContent(quizPresenter.getView());
-    }
-
-    public void undo()
-    {
-        editorPresenter.undo();
-    }
-
-    public void redo()
-    {
-        editorPresenter.redo();
-    }
-
-    public void inputOld()
-    {
-
     }
 
 }

@@ -1,4 +1,4 @@
-package gui.mvp.quiz.editor;
+package gui.mvp.quizCopy.editor;
 
 import java.util.ArrayList;
 
@@ -137,15 +137,15 @@ public class EditView extends Stage
     private void addAnswer()
     {
         HBox container = new HBox();
-        RadioButton radioBtn = new RadioButton();
+        RadioButton rBtn = new RadioButton();
         TextField txtField = new TextField();
-        Button deleteBtn = new Button("L\u00f6schen");
+        Button btn = new Button("L\u00f6schen");
 
-        deleteBtn.setOnAction(e -> handleDelete(e));
-        radioBtn.setToggleGroup(group);
-        radioBtn.setSelected(true);
+        btn.setOnAction(e -> handleDelete(e));
+        rBtn.setToggleGroup(group);
+        rBtn.setSelected(true);
 
-        container.getChildren().addAll(radioBtn, txtField, deleteBtn);
+        container.getChildren().addAll(rBtn, txtField, btn);
         answerPane.getChildren().add(container);
     }
 

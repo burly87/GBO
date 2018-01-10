@@ -1,4 +1,4 @@
-package gui.mvp.quiz.main;
+package gui.mvp.quizCopy.main;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
@@ -8,8 +8,6 @@ import javafx.scene.layout.Pane;
 public class MainView extends BorderPane
 {
     private BorderPane bPane;
-
-    private Button undo, redo;
 
     private MainPresenter mainPresenter;
 
@@ -27,62 +25,36 @@ public class MainView extends BorderPane
         Button weiter = new Button("Quiz fortsetzen!");
         Button overview = new Button("\u00dcberblick!");
         Button edit = new Button("Quiz editieren!");
-        undo = new Button("R\u00dcckg\u00dcngig!");
-        redo = new Button("Wiederholen!");
 
         // zwischen Views hinundherschalten
         start.setOnAction(e -> start());
         weiter.setOnAction(e -> nextQ());
         overview.setOnAction(e -> overview());
         edit.setOnAction(e -> editorList());
-        undo.setOnAction(e -> undo());
-        redo.setOnAction(e -> redo());
 
         overview.setId("overview");
 
-        undo.setId("undo");
-        redo.setId("redo");
-
-        topArea.getChildren().addAll(start, weiter, overview, edit, undo, redo);
+        topArea.getChildren().addAll(start, weiter, overview, edit);
         bPane.setTop(topArea);
-    }
-
-    private void redo()
-    {
-        mainPresenter.inputOld();
-        mainPresenter.undo();
-    }
-
-    private void undo()
-    {
-        mainPresenter.redo();
     }
 
     private void overview()
     {
-        undo.setDisable(true);
-        redo.setDisable(true);
         mainPresenter.showOverviewView();
     }
 
     public void start()
     {
-        undo.setDisable(true);
-        redo.setDisable(true);
         mainPresenter.showQuiz(true);
     }
 
     public void nextQ()
     {
-        undo.setDisable(true);
-        redo.setDisable(true);
         mainPresenter.showQuiz(false);
     }
 
     public void editorList()
     {
-        undo.setDisable(false);
-        redo.setDisable(false);
         mainPresenter.showEditorView();
     }
 
@@ -98,9 +70,6 @@ public class MainView extends BorderPane
 
     public Pane getView()
     {
-        undo.setDisable(true);
-        redo.setDisable(true);
         return bPane;
     }
-
 }

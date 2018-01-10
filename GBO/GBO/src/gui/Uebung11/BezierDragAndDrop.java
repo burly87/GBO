@@ -70,7 +70,7 @@ public class BezierDragAndDrop extends Application
         // make a node movable
         private void enableDrag()
         {
-            final Delta dragDelta = new Delta();
+            Delta dragDelta = new Delta();
             setOnMousePressed(new EventHandler<MouseEvent>()
             {
                 @Override
@@ -127,7 +127,7 @@ public class BezierDragAndDrop extends Application
             });
         }
 
-        // records relative x and y co-ordinates.
+        // records relative x and y coordinates.
         private class Delta
         {
             double x, y;

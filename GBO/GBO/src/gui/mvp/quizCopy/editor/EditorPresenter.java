@@ -1,6 +1,5 @@
-package gui.mvp.quiz.editor;
+package gui.mvp.quizCopy.editor;
 
-import gui.mvp.quiz.UndoRedoManager;
 import gui.mvp.quiz.model.Model;
 import gui.mvp.quiz.model.Question;
 
@@ -9,19 +8,16 @@ public class EditorPresenter
 
     private Model model;
 
-    private EditorView editorview;
-
-    private UndoRedoManager manager;
+    private EditorView view;
 
     public EditorPresenter()
     {
-        this.manager = new UndoRedoManager();
     }
 
     public EditorView getView()
     {
-        editorview.initList();
-        return editorview;
+        view.initList();
+        return view;
     }
 
     public void setModel(Model mo)
@@ -31,40 +27,10 @@ public class EditorPresenter
 
     public void setView(EditorView ev)
     {
-        editorview = ev;
+        view = ev;
     }
 
-    // ------------- UndoRedo
-
-    public void inputQuestion(String question)
-    {
-        String oldQuestion = model.getQuestion();
-
-    }
-
-    public void canUndo()
-    {
-        manager.canUndo();
-    }
-
-    public void canRedo()
-    {
-        manager.redo();
-    }
-
-    public void undo()
-    {
-        System.out.println("undo ausgefuehrt");
-        manager.undo();
-    }
-
-    public void redo()
-    {
-        System.out.println("redo ausgefuehrt");
-        manager.redo();
-    }
-
-    // ------------- Question add, change, show, delete
+    // -------------
 
     public void addQuestion(Question q)
     {
@@ -80,11 +46,11 @@ public class EditorPresenter
     {
         if (q == null)
         {
-            editorview.showSelectedDialog();
+            view.showSelectedDialog();
         }
         else
         {
-            editorview.showDeleteDialog();
+            view.showDeleteDialog();
         }
     }
 
@@ -93,7 +59,7 @@ public class EditorPresenter
         if (delete)
         {
             model.deleteQuestion(q);
-            editorview.initList();
+            view.initList();
         }
 
     }
@@ -105,11 +71,11 @@ public class EditorPresenter
             EditView ev = new EditView(true, this);
             ev.init(q);
             ev.showAndWait();
-            editorview.initList();
+            view.initList();
         }
         else
         {
-            editorview.showSelectedDialog();
+            view.showSelectedDialog();
         }
     }
 
@@ -117,7 +83,7 @@ public class EditorPresenter
     {
         EditView ev = new EditView(false, this);
         ev.showAndWait();
-        editorview.initList();
+        view.initList();
     }
 
     public Question[] getQuestions()

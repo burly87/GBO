@@ -1,0 +1,4 @@
+Was ist das? {blaues licht; rotes Licht; gelbes Licht; gruenes Licht} 0
+..und was tut das? {es leuchtet rot; es leuchtet blau; es leuchtet gruen; es leuchtet gelb} 1
+Wie lautet die Hauptstadt von Frankreich? {Madrid; Rom; Berlin; Paris}3
+In welchem Jahr wurde der Euro als Bargeld eingeführt? {2000; 2001; 2002; 2003; 1999} 2

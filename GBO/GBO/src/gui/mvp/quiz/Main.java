@@ -45,6 +45,8 @@ public class Main extends Application
         EditorPresenter editorPresenter = new EditorPresenter();
         EditorView editorView = new EditorView();
 
+        UndoRedoManager undoRedoManager = new UndoRedoManager();
+
         // Klassen verbinden und setzen
         overviewPresenter.setView(overviewView);
         overviewPresenter.setModel(model);
@@ -60,6 +62,10 @@ public class Main extends Application
         editorPresenter.setView(editorView);
         editorPresenter.setModel(model);
         editorView.setPresenter(editorPresenter);
+        editorPresenter.setManager(undoRedoManager);
+
+        undoRedoManager.setModel(model);
+        undoRedoManager.setPresenter(editorPresenter);
 
         mainPresenter.setView(mainView);
         mainPresenter.setOverviewPresenter(overviewPresenter);

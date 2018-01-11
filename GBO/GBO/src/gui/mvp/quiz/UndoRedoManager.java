@@ -3,19 +3,46 @@ package gui.mvp.quiz;
 import java.util.ArrayList;
 import java.util.List;
 
+import gui.mvp.quiz.editor.EditorPresenter;
+import gui.mvp.quiz.model.Model;
+import gui.mvp.quiz.model.Question;
 import gui.undoredo.UndoableRedoableAction;
 
 public class UndoRedoManager
 {
+    private Model model;
+
+    private EditorPresenter presenter;
 
     private List<UndoableRedoableAction> actions;
 
+    private ArrayList<Question> undoRedoSaver;
+
+    private ArrayList<Integer> saveIndexOfQuestion;
+
     private int currentPosition;
+
+    public void setModel(Model mo)
+    {
+        model = mo;
+    }
+
+    public void setPresenter(EditorPresenter presenter)
+    {
+        this.presenter = presenter;
+    }
 
     public UndoRedoManager()
     {
         actions = new ArrayList<>();
+        undoRedoSaver = new ArrayList<>();
         currentPosition = 0;
+    }
+
+    public void saveQuestion()
+    {
+        undoRedoSaver.add(presenter.getQuestion());
+        saveIndexOfQuestion.add(presenter.getSelectedIndex());
     }
 
     public void addAction(UndoableRedoableAction action)
@@ -39,6 +66,7 @@ public class UndoRedoManager
     public void undo()
     {
         System.out.println("ManagerUndo");
+
         if (currentPosition > 0)
         {
             currentPosition--;
@@ -98,6 +126,7 @@ public class UndoRedoManager
             manager.redo();
         }
     }
+
 }
 
 class SampleAction implements UndoableRedoableAction

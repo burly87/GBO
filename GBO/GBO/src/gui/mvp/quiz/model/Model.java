@@ -39,8 +39,9 @@ public class Model
 
     public void deleteQuestion(Question q)
     {
-        container.indexOf(q);
-        // container.remove(q);
+        // undoRedoSaver.indexOf(q);
+        // container.indexOf(q);
+        container.remove(q);
     }
 
     public void replaceQuestion(Question old, Question n)

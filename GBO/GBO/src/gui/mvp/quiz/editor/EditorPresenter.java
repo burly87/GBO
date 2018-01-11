@@ -24,6 +24,11 @@ public class EditorPresenter
         return editorview;
     }
 
+    public void setManager(UndoRedoManager m)
+    {
+        this.manager = m;
+    }
+
     public void setModel(Model mo)
     {
         model = mo;
@@ -35,12 +40,6 @@ public class EditorPresenter
     }
 
     // ------------- UndoRedo
-
-    public void inputQuestion(String question)
-    {
-        String oldQuestion = model.getQuestion();
-
-    }
 
     public void canUndo()
     {
@@ -56,12 +55,14 @@ public class EditorPresenter
     {
         System.out.println("undo ausgefuehrt");
         manager.undo();
+        editorview.initList();
     }
 
     public void redo()
     {
         System.out.println("redo ausgefuehrt");
         manager.redo();
+        editorview.initList();
     }
 
     // ------------- Question add, change, show, delete
@@ -78,20 +79,24 @@ public class EditorPresenter
 
     public void deleteQuestion(Question q)
     {
+
         if (q == null)
         {
             editorview.showSelectedDialog();
         }
         else
         {
+
             editorview.showDeleteDialog();
         }
     }
 
+    // delete Question
     public void deleteQuestion(Question q, boolean delete)
     {
         if (delete)
         {
+            manager.saveQuestion();
             model.deleteQuestion(q);
             editorview.initList();
         }
@@ -120,9 +125,20 @@ public class EditorPresenter
         editorview.initList();
     }
 
+    public Question getQuestion()
+    {
+        return editorview.getQuestion();
+
+    }
+
     public Question[] getQuestions()
     {
         return model.getQuestionList().toArray(new Question[model.getQuestionList().size()]);
 
+    }
+
+    public int getSelectedIndex()
+    {
+        return editorview.getSelectedIndex();
     }
 }

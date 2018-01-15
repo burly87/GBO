@@ -27,7 +27,7 @@ public class MainView extends BorderPane
         Button weiter = new Button("Quiz fortsetzen!");
         Button overview = new Button("\u00dcberblick!");
         Button edit = new Button("Quiz editieren!");
-        undo = new Button("R\u00dcckg\u00dcngig!");
+        undo = new Button("R\u00fcckg\u00e4ngig!");
         redo = new Button("Wiederholen!");
 
         // zwischen Views hinundherschalten
@@ -47,15 +47,24 @@ public class MainView extends BorderPane
         bPane.setTop(topArea);
     }
 
+    public void setUndoBtn()
+    {
+        undo.setDisable(false);
+    }
+
+    public void setRedoBtn()
+    {
+        redo.setDisable(false);
+    }
+
     private void redo()
     {
-        mainPresenter.inputOld();
-        mainPresenter.undo();
+        mainPresenter.redo();
     }
 
     private void undo()
     {
-        mainPresenter.redo();
+        mainPresenter.undo();
     }
 
     private void overview()
@@ -81,8 +90,8 @@ public class MainView extends BorderPane
 
     public void editorList()
     {
-        undo.setDisable(false);
-        redo.setDisable(false);
+        // undo.setDisable(false);
+        // redo.setDisable(false);
         mainPresenter.showEditorView();
     }
 

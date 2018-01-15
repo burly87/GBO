@@ -1,6 +1,5 @@
 package gui.mvp.quiz.editor;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 import gui.mvp.quiz.model.Question;
@@ -19,8 +18,6 @@ public class EditorView extends VBox
 
     private ListView<Question> editorList;
 
-    private ArrayList<Question> undoRedoSaver;
-
     private Button addQuestion;
 
     private Button editQuestion;
@@ -29,7 +26,6 @@ public class EditorView extends VBox
 
     public EditorView()
     {
-        undoRedoSaver = new ArrayList<Question>();
 
         Label label = new Label("Editor");
         editorList = new ListView<>();
@@ -83,8 +79,6 @@ public class EditorView extends VBox
 
     public void delete()
     {
-        undoRedoSaver.add(editorList.getSelectionModel().getSelectedItem());
-        // System.out.println(undoRedoSaver);
         presenter.deleteQuestion(editorList.getSelectionModel().getSelectedItem());
     }
 

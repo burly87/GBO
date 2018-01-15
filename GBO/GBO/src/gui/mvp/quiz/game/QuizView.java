@@ -56,7 +56,7 @@ public class QuizView
     public void end()
     {
         aPane.getChildren().clear();
-        question.setText("Endes des Quiz");
+        question.setText("Ende des Quiz");
         answerBtn.setDisable(true);
     }
 

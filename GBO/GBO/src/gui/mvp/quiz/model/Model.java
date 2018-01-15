@@ -39,8 +39,6 @@ public class Model
 
     public void deleteQuestion(Question q)
     {
-        // undoRedoSaver.indexOf(q);
-        // container.indexOf(q);
         container.remove(q);
     }
 
@@ -104,6 +102,22 @@ public class Model
     public void delete(Question question)
     {
         container.remove(question);
+    }
+
+    public void addQuestion(Question question, Integer integer)
+    {
+        container.add(integer, question);
+    }
+
+    public void delete(Integer a)
+    {
+        container.remove(a);
+    }
+
+    public void deleteLast()
+    {
+        container.remove(lastSelectedIndex);
+
     }
 
 }

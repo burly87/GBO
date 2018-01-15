@@ -1,6 +1,7 @@
 package gui.mvp.quiz.editor;
 
-import gui.mvp.quiz.UndoRedoManager;
+import gui.mvp.quiz.main.MainPresenter;
+import gui.mvp.quiz.main.UndoRedoManager;
 import gui.mvp.quiz.model.Model;
 import gui.mvp.quiz.model.Question;
 
@@ -12,6 +13,8 @@ public class EditorPresenter
     private EditorView editorview;
 
     private UndoRedoManager manager;
+
+    private MainPresenter mp;
 
     public EditorPresenter()
     {
@@ -41,11 +44,6 @@ public class EditorPresenter
 
     // ------------- UndoRedo
 
-    public void canUndo()
-    {
-        manager.canUndo();
-    }
-
     public void canRedo()
     {
         manager.redo();
@@ -55,6 +53,7 @@ public class EditorPresenter
     {
         System.out.println("undo ausgefuehrt");
         manager.undo();
+        // mainPresenter.setRedoBtn();
         editorview.initList();
     }
 
@@ -62,6 +61,7 @@ public class EditorPresenter
     {
         System.out.println("redo ausgefuehrt");
         manager.redo();
+        // mainPresenter.setUndoBtn();
         editorview.initList();
     }
 
@@ -79,7 +79,7 @@ public class EditorPresenter
 
     public void deleteQuestion(Question q)
     {
-
+        mp.setUndoBtn();
         if (q == null)
         {
             editorview.showSelectedDialog();
@@ -141,4 +141,10 @@ public class EditorPresenter
     {
         return editorview.getSelectedIndex();
     }
+
+    public void setMainPresenter(MainPresenter mainPresenter)
+    {
+        this.mp = mainPresenter;
+    }
+
 }

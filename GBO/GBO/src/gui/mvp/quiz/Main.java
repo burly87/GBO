@@ -6,6 +6,7 @@ import gui.mvp.quiz.game.QuizPresenter;
 import gui.mvp.quiz.game.QuizView;
 import gui.mvp.quiz.main.MainPresenter;
 import gui.mvp.quiz.main.MainView;
+import gui.mvp.quiz.main.UndoRedoManager;
 import gui.mvp.quiz.model.Model;
 import gui.mvp.quiz.overview.OverviewPresenter;
 import gui.mvp.quiz.overview.OverviewView;
@@ -63,9 +64,11 @@ public class Main extends Application
         editorPresenter.setModel(model);
         editorView.setPresenter(editorPresenter);
         editorPresenter.setManager(undoRedoManager);
+        editorPresenter.setMainPresenter(mainPresenter);
 
         undoRedoManager.setModel(model);
         undoRedoManager.setPresenter(editorPresenter);
+        undoRedoManager.setMainPresenter(mainPresenter);
 
         mainPresenter.setView(mainView);
         mainPresenter.setOverviewPresenter(overviewPresenter);

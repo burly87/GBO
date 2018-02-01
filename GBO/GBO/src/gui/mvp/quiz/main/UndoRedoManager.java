@@ -47,19 +47,21 @@ public class UndoRedoManager
 
     public void saveQuestion()
     {
-        System.out.println("saveQuestion ausgefuehrt. currentPos:" + currentPosition + " " + action);
+        // System.out.println("saveQuestion ausgefuehrt. currentPos:" +
+        // currentPosition + " " + action);
         undoRedoSaver.add(presenter.getQuestion());
         saveIndexOfQuestion.add(presenter.getSelectedIndex());
         action.add(1); // delete
         currentPosition++;
-        System.out.println("saveQuestion ausgefuehrt. currentPos:" + currentPosition + " " + action);
+        // System.out.println("saveQuestion ausgefuehrt. currentPos:" +
+        // currentPosition + " " + action);
     }
 
     public boolean canUndo()
     {
         if (currentPosition >= 0)
         {
-            System.out.println("canUndo() -> mainPresenter.setUndoBtn()");
+            // System.out.println("canUndo() -> mainPresenter.setUndoBtn()");
             mainPresenter.setRedoBtn();
             return true;
         }
@@ -71,7 +73,7 @@ public class UndoRedoManager
     {
         if (currentPosition < action.size())
         {
-            System.out.println("canRedo()");
+            // System.out.println("canRedo()");
             mainPresenter.setUndoBtn();
             return true;
         }
@@ -87,7 +89,8 @@ public class UndoRedoManager
 
             if (action.get(currentPosition) == 1)
             {
-                System.out.println("action.get(currentPosition): " + action.get(currentPosition));
+                // System.out.println("action.get(currentPosition): " +
+                // action.get(currentPosition));
                 model.addQuestion(undoRedoSaver.get(currentPosition), saveIndexOfQuestion.get(currentPosition));
             }
 
@@ -104,7 +107,7 @@ public class UndoRedoManager
 
     public void redo()
     {
-        System.out.println("redo " + action + " " + currentPosition);
+        // System.out.println("redo " + action + " " + currentPosition);
         if (canRedo())
         {
             ++currentPosition;
@@ -117,7 +120,8 @@ public class UndoRedoManager
             else
             {
                 model.addQuestion(undoRedoSaver.get(currentPosition));
-                System.out.println("action " + action + "test " + currentPosition);
+                // System.out.println("action " + action + "test " +
+                // currentPosition);
             }
         }
 

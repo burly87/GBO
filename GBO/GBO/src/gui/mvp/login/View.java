@@ -46,8 +46,8 @@ public class View
         pane.add(status, 0, 3, 2, 1);
 
         EventHandler<ActionEvent> h = e -> handle();
-        loginName.setOnAction(h);
-        password.setOnAction(h);
+        // loginName.setOnAction(h);
+        // password.setOnAction(h);
         b.setOnAction(h);
     }
 

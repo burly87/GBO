@@ -1,8 +1,10 @@
 package gui.Tutorium;
 
 import javafx.application.Application;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputControl;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -15,6 +17,7 @@ public class EingabeControlle extends Application
      * Ebene der Key events arbeiten Besser: TextProperty & ChangeListener
      */
 
+    @Override
     public void start(Stage primaryStage)
     {
         VBox root = new VBox(10);
@@ -29,12 +32,12 @@ public class EingabeControlle extends Application
         primaryStage.show();
     }
 
-    private void textListener(TextField elem, String oldText, String newText)
+    private void textListener(ObservableValue<? extends String> elem, String oldText, String newText)
     {
         System.out.println("wird ausgef�hrt");
         if (!isDigitString(newText))
         {
-            elem.setText(oldText);
+            ((TextInputControl) elem).setText(oldText);
         }
     }
 
@@ -49,16 +52,6 @@ public class EingabeControlle extends Application
 
         }
         return true;
-
-        // try
-        // {
-        // Integer.parseInt(s);
-        // return true;
-        // }
-        // catch (NumberFormatException e)
-        // {
-        // return false;
-        // }
 
     }
 

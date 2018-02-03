@@ -1,11 +1,11 @@
 package gui.mvp.login;
 
-import java.util.*;
+import java.util.HashMap;
 
 public class Model
 {
     private HashMap<String, String> userList;
-    
+
     public Model()
     {
         userList = new HashMap<>();

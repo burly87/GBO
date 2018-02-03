@@ -84,6 +84,11 @@ public class EditorPresenter
         view = ev;
     }
 
+    public Question getQuestion()
+    {
+        return view.getQuestion();
+    }
+
     public Question[] getQuestions()
     {
         return m.getQuestList().toArray(new Question[m.getQuestList().size()]);

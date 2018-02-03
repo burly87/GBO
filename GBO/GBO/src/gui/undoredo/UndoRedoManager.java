@@ -1,10 +1,12 @@
 package gui.undoredo;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UndoRedoManager
 {
     private List<UndoableRedoableAction> actions;
+
     private int currentPosition;
 
     public UndoRedoManager()
@@ -15,62 +17,72 @@ public class UndoRedoManager
 
     public void addAction(UndoableRedoableAction action)
     {
-        for(int i = actions.size() - 1; i >= currentPosition; i--)
+        for (int i = actions.size() - 1; i >= currentPosition; i--)
         {
             actions.remove(i);
         }
         actions.add(action);
         currentPosition++;
     }
-    
+
+    public boolean canUndo()
+    {
+        return currentPosition > 0;
+    }
+
     public void undo()
     {
-        if(currentPosition > 0)
+        if (canUndo())
         {
             currentPosition--;
             actions.get(currentPosition).undo();
         }
     }
-    
+
+    public boolean canRedo()
+    {
+        return currentPosition < actions.size();
+    }
+
     public void redo()
     {
-        if(currentPosition < actions.size())
+        if (canRedo())
         {
             actions.get(currentPosition).redo();
             currentPosition++;
         }
     }
-    
+
     public static void main(String[] args)
     {
         UndoRedoManager manager = new UndoRedoManager();
-        for(int i = 1; i <= 10; i++)
+        for (int i = 1; i <= 10; i++)
         {
             manager.addAction(new SampleAction("action" + i));
         }
-        for(int i = 1; i <= 5; i++)
+        for (int i = 1; i <= 5; i++)
         {
             manager.redo();
         }
-        for(int i = 1; i <= 15; i++)
+        for (int i = 1; i <= 15; i++)
         {
             manager.undo();
         }
-        for(int i = 1; i <= 15; i++)
+        for (int i = 1; i <= 15; i++)
         {
             manager.redo();
         }
-        for(int i = 1; i <= 5; i++)
+        for (int i = 1; i <= 5; i++)
         {
             manager.undo();
         }
         manager.addAction(new SampleAction("new action" + 1));
         manager.addAction(new SampleAction("new action" + 2));
-        for(int i = 1; i <= 15; i++)
+        for (int i = 1; i <= 15; i++)
         {
             manager.undo();
         }
-        for(int i = 1; i <= 15; i++)
+        for (int i = 1; i <= 15; i++)
         {
             manager.redo();
         }
@@ -87,14 +99,16 @@ class SampleAction implements UndoableRedoableAction
         this.name = name;
     }
 
+    @Override
     public void undo()
     {
         System.out.println("undo " + name);
     }
 
+    @Override
     public void redo()
     {
         System.out.println("redo " + name);
     }
-    
+
 }

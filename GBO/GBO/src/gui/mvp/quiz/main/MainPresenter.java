@@ -89,9 +89,14 @@ public class MainPresenter
         editorPresenter.redo();
     }
 
-    public void inputOld()
+    public void setUndoBtn()
     {
+        view.setUndoBtn();
+    }
 
+    public void setRedoBtn()
+    {
+        view.setRedoBtn();
     }
 
 }

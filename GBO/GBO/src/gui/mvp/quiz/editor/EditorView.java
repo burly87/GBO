@@ -26,6 +26,7 @@ public class EditorView extends VBox
 
     public EditorView()
     {
+
         Label label = new Label("Editor");
         editorList = new ListView<>();
         addQuestion = new Button("Frage hinzuf\u00fcgen");
@@ -94,6 +95,16 @@ public class EditorView extends VBox
     public void setPresenter(EditorPresenter editorPresenter)
     {
         this.presenter = editorPresenter;
+    }
+
+    public Question getQuestion()
+    {
+        return editorList.getSelectionModel().getSelectedItem();
+    }
+
+    public int getSelectedIndex()
+    {
+        return editorList.getSelectionModel().getSelectedIndex();
     }
 
 }

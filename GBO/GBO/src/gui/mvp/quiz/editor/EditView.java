@@ -70,7 +70,7 @@ public class EditView extends Stage
     public void init(Question q)
     {
         old = q;
-        questionField.setText(q.getQuestion()); // speicheradresse?^^
+        questionField.setText(q.getQuestion());
 
         for (String s : q.getPossibleAnswers())
         {

@@ -16,7 +16,7 @@ public class Main extends Application
 	{
 		Presenter presenter = initApplication();
 
-		Scene scene = new Scene(view.initView(), 300, 500);
+		Scene scene = new Scene(view.initView(), 700, 500);
 		stage.setScene(scene);
 		stage.setTitle("TableView");
 		stage.show();

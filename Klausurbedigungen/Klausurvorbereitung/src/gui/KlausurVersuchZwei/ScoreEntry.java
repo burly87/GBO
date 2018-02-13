@@ -27,16 +27,20 @@ class ScoreEntry
 			score += 3;
 			goals = gA;
 			enemyGoals = gP;
+			
+			
 			winB = true;
 			wins = 1;
-		} else if (gA == gP)
+		}
+		else if (gA == gP)
 		{
 			score += 1;
 			goals = gA;
 			enemyGoals = gP;
 			drawB = true;
 			draw = 1;
-		} else
+		}
+		else
 		{
 			goals = gA;
 			enemyGoals = gP;
@@ -51,21 +55,15 @@ class ScoreEntry
 			return;
 		}
 		if (se.winB)
-		{
-			goals += goals;
-			enemyGoals += enemyGoals;
+		{			
 			wins++;
 		} 
 		else if (se.drawB)
 		{
-			goals += goals;
-			enemyGoals += enemyGoals;
 			draw++;
 		} 
 		else
 		{
-			goals += goals;
-			enemyGoals += enemyGoals;
 			loss++;
 		}
 		score += se.score;
@@ -79,19 +77,14 @@ class ScoreEntry
 		}
 		if (se.winB)
 		{
-			goals -= goals;            
-            enemyGoals -= enemyGoals;
 			wins--;
 		} 
 		else if (se.drawB)
 		{
-			goals -= goals;            
-            enemyGoals -= enemyGoals;
 			draw--;
 		} 
-		else {
-			goals -= goals;            
-            enemyGoals -= enemyGoals;			
+		else 
+		{
 			loss--;
 		}
 		score -= se.score;

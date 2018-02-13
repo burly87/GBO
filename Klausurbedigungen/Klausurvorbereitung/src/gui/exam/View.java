@@ -58,14 +58,13 @@ public class View
 	{
 		games.getItems().clear();
 		games.getItems().addAll(presenter.setGames());
-		score.getItems().clear();
-		score.getItems().addAll(presenter.setScore());
 	}
 
 	public void deleteMatch()
 	{
 		presenter.deleteMatch(games.getSelectionModel().getSelectedItem());
 		resetView();
+		updateScores();
 	}
 
 	public void updateScores()

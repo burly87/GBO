@@ -25,9 +25,9 @@ class ScoreEntry
 		if (gA > gP)
 		{
 			score += 3;
+			
 			goals = gA;
 			enemyGoals = gP;
-			
 			
 			winB = true;
 			wins = 1;
@@ -35,8 +35,10 @@ class ScoreEntry
 		else if (gA == gP)
 		{
 			score += 1;
+			
 			goals = gA;
 			enemyGoals = gP;
+			
 			drawB = true;
 			draw = 1;
 		}

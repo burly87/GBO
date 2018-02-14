@@ -1,15 +1,19 @@
 package gui.KlausurVersuchZwei;
 
+import java.util.Optional;
+
+
 public class Presenter
 {
 	private Model model;
 	private View view;
 	private AddDialog addDialog;
-	
+	private Match m;
+	private UndoRedoManager urm;
 	
 	public Presenter()
 	{
-		
+		this.urm = new UndoRedoManager();
 	}
 
 	public Model getModel()
@@ -44,20 +48,37 @@ public class Presenter
 
 	public void getAddDialog()
 	{
-		AddDialog ad = new AddDialog();
-		ad.setPresenter(this);
-		ad.showAndWait();
+		addDialog = new AddDialog();
+		Optional<Match> result = addDialog.showAndWait();
+		result.ifPresent(match -> addMatch(match));
 	}
 
-	public void addMatch(Match m)
+	public void addMatch(Match match)
 	{
-		model.addMatch(m);
+		AddHandle ah = new AddHandle(match, model);
+		urm.addAction(ah);
+		model.addMatch(match);
+		view.updateScores();
 	}
 
 	public void deleteMatch(Match selectedItem)
 	{
+		DeleteHandle dh = new DeleteHandle(selectedItem, model);
+		urm.addAction(dh);
 		model.deleteMatch(selectedItem);
-		
+		view.updateScores();
+	}
+
+	public void undo()
+	{
+		urm.undo();
+		view.updateScores();
+	}
+
+	public void redo()
+	{
+		urm.redo();
+		view.updateScores();
 	}
 
 }

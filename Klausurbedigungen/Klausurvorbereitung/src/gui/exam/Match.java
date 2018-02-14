@@ -1,6 +1,6 @@
 package gui.exam;
 
-class Match
+public class Match
 {
 	private String teamHome, teamGuest;
 	private int goalsHome, goalsGuest;

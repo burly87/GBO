@@ -1,6 +1,8 @@
 package gui.KlausurVersuchZwei;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
@@ -85,6 +87,8 @@ public class AddDialog extends Dialog<Match>
 
 	private Match generateMatch(ButtonType b)
 	{
+		
+		
 		if (b == ButtonType.OK)
 		{
 			return m;

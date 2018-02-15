@@ -53,7 +53,7 @@ public class SinusPresenter
         this.frequValue = reshapeX;
     }
 
-    /* nur fuer dich leiber ASB */
+    /* nur fuer dich lieber ASB */
     public double getZoomValueX()
     {
         return zoomValueX;

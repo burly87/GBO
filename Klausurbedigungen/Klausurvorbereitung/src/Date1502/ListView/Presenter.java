@@ -14,7 +14,7 @@ public class Presenter
 	private Model model;
 	private boolean b = false;
 	private UndoRedoManager urm;
-	
+
 	public Presenter()
 	{
 		this.urm = new UndoRedoManager();
@@ -35,19 +35,10 @@ public class Presenter
 		return model.getData();
 	}
 
-	public void openDialog()
-	{
-		Country c = view.getItem();
-		
-		CountryEditDialog d = new CountryEditDialog(c, b);
-		Optional<Country> result = d.showAndWait();
-		result.ifPresent(country -> addCountry(country));
-	}
-
 	private void addCountry(Country country)
 	{
 		HandleAdd ha = new HandleAdd(model, country);
-		urm.addAction(ha);		
+		urm.addAction(ha);
 		model.addCountry(country);
 	}
 
@@ -58,19 +49,24 @@ public class Presenter
 		model.deleteCountry(view.getItem());
 	}
 
-	public void openEditDialog()
+	public void openDialog(boolean b)
 	{
 		Country c = view.getItem();
-		b = true;
-		
-		CountryEditDialog d = new CountryEditDialog(c,b);
+
+		CountryEditDialog d = new CountryEditDialog(c, b);
 		Optional<Country> result = d.showAndWait();
-		result.ifPresent(country ->editCountry(c,result.get()));
-		
-		b = false;
+		if (b)
+		{
+			result.ifPresent(country -> editCountry(c, result.get()));
+			b = false;
+		} 
+		else
+		{
+			result.ifPresent(country -> addCountry(country));
+		}
 	}
 
-	private void editCountry(Country old,Country newCountry)
+	private void editCountry(Country old, Country newCountry)
 	{
 		HandleEdit he = new HandleEdit(model, newCountry, old);
 		urm.addAction(he);
@@ -86,11 +82,5 @@ public class Presenter
 	{
 		urm.undo();
 	}
-
-	
-
-
-	
-	
 
 }

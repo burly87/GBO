@@ -26,6 +26,7 @@ public class CountryEditDialog extends Dialog<Country>
 
 	public CountryEditDialog(Country c, boolean b)
 	{
+		
 		root = new GridPane();
 		fieldBox = new VBox();
 		name = new TextField();
@@ -41,6 +42,7 @@ public class CountryEditDialog extends Dialog<Country>
 
 		if (b)
 		{
+			setTitle("EditierModus");
 			name.setText(c.getName());
 			pop.setText(Integer.toString(c.getPopulation()));
 			size.setText(Integer.toString(c.getSize()));
@@ -48,6 +50,7 @@ public class CountryEditDialog extends Dialog<Country>
 			cancle.setText("Änderung verwerfen");
 		} else
 		{
+			setTitle("AddModus");
 			name.setPromptText("Name");
 			pop.setPromptText("Population");
 			size.setPromptText("Größe");

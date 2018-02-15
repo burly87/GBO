@@ -41,10 +41,10 @@ public class View
 
 		add.setOnAction(e -> openDialog());
 		delete.setOnAction(e -> deleteCountry());
-		edit.setOnAction(e-> editCountry());
-		undo.setOnAction(e-> undo());
-		redo.setOnAction(e-> redo());
-		
+		edit.setOnAction(e -> editCountry());
+		undo.setOnAction(e -> undo());
+		redo.setOnAction(e -> redo());
+
 		countryList = new ListView<Country>(presenter.getData());
 		countryList.setOnMouseClicked(e -> setLabelText());
 
@@ -69,7 +69,8 @@ public class View
 
 	private void editCountry()
 	{
-		presenter.openEditDialog();
+		boolean b = true;
+		presenter.openDialog(b);
 	}
 
 	private void deleteCountry()
@@ -79,7 +80,8 @@ public class View
 
 	private void openDialog()
 	{
-		presenter.openDialog();
+		boolean b = false;
+		presenter.openDialog(b);
 	}
 
 	public void setLabelText()

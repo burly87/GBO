@@ -113,14 +113,6 @@ public class CountryInfo extends Application
 	{
 		CountryEditView cev = new CountryEditView(c);
 		cev.showAndWait();
-//		resetView();
-	}
-
-
-	private void resetView()
-	{
-		eNum.getItems().clear();
-		eNum.getItems().setAll(countries);
 	}
 
 
@@ -173,7 +165,7 @@ public class CountryInfo extends Application
 		aHauptstadt.setText(name.getCapital());
 		aEinwohner.setText("" + name.getPeople());
 		aFlaeche.setText("" + name.getArea());
-		aDichte.setText("" + name.getDichte());
+		aDichte.setText(Long.toString(name.getDichte()));
 	}
 
 	public static void main(String[] args)

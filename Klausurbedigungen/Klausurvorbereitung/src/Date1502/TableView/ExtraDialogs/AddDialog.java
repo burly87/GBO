@@ -49,22 +49,28 @@ public class AddDialog extends Dialog<Animal>
 		tfPop = new TextField();
 		tfPop.setPromptText("Population");
 		
+		///////////////////////////
 		getDialogPane().getButtonTypes().addAll(ButtonType.OK,ButtonType.CANCEL);
+		///////////////////////////
 		add = (Button)getDialogPane().lookupButton(ButtonType.OK);
 		add.setText("Hinzufügen");
 		cancel = (Button)getDialogPane().lookupButton(ButtonType.CANCEL);
 		cancel.setText("Abbrechen");
-
+		///////////////////////////
 		checkIfPossible();
+		///////////////////////////
 		setResultConverter(a -> generateAnimal(a));
+		///////////////////////////
 		
 		btnBox.getChildren().addAll(add,cancel);
 		txtBox.getChildren().addAll(tfName,tfCountry,tfSize,tfPop);
 		root.add(txtBox, 0, 0);
 		root.add(btnBox, 1, 0);
 		root.add(status, 0, 2,4,1);
-		getDialogPane().setContent(root);
 		
+		///////////////////////////
+		getDialogPane().setContent(root);
+		///////////////////////////
 	}
 	
 

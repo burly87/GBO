@@ -87,15 +87,7 @@ public class AddDialog extends Dialog<Match>
 
 	private Match generateMatch(ButtonType b)
 	{
-<<<<<<< HEAD
-=======
-		
-		
-		if (b == ButtonType.OK)
-		{
-			return m;
-		}
->>>>>>> 622642121ca90fbf379e4c1cddb098965e44e7a5
+
 		return m;
 	}
 

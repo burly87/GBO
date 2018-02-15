@@ -75,9 +75,9 @@ public class AddDialog extends Dialog<Match>
 		add.addEventFilter(ActionEvent.ACTION, event -> {
 			try
 			{
-				m = new Match(team1.getText(), team2.getText(), Integer.parseInt(erg1.getText()),
-						Integer.parseInt(erg2.getText()));
-			} catch (Exception e)
+				m = new Match(team1.getText(), team2.getText(), Integer.parseInt(erg1.getText()),Integer.parseInt(erg2.getText()));
+			} 
+			catch (Exception e)
 			{
 				status.setText("Ungueltige Eingabe");
 				event.consume();

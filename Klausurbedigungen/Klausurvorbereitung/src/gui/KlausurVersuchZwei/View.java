@@ -1,7 +1,9 @@
 package gui.KlausurVersuchZwei;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -29,18 +31,18 @@ public class View
 		btnBox = new HBox(5);
 		listBox = new HBox(5);
 		
+		add = new Button("Neues Spielergebnis");
+		delete = new Button("Spielergebnis lˆschen");
 		undo =  new Button("UNDO");
-		undo.setOnAction(e->undo());
 		redo = new Button("REDO");
-		redo.setOnAction(e->redo());
 		
 		games = new ListView<Match>();
 		score = new ListView<ScoreEntry>();
 		
-		add = new Button("Neues Spielergebnis");
 		add.setOnAction(e -> addMatch());
-		delete = new Button("Spielergebnis lˆschen");
 		delete.setOnAction(e-> deleteMatch());
+		undo.setOnAction(e-> undo());
+		redo.setOnAction(e-> redo());
 		
 		btnBox.getChildren().addAll(add,delete, undo, redo);
 		listBox.getChildren().addAll(games,score);
@@ -73,8 +75,18 @@ public class View
 	}
 	private void deleteMatch()
 	{
+		showWarning();
+		
 		presenter.deleteMatch(games.getSelectionModel().getSelectedItem());
 		updateScores();
+	}
+
+	public void showWarning()
+	{
+		Alert a = new Alert(AlertType.CONFIRMATION);
+		a.setHeaderText("");
+		a.setContentText("L÷÷÷SCHEN?");
+		a.showAndWait();
 	}
 
 	private void addMatch()

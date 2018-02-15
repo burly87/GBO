@@ -1,4 +1,4 @@
-package gui.KlausurVersuchZwei;
+package gui.KORREKT2;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
@@ -75,9 +75,9 @@ public class AddDialog extends Dialog<Match>
 		add.addEventFilter(ActionEvent.ACTION, event -> {
 			try
 			{
-				m = new Match(team1.getText(), team2.getText(), Integer.parseInt(erg1.getText()),Integer.parseInt(erg2.getText()));
-			} 
-			catch (Exception e)
+				m = new Match(team1.getText(), team2.getText(), Integer.parseInt(erg1.getText()),
+						Integer.parseInt(erg2.getText()));
+			} catch (Exception e)
 			{
 				status.setText("Ungueltige Eingabe");
 				event.consume();
@@ -87,15 +87,12 @@ public class AddDialog extends Dialog<Match>
 
 	private Match generateMatch(ButtonType b)
 	{
-<<<<<<< HEAD
-=======
 		
 		
 		if (b == ButtonType.OK)
 		{
 			return m;
 		}
->>>>>>> 622642121ca90fbf379e4c1cddb098965e44e7a5
 		return m;
 	}
 

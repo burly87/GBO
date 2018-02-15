@@ -22,7 +22,6 @@ public class RectangleBinding extends Application
 	private Rectangle rec;
 	private Slider slider, sliderY, sliderMove;
 	private HBox box;
-	private Curve curve;
 	private Circle p1,p2,p3;
 	private double xOrg, yOrg;
 	

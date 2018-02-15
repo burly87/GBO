@@ -21,5 +21,21 @@ public class Model
 		return  list;
 	}
 
+	public void addCountry(Country country)
+	{
+		list.add(country);
+	}
+
+	public void deleteCountry(Country item)
+	{
+		list.remove(item);
+	}
+
+	public void editCountry(Country old, Country newCountry)
+	{
+		int i = list.indexOf(old);
+		list.remove(i);
+		list.add(i,newCountry);
+	}
 
 }

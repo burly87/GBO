@@ -4,6 +4,7 @@ public class Country
 {
 	private String name;
 	private int population, size;
+	public Country countryNew;
 	public Country(String name, int population, int size)
 	{
 		super();

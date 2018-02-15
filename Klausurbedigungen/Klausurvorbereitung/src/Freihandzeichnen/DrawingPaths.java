@@ -43,8 +43,8 @@ public class DrawingPaths extends Application
 	private void mousePressed(double x, double y)
 	{
 		path = new Path();
-		path.setStroke(Color.BLUE);
-		path.setStrokeWidth(4);
+//		path.setStroke(Color.BLUE);
+//		path.setStrokeWidth(4);
 		path.getElements().add(new MoveTo(x,y));
 		root.getChildren().add(path);
 	}

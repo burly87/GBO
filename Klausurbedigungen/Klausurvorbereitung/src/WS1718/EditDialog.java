@@ -1,6 +1,5 @@
 package WS1718;
 
-
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -15,11 +14,10 @@ public class EditDialog extends Dialog<StringDoubleProp>
 
 	private StringDoubleProp std;
 	private GridPane root;
-	private Button add,  abord;
+	private Button add, abord;
 	private HBox btnBox, box1, box2;
-	
-	private Label name, gehalt;
-	
+
+	private Label name, gehalt, status;
 	private TextField txtName, txtGehalt;
 
 	public EditDialog(StringDoubleProp sdp)
@@ -28,14 +26,14 @@ public class EditDialog extends Dialog<StringDoubleProp>
 		root = new GridPane();
 
 		btnBox = new HBox();
-		txtName = new TextField(sdp.getS());
-		txtGehalt = new  TextField(Double.toString(sdp.getD()));
+		txtName = new TextField(sdp.getString());
+		txtGehalt = new TextField(Double.toString(sdp.getDouble()));
 		box1 = new HBox();
 		box2 = new HBox();
-		
-		
+
 		name = new Label("Name: ");
 		gehalt = new Label("Gehalt: ");
+		status = new Label();
 
 		getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
 
@@ -47,14 +45,15 @@ public class EditDialog extends Dialog<StringDoubleProp>
 		checkIfPossible();
 		setResultConverter(a -> generateStringDoubleProp());
 
-		btnBox.getChildren().addAll(add,abord);
-		box1.getChildren().addAll(name,txtName);
+		btnBox.getChildren().addAll(add, abord);
+		box1.getChildren().addAll(name, txtName);
 		box2.getChildren().addAll(gehalt, txtGehalt);
-		
+
 		root.add(box1, 0, 0);
 		root.add(box2, 0, 1);
 		root.add(btnBox, 0, 2);
-		
+		root.add(status, 0, 3, 4, 1);
+
 		getDialogPane().setContent(root);
 	}
 
@@ -63,10 +62,18 @@ public class EditDialog extends Dialog<StringDoubleProp>
 		add.addEventFilter(ActionEvent.ACTION, event -> {
 			try
 			{
-				std = new StringDoubleProp(txtName.getText(), Double.parseDouble(txtGehalt.getText()));
+				if (!"".equals(txtName.getText()))
+				{
+					std = new StringDoubleProp(txtName.getText(), Double.parseDouble(txtGehalt.getText()));
+				} else
+				{
+					status.setText("Fehlerhafte Eingabe");
+					event.consume();
+				}
 
 			} catch (Exception e)
 			{
+				status.setText("Fehlerhafte Eingabe");
 				event.consume();
 			}
 		});
@@ -77,5 +84,4 @@ public class EditDialog extends Dialog<StringDoubleProp>
 		return std;
 	}
 
-	
 }

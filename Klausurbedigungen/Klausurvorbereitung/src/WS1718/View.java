@@ -18,8 +18,18 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /*
- * was noch fehlt. man Soll die DoubleWerte aus der Tabelle mit einem eingegebenen Double in einem extra Dialog 
+ * Es muss kein MVP benutzt werden.
+ * a) TableView verwenden. (Mit Punktabzug darf auch ListView verwendet werden). Oberflaeche aufgaben. Buttons initialisieren, methoden anlegen, methoden noch leer.
+ * b) AddMethode schreiben um neues Obj in Liste hinzuzufuegen. Ausgegangen ist er von einer Pane. es darf auch Dialog verwendet werden, ohne das Punkte abgezogen werden.
+ * 	Wichtig ist Ausnahmebehandlung bei fehlerhafter Eingabe.
+ * c) DeleteMethode zum loeschen aus der Liste schreiben.
+ * d) EditMethode schreiben. Kann neuer Dialog angelegt werden.
+ * e) was noch fehlt. man Soll die DoubleWerte aus der Tabelle mit einem eingegebenen Double in einem extra Dialog 
  * prozentual erhoehen. Sprich bei Eingabe 2, werden saemtliche Double mit 1,02 multipliziert.(+2%)
+ * 
+ * BonusAufgabe) Alerts hinzufuegen. Sollte kein Item ausgewaehlt sein, kommt bei Edit und Delete eine ErrorAlert, "Kein Item ausgewaehlt". 
+ * Beim Loeschen eines Obj. muss ein Alert folgen "Sind Sie sich sicher, dass sie das Obj loeschen wollen".
+ *
  */
 
 
@@ -53,12 +63,13 @@ public class View extends Application
 		names = new TableColumn<>("Namen");
 		gehalt = new TableColumn<StringDoubleProp, Double>("Gehalt");
 
-		names.setCellValueFactory(new PropertyValueFactory<>("s"));
-		gehalt.setCellValueFactory(new PropertyValueFactory<>("d"));
+		names.setCellValueFactory(new PropertyValueFactory<>("string"));
+		gehalt.setCellValueFactory(new PropertyValueFactory<>("double"));
 
-		obsList.add(new StringDoubleProp("E8", 123123.22));
+		obsList.add(new StringDoubleProp("E8", 100.00));
 
 		list.getColumns().addAll(names, gehalt);
+		
 		// setup Buttons
 		add = new Button("Hinzufuegen");
 		delete = new Button("Loeschen");
@@ -84,6 +95,22 @@ public class View extends Application
 
 	private void editAll()
 	{
+		EditAllDialog ead = new EditAllDialog();
+		Optional<Double> result = ead.showAndWait();
+		result.ifPresent(d -> multiply(d));
+	}
+
+	private void multiply(Double result)
+	{
+		for(int i = 0; i < obsList.size(); i++)
+		{
+			double temp =  obsList.get(i).getDouble();
+			
+//			result = result*(100);
+			temp += result;
+			System.out.println(obsList.get(i).getDouble());
+			System.out.println(temp);
+		}
 	}
 
 	private void edit()

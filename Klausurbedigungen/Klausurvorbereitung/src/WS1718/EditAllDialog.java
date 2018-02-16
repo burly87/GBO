@@ -8,39 +8,33 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 
-public class AddDialog extends Dialog<StringDoubleProp>
+public class EditAllDialog extends Dialog<Double>
 {
-
-	private StringDoubleProp std;
+	private double proz;
 	private GridPane root;
 	private Button add, abord;
-	private HBox btnBox, box1, box2;
+	private HBox btnBox, box1;
 
-	private Label name, gehalt,status;
+	private Label gehalt, status;
+	private TextField txtGehalt;
 
-	private TextField txtName, txtGehalt;
-
-	public AddDialog()
+	public EditAllDialog()
 	{
 
 		root = new GridPane();
 
 		btnBox = new HBox();
-		txtName = new TextField();
 		txtGehalt = new TextField();
 		box1 = new HBox();
-		box2 = new HBox();
 
-		name = new Label("Name: ");
-		gehalt = new Label("Gehalt: ");
+		gehalt = new Label("Prezent: ");
 		status = new Label();
 
 		getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
 
 		add = (Button) getDialogPane().lookupButton(ButtonType.OK);
-		add.setText("Hinzufügen");
+		add.setText("Aufaddieren");
 		abord = (Button) getDialogPane().lookupButton(ButtonType.CANCEL);
 		abord.setText("Abbrechen");
 
@@ -48,13 +42,11 @@ public class AddDialog extends Dialog<StringDoubleProp>
 		setResultConverter(a -> generateStringDoubleProp());
 
 		btnBox.getChildren().addAll(add, abord);
-		box1.getChildren().addAll(name, txtName);
-		box2.getChildren().addAll(gehalt, txtGehalt);
+		box1.getChildren().addAll(gehalt, txtGehalt);
 
 		root.add(box1, 0, 0);
-		root.add(box2, 0, 1);
 		root.add(btnBox, 0, 2);
-		root.add(status, 0, 3,4,1);
+		root.add(status, 0, 3, 4, 1);
 
 		getDialogPane().setContent(root);
 	}
@@ -64,9 +56,9 @@ public class AddDialog extends Dialog<StringDoubleProp>
 		add.addEventFilter(ActionEvent.ACTION, event -> {
 			try
 			{
-				if (!"".equals(txtName.getText()))
+				if (!"".equals(txtGehalt.getText()))
 				{
-					std = new StringDoubleProp(txtName.getText(), Double.parseDouble(txtGehalt.getText()));
+					proz = Double.parseDouble(txtGehalt.getText());
 				} else
 				{
 					status.setText("Fehlerhafte Eingabe");
@@ -81,9 +73,9 @@ public class AddDialog extends Dialog<StringDoubleProp>
 		});
 	}
 
-	private StringDoubleProp generateStringDoubleProp()
+	private double generateStringDoubleProp()
 	{
-		return std;
+		return proz;
 	}
 
 }

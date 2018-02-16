@@ -16,7 +16,7 @@ public class StringDoubleProp
 		this.s = new SimpleStringProperty(string);
 		this.d = new SimpleDoubleProperty(e);
 	}
-	public String getS()
+	public String getString()
 	{
 		return s.get();
 	}
@@ -24,7 +24,7 @@ public class StringDoubleProp
 	{
 		this.s = s;
 	}
-	public Double getD()
+	public Double getDouble()
 	{
 		return d.get();
 	}

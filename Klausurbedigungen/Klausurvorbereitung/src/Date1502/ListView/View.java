@@ -44,7 +44,7 @@ public class View
 		edit.setOnAction(e -> editCountry());
 		undo.setOnAction(e -> undo());
 		redo.setOnAction(e -> redo());
-
+		
 		countryList = new ListView<Country>(presenter.getData());
 		countryList.setOnMouseClicked(e -> setLabelText());
 

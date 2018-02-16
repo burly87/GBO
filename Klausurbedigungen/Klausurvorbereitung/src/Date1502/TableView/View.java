@@ -73,7 +73,6 @@ public class View
 		redo.setOnAction(e-> redo());
 		
 		
-		
 		labelBox.getChildren().addAll(nameL,country,size, population);
 		btnBox.getChildren().addAll(add,delete,undo,redo);
 		
